@@ -1,0 +1,139 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{8}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[{ACM SIGIR}(2026)]%
+        {acmsigir2026}
+\bibfield{author}{\bibinfo{person}{{ACM SIGIR}}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{ACM SIGIR Conference on Research and Development in
+  Information Retrieval}.
+\newblock
+  \bibinfo{howpublished}{\url{https://sigir2026.org/en-AU/pages/submissions/full-papers-track}}.
+\newblock
+\newblock
+\shownote{Accessed May 6, 2026}.
+
+
+\bibitem[{Association for Computing Machinery}(2025)]%
+        {acmart2025}
+\bibfield{author}{\bibinfo{person}{{Association for Computing Machinery}}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{The ACM Article Template: Using LaTeX}.
+\newblock
+  \bibinfo{howpublished}{\url{https://authors.acm.org/proceedings/production-information/preparing-your-article-with-latex}}.
+\newblock
+\newblock
+\shownote{Accessed May 6, 2026}.
+
+
+\bibitem[Brin and Page(1998)]%
+        {brin1998pagerank}
+\bibfield{author}{\bibinfo{person}{Sergey Brin} {and} \bibinfo{person}{Lawrence
+  Page}.} \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{The Anatomy of a Large-Scale Hypertextual Web
+  Search Engine}.
+\newblock \bibinfo{journal}{\emph{Computer Networks and ISDN Systems}}
+  \bibinfo{volume}{30}, \bibinfo{number}{1--7} (\bibinfo{year}{1998}),
+  \bibinfo{pages}{107--117}.
+\newblock
+\href{https://doi.org/10.1016/S0169-7552(98)00110-X}{doi:\nolinkurl{10.1016/S0169-7552(98)00110-X}}
+
+
+\bibitem[Jaervelin and Kekaelaeinen(2002)]%
+        {jarvelin2002dcg}
+\bibfield{author}{\bibinfo{person}{Kalervo Jaervelin} {and}
+  \bibinfo{person}{Jaana Kekaelaeinen}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{Cumulated Gain-Based Evaluation of IR Techniques}.
+\newblock \bibinfo{journal}{\emph{ACM Transactions on Information Systems}}
+  \bibinfo{volume}{20}, \bibinfo{number}{4} (\bibinfo{year}{2002}),
+  \bibinfo{pages}{422--446}.
+\newblock
+\href{https://doi.org/10.1145/582415.582418}{doi:\nolinkurl{10.1145/582415.582418}}
+
+
+\bibitem[Manning et~al\mbox{.}(2008)]%
+        {manning2008ir}
+\bibfield{author}{\bibinfo{person}{Christopher~D. Manning},
+  \bibinfo{person}{Prabhakar Raghavan}, {and} \bibinfo{person}{Hinrich
+  Schuetze}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Introduction to Information Retrieval}}.
+\newblock \bibinfo{publisher}{Cambridge University Press}.
+\newblock
+\showISBNx{9780521865715}
+\urldef\tempurl%
+\url{https://nlp.stanford.edu/IR-book/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Robertson and Walker(1994)]%
+        {robertson1994bm25}
+\bibfield{author}{\bibinfo{person}{Stephen~E. Robertson} {and}
+  \bibinfo{person}{Steve Walker}.} \bibinfo{year}{1994}\natexlab{}.
+\newblock \showarticletitle{Some Simple Effective Approximations to the
+  2-Poisson Model for Probabilistic Weighted Retrieval}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 17th Annual International ACM
+  SIGIR Conference on Research and Development in Information Retrieval}}.
+  \bibinfo{publisher}{ACM/Springer}, \bibinfo{pages}{232--241}.
+\newblock
+\href{https://doi.org/10.1007/978-1-4471-2099-5_24}{doi:\nolinkurl{10.1007/978-1-4471-2099-5_24}}
+
+
+\bibitem[Rocchio(1971)]%
+        {rocchio1971feedback}
+\bibfield{author}{\bibinfo{person}{J.~J. Rocchio}.}
+  \bibinfo{year}{1971}\natexlab{}.
+\newblock \showarticletitle{Relevance Feedback in Information Retrieval}.
+\newblock In \bibinfo{booktitle}{\emph{The SMART Retrieval System: Experiments
+  in Automatic Document Processing}}. \bibinfo{publisher}{Prentice-Hall},
+  \bibinfo{address}{Englewood Cliffs, NJ}, \bibinfo{pages}{313--323}.
+\newblock
+
+
+\bibitem[Salton et~al\mbox{.}(1975)]%
+        {salton1975vector}
+\bibfield{author}{\bibinfo{person}{Gerard Salton}, \bibinfo{person}{A. Wong},
+  {and} \bibinfo{person}{C.~S. Yang}.} \bibinfo{year}{1975}\natexlab{}.
+\newblock \showarticletitle{A Vector Space Model for Automatic Indexing}.
+\newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{18},
+  \bibinfo{number}{11} (\bibinfo{year}{1975}), \bibinfo{pages}{613--620}.
+\newblock
+\href{https://doi.org/10.1145/361219.361220}{doi:\nolinkurl{10.1145/361219.361220}}
+
+
+\end{thebibliography}

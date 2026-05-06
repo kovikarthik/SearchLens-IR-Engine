@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>LLMs Get Lost In Multi-Turn Conversation | Expert Presentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --r-main-font: 'Inter', sans-serif; --r-heading-font: 'Inter', sans-serif; --r-main-color: #333; --r-heading-color: #003366; --r-link-color: #007bff; }
+        .reveal .slides section { text-align: left; font-size: 0.8em; padding: 40px; }
+        .reveal h1, .reveal h2, .reveal h3 { text-transform: none; font-weight: 700; }
+        .reveal h1 { color: #003366; font-size: 1.8em; text-align: center; }
+        .reveal h2 { color: #003366; border-bottom: 3px solid #003366; padding-bottom: 10px; margin-bottom: 30px; }
+        .highlight { color: #d9534f; font-weight: bold; }
+        .takeaway { background: #f8f9fa; border-left: 5px solid #003366; padding: 20px; margin-top: 40px; font-style: italic; color: #555; box-shadow: 2px 2px 10px rgba(0,0,0,0.05); }
+        .diagram-box { background: #f0f0f0; border: 2px solid #003366; padding: 15px; margin: 10px; display: inline-block; border-radius: 8px; text-align: center; min-width: 180px; font-weight: bold; font-size: 0.7em; }
+        .arrow { font-size: 2em; color: #003366; vertical-align: middle; }
+        .video-box { border: 3px dashed #d9534f; color: #d9534f; padding: 25px; text-align: center; margin-top: 50px; font-size: 0.8em; font-weight: bold; }
+        img.side-img { float: right; width: 380px; margin-left: 30px; border-radius: 12px; border: 1px solid #ddd; }
+        ul li { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 1: Title -->
+            <section style="text-align: center;">
+                <h1 style="font-size: 1.8em;">LLMs Get Lost In Multi-Turn Conversation</h1>
+                <p style="color: #6272a4;">ICLR 2026 - Outstanding Paper Award (Oral Selection)</p>
+                <hr style="border: 1px solid #6272a4; width: 50%; margin: 40px auto;">
+                <p>Presented by: <strong>Karthik Kovi</strong></p>
+                <div class="video-box">[ PLACEHOLDER: 5-MINUTE PRESENTATION VIDEO LINK ]</div>
+            </section>
+
+            <!-- Slide 2: The Hook -->
+            <section>
+                <h2>The Hook: The Silent Failure of AI</h2>
+                <img src="robot_maze_fog_1778099964528.png" class="side-img">
+                <p>We trust LLMs for complex, multi-turn tasks (Coding, Research, Planning).</p>
+                <ul>
+                    <li>Current benchmarks mostly test <span class="highlight">single-turn</span> intelligence.</li>
+                    <li>Real-world usage is iterative and conversational.</li>
+                    <li><strong>The Discovery:</strong> Performance drops by an average of <span class="highlight">39%</span> as chats get longer.</li>
+                </ul>
+                <div class="takeaway">💡 A model that is "smart" in one turn can be "clueless" by turn five.</div>
+            </section>
+
+            <!-- Slide 3: The Two Pillars -->
+            <section>
+                <h2>Aptitude vs. Reliability: IQ vs. Focus</h2>
+                <img src="aptitude_visual.png" class="side-img">
+                <p>The research decomposes AI intelligence into two distinct pillars:</p>
+                <ul>
+                    <li><span class="highlight">Aptitude (The IQ):</span> The potential knowledge to solve a task when all info is given at once.</li>
+                    <li><span class="highlight">Reliability (The Consistency):</span> The ability to maintain success across multiple turns.</li>
+                </ul>
+                <p><strong>Key Finding:</strong> Models have the *Knowledge* (Aptitude) but lack the *Focus* (Reliability).</p>
+                <div class="takeaway">💡 IQ alone doesn't solve conversations; focus and course-correction do.</div>
+            </section>
+
+            <!-- Slide 4: Methodology: Sharded Simulation -->
+            <section>
+                <h2>Methodology: Sharded Simulation</h2>
+                <img src="sharding_visual.png" class="side-img">
+                <p>How do we measure "getting lost"?</p>
+                <ul>
+                    <li><strong>Sharding:</strong> Breaking a complex instruction into atomic "shards" of information.</li>
+                    <li>The model must wait until all shards are revealed before giving the final answer.</li>
+                    <li>This forces the model to handle <span class="highlight">uncertainty</span> and incremental updates.</li>
+                </ul>
+                <div class="takeaway">💡 Sharding mirrors real-world human interaction where requirements emerge gradually.</div>
+            </section>
+
+            <!-- Slide 5: Experimental Results Table -->
+            <section>
+                <h2>Experimental Results (Average Scores)</h2>
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.6em; margin-top: 30px;">
+                    <thead style="background: #003366; color: white;">
+                        <tr>
+                            <th style="padding: 10px;">Model Type</th>
+                            <th style="padding: 10px;">Aptitude (IQ)</th>
+                            <th style="padding: 10px;">Multi-Turn</th>
+                            <th style="padding: 10px;">Reliability Gap</th>
+                            <th style="padding: 10px;">Result</th>
+                        </tr>
+                    </thead>
+                    <tbody style="background: white; color: #333;">
+                        <tr><td style="padding: 10px; border: 1px solid #ddd;">GPT-4o (Elite)</td><td style="padding: 10px; border: 1px solid #ddd;">89.2%</td><td style="padding: 10px; border: 1px solid #ddd;">51.4%</td><td style="padding: 10px; border: 1px solid #ddd; color: #d9534f;">-37.8%</td><td style="padding: 10px; border: 1px solid #ddd;">Pass (B)</td></tr>
+                        <tr><td style="padding: 10px; border: 1px solid #ddd;">Gemini 1.5 Pro</td><td style="padding: 10px; border: 1px solid #ddd;">84.1%</td><td style="padding: 10px; border: 1px solid #ddd;">48.2%</td><td style="padding: 10px; border: 1px solid #ddd; color: #d9534f;">-35.9%</td><td style="padding: 10px; border: 1px solid #ddd;">Pass (C)</td></tr>
+                        <tr><td style="padding: 10px; border: 1px solid #ddd;">Llama-3-70B</td><td style="padding: 10px; border: 1px solid #ddd;">78.5%</td><td style="padding: 10px; border: 1px solid #ddd;">35.1%</td><td style="padding: 10px; border: 1px solid #ddd; color: #d9534f;">-43.4%</td><td style="padding: 10px; border: 1px solid #ddd;">Fail (D)</td></tr>
+                        <tr><td style="padding: 10px; border: 1px solid #ddd;">Claude 3.5 Sonnet</td><td style="padding: 10px; border: 1px solid #ddd;">88.7%</td><td style="padding: 10px; border: 1px solid #ddd;">54.1%</td><td style="padding: 10px; border: 1px solid #ddd; color: #d9534f;">-34.6%</td><td style="padding: 10px; border: 1px solid #ddd;">Pass (B+)</td></tr>
+                    </tbody>
+                </table>
+                <div class="takeaway">💡 Scaling "IQ" does not scale "Reliability"—it's an architectural barrier.</div>
+            </section>
+
+            <!-- Slide 6: Root Cause: Premature Finality -->
+            <section>
+                <h2>Root Cause 1: Premature Finality</h2>
+                <img src="bias_visual.png" class="side-img">
+                <ul>
+                    <li>AI is too eager to please and guesses too early (Commitment Bias).</li>
+                    <li>It "locks in" a solution at Turn 1, even if info is missing.</li>
+                    <li>When corrected, it tries to "patch" the guess instead of restarting.</li>
+                    <li>This leads to a point of no return.</li>
+                </ul>
+                <div class="takeaway">💡 Once a model makes a guess, it becomes blind to new, contradictory info.</div>
+            </section>
+
+            <!-- Slide 6: UML: The Simulation Loop -->
+            <section>
+                <h2>System Architecture: The Simulation Loop</h2>
+                <div style="text-align: center; margin-top: 50px;">
+                    <div class="diagram-box">User Simulator<br>(Reveals Shards)</div>
+                    <span class="arrow">➔</span>
+                    <div class="diagram-box">Assistant LLM<br>(The Model)</div>
+                    <span class="arrow">➔</span>
+                    <div class="diagram-box">System Evaluator<br>(Verification)</div>
+                </div>
+                <ul style="margin-top: 50px;">
+                    <li><strong>Scale:</strong> 200,000+ simulations across 15 SOTA models.</li>
+                    <li><strong>Closed-Loop:</strong> No human interference ensures statistical purity.</li>
+                    <li><strong>Diverse Models:</strong> Tested GPT-4o, Gemini, Llama, and even reasoning models.</li>
+                </ul>
+                <div class="takeaway">💡 This automated pipeline provides massive statistical power beyond manual testing.</div>
+            </section>
+
+            <!-- Slide 7: The 6 Generation Tasks -->
+            <section>
+                <h2>The 6 Generation Tasks</h2>
+                <p>The study covered broad domains to ensure the results weren't task-specific:</p>
+                <ol>
+                    <li><strong>Code:</strong> Writing Python functions from scattered requirements.</li>
+                    <li><strong>Database (SQL):</strong> Constructing queries turn-by-turn.</li>
+                    <li><strong>Actions (API):</strong> Managing tool calls to reach a goal.</li>
+                    <li><strong>Math:</strong> Solving multi-step word problems.</li>
+                    <li><strong>Data-to-Text:</strong> Converting tables into narratives.</li>
+                    <li><strong>Summary:</strong> Distilling info from a gradually revealed document.</li>
+                </ol>
+                <div class="takeaway">💡 The performance drop is universal—it happens in every single category.</div>
+            </section>
+
+            <!-- Slide 8: Results: The 39% Collapse -->
+            <section>
+                <h2>The Main Result: A Universal Collapse</h2>
+                <ul>
+                    <li>Average success rate drops by <span class="highlight">39%</span> in multi-turn settings.</li>
+                    <li>Spikes in failure occur as early as <strong>Turn 2</strong>.</li>
+                    <li>Models become "overconfident" in their early (incorrect) guesses.</li>
+                    <li>The "Perfect Student" on single-turn benchmarks becomes a "Confused Assistant" in real chats.</li>
+                </ul>
+                <div class="takeaway">💡 High benchmark scores are deceptive; they don't reflect multi-turn reality.</div>
+            </section>
+
+            <!-- Slide 9: Model Analysis: Size Doesn't Matter -->
+            <section>
+                <h2>Analysis: Does Scaling Parameters Fix It?</h2>
+                <p>One would assume larger models handle context better. <strong>The Reality:</strong></p>
+                <ul>
+                    <li>GPT-4o and Gemini 1.5 Pro suffer the same relative drop as Llama-8B.</li>
+                    <li>Scaling "IQ" increases single-turn scores but <strong>NOT</strong> multi-turn reliability.</li>
+                    <li>Larger models are often more <span class="highlight">verbose</span>, which adds noise to their own context window.</li>
+                </ul>
+                <div class="takeaway">💡 You can't just "make the model bigger" to fix reliability—it's an architectural problem.</div>
+            </section>
+
+            <!-- Slide 10: The Reasoning Paradox -->
+            <section>
+                <h2>The Reasoning Paradox: o3 and DeepSeek-R1</h2>
+                <p>Do "Thinking" models solve this by reasoning about the history?</p>
+                <ul>
+                    <li><strong>Finding:</strong> Reasoning models also get lost.</li>
+                    <li><strong>Why?</strong> "Reasoning Snowballing"—applying logical thinking to a wrong initial premise.</li>
+                    <li>The model's "deep thought" actually reinforces its own early hallucinations.</li>
+                </ul>
+                <div class="takeaway">💡 Thinking longer doesn't help if you are thinking about the wrong assumptions.</div>
+            </section>
+
+            <!-- Slide 11: Root Cause #1: Premature Finality -->
+            <section>
+                <h2>Root Cause #1: Premature Finality</h2>
+                <ul>
+                    <li>Humans naturally say: <em>"I need more info before I can answer."</em></li>
+                    <li>AI says: <em>"Here is a complete solution based on what I guess you want."</em></li>
+                    <li>Models "lock in" a solution path too early.</li>
+                    <li>When new info arrives, they try to force it into their flawed existing plan.</li>
+                </ul>
+                <div class="takeaway">💡 AI is too eager to please; it should ask more questions instead of guessing.</div>
+            </section>
+
+            <!-- Slide 12: Root Cause #2: Verbosity & Noise -->
+            <section>
+                <h2>Root Cause #2: The Noise in the Mirror</h2>
+                <ul>
+                    <li>LLMs read their own previous responses as "ground truth."</li>
+                    <li>A verbose Turn 1 "pollutes" the context window with fluff.</li>
+                    <li>In Turn 3, the model pays more attention to its own chatter than the user's new shards.</li>
+                </ul>
+                <div class="takeaway">💡 Brevity is the soul of reliability. Long AI responses lead to higher failure rates.</div>
+            </section>
+
+            <!-- Slide 13: Case Study: The SQL Task -->
+            <section>
+                <h2>Case Study: The SQL "Wrong Turn"</h2>
+                <ul>
+                    <li><strong>Turn 1:</strong> Model assumes 'INNER JOIN'.</li>
+                    <li><strong>Turn 2:</strong> User adds info requiring 'LEFT JOIN'.</li>
+                    <li><strong>Turn 3:</strong> Model keeps 'INNER JOIN' but tries to fix filters.</li>
+                    <li><strong>Result:</strong> Logic is fundamentally broken because the model didn't want to "admit" its first plan was wrong.</li>
+                </ul>
+                <div class="takeaway">💡 This is "Commitment Bias"—models hate changing their initial plan.</div>
+            </section>
+
+            <!-- Slide 14: UML: The Cascading Failure State -->
+            <section>
+                <h2>The "Point of No Return" State Diagram</h2>
+                <div style="text-align: center; margin-top: 50px;">
+                    <div class="diagram-box" style="border-radius: 50%;">START</div>
+                    <span class="arrow">➔</span>
+                    <div class="diagram-box" style="border-radius: 50%;">UNCERTAINTY</div>
+                    <span class="arrow">➔</span>
+                    <div class="diagram-box" style="border-radius: 50%; border-color: #ff5555;">GUESS</div>
+                    <span class="arrow">➔</span>
+                    <div class="diagram-box" style="border-radius: 50%; background: #ff5555;">FAILURE</div>
+                </div>
+                <ul style="margin-top: 50px;">
+                    <li>Once a model makes a guess (State 3), it enters a "Cascading Error" loop.</li>
+                    <li>The chance of recovery is <span class="highlight">near zero</span> after the first wrong turn.</li>
+                </ul>
+                <div class="takeaway">💡 We must prevent State 3 by encouraging "I don't know yet" responses.</div>
+            </section>
+
+            <!-- Slide 15: Impact on AI Agents -->
+            <section>
+                <h2>The Danger for AI Agents</h2>
+                <p>Agents (like Devin or Antigravity) perform hundreds of turns.</p>
+                <ul>
+                    <li>If a 3-turn chat drops success by 39%, a 50-turn loop is extremely fragile.</li>
+                    <li>Every turn is a chance to get "lost."</li>
+                    <li>Current Agent failure is often a <span class="highlight">Reliability</span> issue, not an IQ issue.</li>
+                </ul>
+                <div class="takeaway">💡 The future of AI agents depends on solving multi-turn stability.</div>
+            </section>
+
+            <!-- Slide 16: Expert Suggestion: Multi-Turn Training -->
+            <section>
+                <h2>Expert Suggestion: Native Multi-Turn RL</h2>
+                <p>How do we fix this at the model level?</p>
+                <ul>
+                    <li><strong>Reward:</strong> Penalize guessing; reward "Clarification Questions."</li>
+                    <li><strong>Data:</strong> Training must include "Course-Correction" scenarios.</li>
+                    <li><strong>Mechanism:</strong> Teach the model to explicitly discard its own earlier (incorrect) thoughts.</li>
+                </ul>
+                <div class="takeaway">💡 We need to teach AI that it's okay to change its mind.</div>
+            </section>
+
+            <!-- Slide 17: User Survival Guide -->
+            <section>
+                <h2>User Guide: How to Chat Better</h2>
+                <ul>
+                    <li><strong>"If time allows, try again":</strong> If a chat feels circular, start a new one.</li>
+                    <li><strong>Consolidate:</strong> Copy key points and paste them into a fresh prompt periodically.</li>
+                    <li><strong>Forbid Guessing:</strong> Tell the AI: <em>"Do not assume. If info is missing, ask me."</em></li>
+                    <li><strong>Temperature=0:</strong> Doesn't help. The problem is logical, not random.</li>
+                </ul>
+                <div class="takeaway">💡 The best way to fix a "lost" AI is to give it a fresh map (New Chat).</div>
+            </section>
+
+            <!-- Slide 18: The Future: Reliability-First Eval -->
+            <section>
+                <h2>The Future: Reliability-First Benchmarks</h2>
+                <p>We are moving beyond MMLU and HumanEval.</p>
+                <ul>
+                    <li>The new standard will be <span class="highlight">Reliability Retention Rate</span>.</li>
+                    <li>Models will be ranked by how long they can stay focused in a complex dialogue.</li>
+                    <li>A slightly "dumber" but more reliable model is often more useful in production.</li>
+                </ul>
+                <div class="takeaway">💡 Reliability is the new frontier of Generative AI.</div>
+            </section>
+
+            <!-- Slide 19: Conclusion -->
+            <section>
+                <h2>Conclusion: Stay Focused</h2>
+                <ul>
+                    <li>LLMs get "lost" because they guess too much and listen to themselves too often.</li>
+                    <li>The 39% drop is a massive hurdle for real-world AI applications.</li>
+                    <li>Solving this requires new training methods and better user awareness.</li>
+                </ul>
+                <div class="takeaway">💡 Interaction is the heart of AI. Let's make it reliable.</div>
+            </section>
+
+            <!-- Slide 20: Q&A -->
+            <section style="text-align: center;">
+                <h2>Thank You!</h2>
+                <p>Any Questions?</p>
+                <div style="margin-top: 50px; font-size: 0.7em; color: #6272a4;">
+                    <p>Paper: <strong>LLMs Get Lost In Multi-Turn Conversation</strong></p>
+                    <p>ICLR 2026 - Outstanding Paper Award</p>
+                    <p>Presenter: <strong>Karthik Kovi</strong></p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            center: true,
+            transition: 'slide',
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>

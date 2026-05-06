@@ -1,0 +1,1157 @@
+{
+  "Q01": {
+    "query": "inverted index postings positions phrase query",
+    "bm25": [
+      {
+        "doc_id": "D002",
+        "title": "Positional Postings for Phrase Search",
+        "score": 13.440314921712794,
+        "snippet": "A <mark>position</mark>al <mark>index</mark> stores the exact token <mark>position</mark>s where a term occurs. <mark>Phrase</mark> queries such as information retrieval are answered by checking whether <mark>position</mark>s for adjacent terms appear con...",
+        "category": "indexing",
+        "url": "https://example.edu/searchlens/D002",
+        "explanation": "matched terms; top document terms: positional:2, phrase:2, position:2, term:2"
+      },
+      {
+        "doc_id": "D001",
+        "title": "Building an Inverted Index with Postings Lists",
+        "score": 10.203154261851887,
+        "snippet": "An <mark>invert</mark>ed <mark>index</mark> maps each normalized term to a <mark>posting</mark>s list of documents. The pipeline tokenizes text, builds a term dictionary, records term frequency, and sorts document identifiers so ...",
+        "category": "indexing",
+        "url": "https://example.edu/searchlens/D001",
+        "explanation": "matched terms; top document terms: posting:3, term:3, build:2, invert:2"
+      },
+      {
+        "doc_id": "D007",
+        "title": "Phrase Search as a Hard Filter",
+        "score": 5.089878917497729,
+        "snippet": "A <mark>phrase</mark> search requires all quoted terms to occur in the specified order. SearchLens applies <mark>phrase</mark> constraints before scoring so a document must contain the exact <mark>phrase</mark> to be ranked.",
+        "category": "boolean",
+        "url": "https://example.edu/searchlens/D007",
+        "explanation": "matched terms; top document terms: phrase:4, search:2, hard:1, filter:1"
+      },
+      {
+        "doc_id": "D014",
+        "title": "BM25 Implementation Notes",
+        "score": 5.009845032068766,
+        "snippet": "... can be computed over a candidate set from the <mark>invert</mark>ed <mark>index</mark>.",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D014",
+        "explanation": "matched terms; top document terms: bm25:2, implementation:2, document:2, frequency:2"
+      },
+      {
+        "doc_id": "D004",
+        "title": "Dynamic Index Updates for Small Search Engines",
+        "score": 4.009288371093131,
+        "snippet": "... small search engine can maintain an in-memory <mark>index</mark> and periodically write the dictionary and <mark>posting</mark>s to disk. Dynamic updates add new documents, remove deleted identifiers, and rebuild su...",
+        "category": "indexing",
+        "url": "https://example.edu/searchlens/D004",
+        "explanation": "matched terms; top document terms: dynamic:2, index:2, update:2, small:2"
+      }
+    ],
+    "bm25_prf": [
+      {
+        "doc_id": "D002",
+        "title": "Positional Postings for Phrase Search",
+        "score": 25.649106646347427,
+        "snippet": "A <mark><mark>position</mark>al</mark> <mark>index</mark> stores the exact token <mark>position</mark>s where a term occurs. <mark>Phrase</mark> queries such as information retrieval are answered by <mark>check</mark>ing whether <mark>position</mark>s for <mark>adjacent</mark> terms appear con...",
+        "category": "indexing",
+        "url": "https://example.edu/searchlens/D002",
+        "explanation": "matched terms; top document terms: positional:2, phrase:2, position:2, term:2"
+      },
+      {
+        "doc_id": "D001",
+        "title": "Building an Inverted Index with Postings Lists",
+        "score": 10.203154261851887,
+        "snippet": "An <mark>invert</mark>ed <mark>index</mark> maps each normalized term to a <mark>posting</mark>s list of documents. The pipeline tokenizes text, builds a term dictionary, records term frequency, and sorts document identifiers so ...",
+        "category": "indexing",
+        "url": "https://example.edu/searchlens/D001",
+        "explanation": "matched terms; top document terms: posting:3, term:3, build:2, invert:2"
+      },
+      {
+        "doc_id": "D007",
+        "title": "Phrase Search as a Hard Filter",
+        "score": 5.089878917497729,
+        "snippet": "A <mark>phrase</mark> search requires all quoted terms to occur in the specified order. SearchLens applies <mark>phrase</mark> constraints before scoring so a document must contain the exact <mark>phrase</mark> to be ranked.",
+        "category": "boolean",
+        "url": "https://example.edu/searchlens/D007",
+        "explanation": "matched terms; top document terms: phrase:4, search:2, hard:1, filter:1"
+      },
+      {
+        "doc_id": "D014",
+        "title": "BM25 Implementation Notes",
+        "score": 5.009845032068766,
+        "snippet": "... can be computed over a candidate set from the <mark>invert</mark>ed <mark>index</mark>.",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D014",
+        "explanation": "matched terms; top document terms: bm25:2, implementation:2, document:2, frequency:2"
+      },
+      {
+        "doc_id": "D004",
+        "title": "Dynamic Index Updates for Small Search Engines",
+        "score": 4.009288371093131,
+        "snippet": "... small search engine can maintain an in-memory <mark>index</mark> and periodically write the dictionary and <mark>posting</mark>s to disk. Dynamic updates add new documents, remove deleted identifiers, and rebuild su...",
+        "category": "indexing",
+        "url": "https://example.edu/searchlens/D004",
+        "explanation": "matched terms; top document terms: dynamic:2, index:2, update:2, small:2"
+      }
+    ]
+  },
+  "Q02": {
+    "query": "bm25 term frequency document length normalization",
+    "bm25": [
+      {
+        "doc_id": "D012",
+        "title": "Document Length Normalization in BM25",
+        "score": 13.423023769355304,
+        "snippet": "The <mark>BM25</mark> b parameter controls <mark>document</mark> <mark>length</mark> <mark>normalization</mark>. A higher value penalizes <mark>document</mark>s that are much longer than the collection average, while k1 controls the strength of <mark>term</mark> frequ...",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D012",
+        "explanation": "matched terms; top document terms: document:3, length:2, normalization:2, bm25:2"
+      },
+      {
+        "doc_id": "D014",
+        "title": "BM25 Implementation Notes",
+        "score": 10.58418765104432,
+        "snippet": "A practical <mark>BM25</mark> implementation needs <mark>document</mark> <mark>frequency</mark>, <mark>document</mark> <mark>length</mark>, average <mark>length</mark>, and <mark>term</mark> <mark>frequency</mark> statistics. Scores can be computed over a candidate set from the inverted index.",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D014",
+        "explanation": "matched terms; top document terms: bm25:2, implementation:2, document:2, frequency:2"
+      },
+      {
+        "doc_id": "D018",
+        "title": "Cosine Normalization for Different Document Lengths",
+        "score": 8.68104711075084,
+        "snippet": "...rmalization divides by vector <mark>length</mark> so longer <mark>document</mark>s do not automatically receive higher scores. This is useful when corpus <mark>document</mark>s vary in <mark>length</mark> and verbosity.",
+        "category": "tfidf",
+        "url": "https://example.edu/searchlens/D018",
+        "explanation": "matched terms; top document terms: document:3, length:3, cosine:2, normalization:2"
+      },
+      {
+        "doc_id": "D011",
+        "title": "BM25 Ranking with Term Frequency Saturation",
+        "score": 7.951271903580592,
+        "snippet": "<mark>BM25</mark> ranks <mark>document</mark>s by combining inverse <mark>document</mark> <mark>frequency</mark> with a saturated <mark>term</mark> <mark>frequency</mark> component. Repeating a query <mark>term</mark> helps at first, but the gain decreases so long <mark>document</mark>s do not...",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D011",
+        "explanation": "matched terms; top document terms: term:3, frequency:3, document:3, bm25:2"
+      },
+      {
+        "doc_id": "D019",
+        "title": "Comparing TF-IDF and BM25",
+        "score": 7.576293862892339,
+        "snippet": "TF-IDF cosine and <mark>BM25</mark> are both lexical ranking models. <mark>BM25</mark> adds saturation and <mark>length</mark> <mark>normalization</mark>, while tf-idf cosine offers a simple geometric interpretation.",
+        "category": "tfidf",
+        "url": "https://example.edu/searchlens/D019",
+        "explanation": "matched terms; top document terms: tf:3, idf:3, bm25:3, cosine:2"
+      }
+    ],
+    "bm25_prf": [
+      {
+        "doc_id": "D012",
+        "title": "Document Length Normalization in BM25",
+        "score": 24.442192789044142,
+        "snippet": "The <mark>BM25</mark> b parameter <mark>control</mark>s <mark>document</mark> <mark>length</mark> <mark>normalization</mark>. A higher value penalizes <mark>document</mark>s that are much <mark>longer</mark> than the collection <mark>average</mark>, while k1 <mark>control</mark>s the strength of <mark>term</mark> frequ...",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D012",
+        "explanation": "matched terms; top document terms: document:3, length:2, normalization:2, bm25:2"
+      },
+      {
+        "doc_id": "D014",
+        "title": "BM25 Implementation Notes",
+        "score": 13.22032629772419,
+        "snippet": "A practical <mark>BM25</mark> implementation needs <mark>document</mark> <mark>frequency</mark>, <mark>document</mark> <mark>length</mark>, <mark>average</mark> <mark>length</mark>, and <mark>term</mark> <mark>frequency</mark> statistics. Scores can be computed over a candidate set from the inverted index.",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D014",
+        "explanation": "matched terms; top document terms: bm25:2, implementation:2, document:2, frequency:2"
+      },
+      {
+        "doc_id": "D018",
+        "title": "Cosine Normalization for Different Document Lengths",
+        "score": 11.850431953662886,
+        "snippet": "...rmalization divides by vector <mark>length</mark> so <mark>longer</mark> <mark>document</mark>s do not automatically receive higher scores. This is useful when corpus <mark>document</mark>s vary in <mark>length</mark> and verbosity.",
+        "category": "tfidf",
+        "url": "https://example.edu/searchlens/D018",
+        "explanation": "matched terms; top document terms: document:3, length:3, cosine:2, normalization:2"
+      },
+      {
+        "doc_id": "D011",
+        "title": "BM25 Ranking with Term Frequency Saturation",
+        "score": 7.951271903580592,
+        "snippet": "<mark>BM25</mark> ranks <mark>document</mark>s by combining inverse <mark>document</mark> <mark>frequency</mark> with a saturated <mark>term</mark> <mark>frequency</mark> component. Repeating a query <mark>term</mark> helps at first, but the gain decreases so long <mark>document</mark>s do not...",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D011",
+        "explanation": "matched terms; top document terms: term:3, frequency:3, document:3, bm25:2"
+      },
+      {
+        "doc_id": "D019",
+        "title": "Comparing TF-IDF and BM25",
+        "score": 7.576293862892339,
+        "snippet": "TF-IDF cosine and <mark>BM25</mark> are both lexical ranking models. <mark>BM25</mark> adds saturation and <mark>length</mark> <mark>normalization</mark>, while tf-idf cosine offers a simple geometric interpretation.",
+        "category": "tfidf",
+        "url": "https://example.edu/searchlens/D019",
+        "explanation": "matched terms; top document terms: tf:3, idf:3, bm25:3, cosine:2"
+      }
+    ]
+  },
+  "Q03": {
+    "query": "tf idf cosine vector space retrieval",
+    "bm25": [
+      {
+        "doc_id": "D016",
+        "title": "Vector Space Ranking with TF-IDF",
+        "score": 17.676059159636488,
+        "snippet": "...ocuments and queries as weighted term <mark>vector</mark>s. TF-<mark>IDF</mark> combines term frequency with inverse document frequency, and <mark>cosine</mark> similarity compares the angle between <mark>vector</mark>s.",
+        "category": "tfidf",
+        "url": "https://example.edu/searchlens/D016",
+        "explanation": "matched terms; top document terms: vector:4, space:2, tf:2, idf:2"
+      },
+      {
+        "doc_id": "D019",
+        "title": "Comparing TF-IDF and BM25",
+        "score": 12.378088803525078,
+        "snippet": "TF-<mark>IDF</mark> <mark>cosine</mark> and BM25 are both lexical ranking models. BM25 adds saturation and length normalization, while tf-<mark>idf</mark> <mark>cosine</mark> offers a simple geometric interpretation.",
+        "category": "tfidf",
+        "url": "https://example.edu/searchlens/D019",
+        "explanation": "matched terms; top document terms: tf:3, idf:3, bm25:3, cosine:2"
+      },
+      {
+        "doc_id": "D036",
+        "title": "Rocchio Relevance Feedback",
+        "score": 7.561684699480083,
+        "snippet": "Rocchio feedback moves a query <mark>vector</mark> toward relevant documents and away from nonrelevant documents. It is a classic method for improving <mark>vector</mark> <mark>space</mark> <mark>retrieval</mark> when relevance judgments are ...",
+        "category": "expansion",
+        "url": "https://example.edu/searchlens/D036",
+        "explanation": "matched terms; top document terms: rocchio:2, relevance:2, feedback:2, vector:2"
+      },
+      {
+        "doc_id": "D018",
+        "title": "Cosine Normalization for Different Document Lengths",
+        "score": 6.447105949988434,
+        "snippet": "<mark>Cosine</mark> normalization divides by <mark>vector</mark> length so longer documents do not automatically receive higher scores. This is useful when corpus documents vary in length and verbosity.",
+        "category": "tfidf",
+        "url": "https://example.edu/searchlens/D018",
+        "explanation": "matched terms; top document terms: document:3, length:3, cosine:2, normalization:2"
+      },
+      {
+        "doc_id": "D009",
+        "title": "Limitations of Pure Boolean Search",
+        "score": 5.624676317412746,
+        "snippet": "...esses this limitation by ordering results with tf-<mark>idf</mark>, BM25, or other scoring functions.",
+        "category": "boolean",
+        "url": "https://example.edu/searchlens/D009",
+        "explanation": "matched terms; top document terms: limitation:2, pure:2, boolean:2, search:2"
+      }
+    ],
+    "bm25_prf": [
+      {
+        "doc_id": "D016",
+        "title": "Vector Space Ranking with TF-IDF",
+        "score": 27.494317766550093,
+        "snippet": "...ocuments and queries as weighted term <mark>vector</mark>s. TF-<mark>IDF</mark> combines term <mark>frequency</mark> with inverse document <mark>frequency</mark>, and <mark>cosine</mark> similarity compares the <mark>angle</mark> between <mark>vector</mark>s.",
+        "category": "tfidf",
+        "url": "https://example.edu/searchlens/D016",
+        "explanation": "matched terms; top document terms: vector:4, space:2, tf:2, idf:2"
+      },
+      {
+        "doc_id": "D019",
+        "title": "Comparing TF-IDF and BM25",
+        "score": 12.378088803525078,
+        "snippet": "TF-<mark>IDF</mark> <mark>cosine</mark> and BM25 are both lexical ranking models. BM25 adds saturation and length normalization, while tf-<mark>idf</mark> <mark>cosine</mark> offers a simple geometric interpretation.",
+        "category": "tfidf",
+        "url": "https://example.edu/searchlens/D019",
+        "explanation": "matched terms; top document terms: tf:3, idf:3, bm25:3, cosine:2"
+      },
+      {
+        "doc_id": "D036",
+        "title": "Rocchio Relevance Feedback",
+        "score": 7.561684699480083,
+        "snippet": "Rocchio feedback moves a query <mark>vector</mark> toward relevant documents and away from nonrelevant documents. It is a classic method for improving <mark>vector</mark> <mark>space</mark> <mark>retrieval</mark> when relevance judgments are ...",
+        "category": "expansion",
+        "url": "https://example.edu/searchlens/D036",
+        "explanation": "matched terms; top document terms: rocchio:2, relevance:2, feedback:2, vector:2"
+      },
+      {
+        "doc_id": "D018",
+        "title": "Cosine Normalization for Different Document Lengths",
+        "score": 6.447105949988434,
+        "snippet": "<mark>Cosine</mark> normalization divides by <mark>vector</mark> length so longer documents do not automatically receive higher scores. This is useful when corpus documents vary in length and verbosity.",
+        "category": "tfidf",
+        "url": "https://example.edu/searchlens/D018",
+        "explanation": "matched terms; top document terms: document:3, length:3, cosine:2, normalization:2"
+      },
+      {
+        "doc_id": "D009",
+        "title": "Limitations of Pure Boolean Search",
+        "score": 5.624676317412746,
+        "snippet": "...esses this limitation by ordering results with tf-<mark>idf</mark>, BM25, or other scoring functions.",
+        "category": "boolean",
+        "url": "https://example.edu/searchlens/D009",
+        "explanation": "matched terms; top document terms: limitation:2, pure:2, boolean:2, search:2"
+      }
+    ]
+  },
+  "Q04": {
+    "query": "boolean AND OR NOT phrase proximity",
+    "bm25": [
+      {
+        "doc_id": "D008",
+        "title": "Proximity Matching Beyond Exact Phrases",
+        "score": 7.628848474046906,
+        "snippet": "<mark>Proximity</mark> ranking rewards documents where query terms occur near each other. This can improve user satisfaction for verbose queries because related terms in the same passage usually signal t...",
+        "category": "boolean",
+        "url": "https://example.edu/searchlens/D008",
+        "explanation": "matched terms; top document terms: proximity:2, query:2, term:2, match:1"
+      },
+      {
+        "doc_id": "D007",
+        "title": "Phrase Search as a Hard Filter",
+        "score": 5.089878917497729,
+        "snippet": "A <mark>phrase</mark> search requires all quoted terms to occur in the specified order. SearchLens applies <mark>phrase</mark> constraints before scoring so a document must contain the exact <mark>phrase</mark> to be ranked.",
+        "category": "boolean",
+        "url": "https://example.edu/searchlens/D007",
+        "explanation": "matched terms; top document terms: phrase:4, search:2, hard:1, filter:1"
+      },
+      {
+        "doc_id": "D006",
+        "title": "Boolean Retrieval with AND OR and NOT",
+        "score": 4.355070041603758,
+        "snippet": "<mark>Boolean</mark> retrieval treats queries as set expressions over postings lists. AND computes an intersection, OR computes a union, and NOT subtracts a set from the document universe.",
+        "category": "boolean",
+        "url": "https://example.edu/searchlens/D006",
+        "explanation": "matched terms; top document terms: boolean:2, retrieval:2, set:2, compute:2"
+      },
+      {
+        "doc_id": "D002",
+        "title": "Positional Postings for Phrase Search",
+        "score": 3.9528180011086524,
+        "snippet": "...the exact token positions where a term occurs. <mark>Phrase</mark> queries such as information retrieval are answered by checking whether positions for adjacent terms appear consecutively in the same doc...",
+        "category": "indexing",
+        "url": "https://example.edu/searchlens/D002",
+        "explanation": "matched terms; top document terms: positional:2, phrase:2, position:2, term:2"
+      },
+      {
+        "doc_id": "D009",
+        "title": "Limitations of Pure Boolean Search",
+        "score": 3.8023052461011067,
+        "snippet": "Pure <mark>Boolean</mark> search returns an unordered set, so users must inspect every matching document. Ranked retrieval addresses this limitation by ordering results with tf-idf, BM25, or other scorin...",
+        "category": "boolean",
+        "url": "https://example.edu/searchlens/D009",
+        "explanation": "matched terms; top document terms: limitation:2, pure:2, boolean:2, search:2"
+      }
+    ],
+    "bm25_prf": [
+      {
+        "doc_id": "D008",
+        "title": "Proximity Matching Beyond Exact Phrases",
+        "score": 17.881063021543433,
+        "snippet": "<mark>Proximity</mark> ranking rewards documents where query terms occur near each other. This can improve user satisfaction for <mark>verbose</mark> queries because related terms in the same passage <mark>usually</mark> signal t...",
+        "category": "boolean",
+        "url": "https://example.edu/searchlens/D008",
+        "explanation": "matched terms; top document terms: proximity:2, query:2, term:2, match:1"
+      },
+      {
+        "doc_id": "D007",
+        "title": "Phrase Search as a Hard Filter",
+        "score": 5.089878917497729,
+        "snippet": "A <mark>phrase</mark> search requires all quoted terms to occur in the specified order. SearchLens applies <mark>phrase</mark> constraints before scoring so a document must contain the exact <mark>phrase</mark> to be ranked.",
+        "category": "boolean",
+        "url": "https://example.edu/searchlens/D007",
+        "explanation": "matched terms; top document terms: phrase:4, search:2, hard:1, filter:1"
+      },
+      {
+        "doc_id": "D006",
+        "title": "Boolean Retrieval with AND OR and NOT",
+        "score": 4.355070041603758,
+        "snippet": "<mark>Boolean</mark> retrieval treats queries as set expressions over postings lists. AND computes an intersection, OR computes a union, and NOT subtracts a set from the document universe.",
+        "category": "boolean",
+        "url": "https://example.edu/searchlens/D006",
+        "explanation": "matched terms; top document terms: boolean:2, retrieval:2, set:2, compute:2"
+      },
+      {
+        "doc_id": "D002",
+        "title": "Positional Postings for Phrase Search",
+        "score": 3.9528180011086524,
+        "snippet": "...the exact token positions where a term occurs. <mark>Phrase</mark> queries such as information retrieval are answered by checking whether positions for adjacent terms appear consecutively in the same doc...",
+        "category": "indexing",
+        "url": "https://example.edu/searchlens/D002",
+        "explanation": "matched terms; top document terms: positional:2, phrase:2, position:2, term:2"
+      },
+      {
+        "doc_id": "D009",
+        "title": "Limitations of Pure Boolean Search",
+        "score": 3.8023052461011067,
+        "snippet": "Pure <mark>Boolean</mark> search returns an unordered set, so users must inspect every matching document. Ranked retrieval addresses this limitation by ordering results with tf-idf, BM25, or other scorin...",
+        "category": "boolean",
+        "url": "https://example.edu/searchlens/D009",
+        "explanation": "matched terms; top document terms: limitation:2, pure:2, boolean:2, search:2"
+      }
+    ]
+  },
+  "Q05": {
+    "query": "pagerank link analysis random surfer anchor text",
+    "bm25": [
+      {
+        "doc_id": "D026",
+        "title": "PageRank and the Random Surfer Model",
+        "score": 18.78606356326192,
+        "snippet": "<mark>PageRank</mark> models a <mark>random</mark> <mark>surfer</mark> following <mark>link</mark>s with occasional teleportation. A page receives high score when many important pages <mark>link</mark> to it.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D026",
+        "explanation": "matched terms; top document terms: pagerank:2, random:2, surfer:2, model:2"
+      },
+      {
+        "doc_id": "D027",
+        "title": "Combining Link Analysis with Text Ranking",
+        "score": 16.222433290301424,
+        "snippet": "...t relevance from BM25 with <mark>link</mark> authority from <mark>PageRank</mark>. The combined score improves ranking when <mark>anchor</mark> <mark>text</mark> and <mark>link</mark>s indicate popularity or trust.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D027",
+        "explanation": "matched terms; top document terms: link:3, combin:2, text:2, rank:2"
+      },
+      {
+        "doc_id": "D028",
+        "title": "Anchor Text as External Evidence",
+        "score": 8.554573510964289,
+        "snippet": "<mark>Anchor</mark> <mark>text</mark> often describes the destination page using words chosen by other authors. Indexing <mark>anchor</mark> <mark>text</mark> can improve retrieval for pages whose own content lacks the query terms.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D028",
+        "explanation": "matched terms; top document terms: anchor:3, text:3, page:2, external:1"
+      },
+      {
+        "doc_id": "D024",
+        "title": "Parsing HTML into Indexable Text",
+        "score": 7.025818065838824,
+        "snippet": "...remove boilerplate navigation, preserve useful <mark>anchor</mark> <mark>text</mark>, and pass clean content to the indexing pipeline.",
+        "category": "crawling",
+        "url": "https://example.edu/searchlens/D024",
+        "explanation": "matched terms; top document terms: text:3, html:2, pars:1, indexable:1"
+      },
+      {
+        "doc_id": "D029",
+        "title": "Topic-Sensitive Link Ranking",
+        "score": 5.47127885823916,
+        "snippet": "Topic-sensitive <mark>PageRank</mark> computes authority within topical subsets. It can help distinguish pages about search engines from pages about unrelated popular subjects.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D029",
+        "explanation": "matched terms; top document terms: topic:2, sensitive:2, page:2, link:1"
+      }
+    ],
+    "bm25_prf": [
+      {
+        "doc_id": "D026",
+        "title": "PageRank and the Random Surfer Model",
+        "score": 29.086340704657417,
+        "snippet": "<mark><mark>Page</mark>Rank</mark> <mark>model</mark>s a <mark>random</mark> <mark>surfer</mark> <mark>follow</mark>ing <mark>link</mark>s with occasional teleportation. A <mark>page</mark> receives high score when many important <mark>page</mark>s <mark>link</mark> to it.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D026",
+        "explanation": "matched terms; top document terms: pagerank:2, random:2, surfer:2, model:2"
+      },
+      {
+        "doc_id": "D027",
+        "title": "Combining Link Analysis with Text Ranking",
+        "score": 16.222433290301424,
+        "snippet": "...t relevance from BM25 with <mark>link</mark> authority from <mark><mark>Page</mark>Rank</mark>. The combined score improves ranking when <mark>anchor</mark> <mark>text</mark> and <mark>link</mark>s indicate popularity or trust.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D027",
+        "explanation": "matched terms; top document terms: link:3, combin:2, text:2, rank:2"
+      },
+      {
+        "doc_id": "D028",
+        "title": "Anchor Text as External Evidence",
+        "score": 11.280235474515187,
+        "snippet": "<mark>Anchor</mark> <mark>text</mark> often describes the destination <mark>page</mark> using words chosen by other authors. Indexing <mark>anchor</mark> <mark>text</mark> can improve retrieval for <mark>page</mark>s whose own content lacks the query terms.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D028",
+        "explanation": "matched terms; top document terms: anchor:3, text:3, page:2, external:1"
+      },
+      {
+        "doc_id": "D029",
+        "title": "Topic-Sensitive Link Ranking",
+        "score": 8.43128193262739,
+        "snippet": "Topic-sensitive <mark><mark>Page</mark>Rank</mark> computes authority within topical subsets. It can help distinguish <mark>page</mark>s about search engines from <mark>page</mark>s about unrelated popular subjects.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D029",
+        "explanation": "matched terms; top document terms: topic:2, sensitive:2, page:2, link:1"
+      },
+      {
+        "doc_id": "D024",
+        "title": "Parsing HTML into Indexable Text",
+        "score": 7.025818065838824,
+        "snippet": "...remove boilerplate navigation, preserve useful <mark>anchor</mark> <mark>text</mark>, and pass clean content to the indexing pipeline.",
+        "category": "crawling",
+        "url": "https://example.edu/searchlens/D024",
+        "explanation": "matched terms; top document terms: text:3, html:2, pars:1, indexable:1"
+      }
+    ]
+  },
+  "Q06": {
+    "query": "crawler robots politeness url frontier duplicate detection",
+    "bm25": [
+      {
+        "doc_id": "D022",
+        "title": "URL Frontier Scheduling",
+        "score": 14.114490872826183,
+        "snippet": "...etch. Good scheduling balances freshness, host <mark>politeness</mark>, priority, and coverage of important pages.",
+        "category": "crawling",
+        "url": "https://example.edu/searchlens/D022",
+        "explanation": "matched terms; top document terms: url:2, frontier:2, schedul:2, page:2"
+      },
+      {
+        "doc_id": "D021",
+        "title": "Crawler Politeness and Robots Exclusion",
+        "score": 14.051866621976622,
+        "snippet": "A web <mark>crawler</mark> should respect <mark>robot</mark>s.txt, throttle requests to each host, and avoid overloading servers. <mark>Politeness</mark> policies are essential for responsible collection of web pages.",
+        "category": "crawling",
+        "url": "https://example.edu/searchlens/D021",
+        "explanation": "matched terms; top document terms: crawler:2, politeness:2, robot:2, web:2"
+      },
+      {
+        "doc_id": "D023",
+        "title": "Duplicate and Near-Duplicate Detection",
+        "score": 12.851506547236827,
+        "snippet": "<mark>Crawler</mark>s often encounter mirrored pages and repeated templates. Fingerprinting and shingling can detect near <mark>duplicate</mark>s before they waste index space and distort retrieval evaluation.",
+        "category": "crawling",
+        "url": "https://example.edu/searchlens/D023",
+        "explanation": "matched terms; top document terms: duplicate:3, near:2, detection:1, crawler:1"
+      },
+      {
+        "doc_id": "D024",
+        "title": "Parsing HTML into Indexable Text",
+        "score": 2.94715024039664,
+        "snippet": "A <mark>crawler</mark> must extract readable text from HTML, remove boilerplate navigation, preserve useful anchor text, and pass clean content to the indexing pipeline.",
+        "category": "crawling",
+        "url": "https://example.edu/searchlens/D024",
+        "explanation": "matched terms; top document terms: text:3, html:2, pars:1, indexable:1"
+      }
+    ],
+    "bm25_prf": [
+      {
+        "doc_id": "D022",
+        "title": "URL Frontier Scheduling",
+        "score": 25.696325490397193,
+        "snippet": "...etch. Good <mark>schedul</mark>ing balances freshness, <mark>host</mark> <mark>politeness</mark>, priority, and coverage of important <mark>page</mark>s.",
+        "category": "crawling",
+        "url": "https://example.edu/searchlens/D022",
+        "explanation": "matched terms; top document terms: url:2, frontier:2, schedul:2, page:2"
+      },
+      {
+        "doc_id": "D021",
+        "title": "Crawler Politeness and Robots Exclusion",
+        "score": 19.27539924921358,
+        "snippet": "A web <mark>crawler</mark> should respect <mark>robot</mark>s.txt, throttle requests to each <mark>host</mark>, and avoid overloading servers. <mark>Politeness</mark> policies are essential for responsible collection of web <mark>page</mark>s.",
+        "category": "crawling",
+        "url": "https://example.edu/searchlens/D021",
+        "explanation": "matched terms; top document terms: crawler:2, politeness:2, robot:2, web:2"
+      },
+      {
+        "doc_id": "D023",
+        "title": "Duplicate and Near-Duplicate Detection",
+        "score": 14.84449771854861,
+        "snippet": "<mark>Crawler</mark>s often encounter mirrored <mark>page</mark>s and repeated templates. Fingerprinting and shingling can detect near <mark>duplicate</mark>s before they waste index space and distort retrieval evaluation.",
+        "category": "crawling",
+        "url": "https://example.edu/searchlens/D023",
+        "explanation": "matched terms; top document terms: duplicate:3, near:2, detection:1, crawler:1"
+      },
+      {
+        "doc_id": "D026",
+        "title": "PageRank and the Random Surfer Model",
+        "score": 2.960003074388231,
+        "snippet": "<mark>Page</mark>Rank models a random surfer following links with occasional teleportation. A <mark>page</mark> receives high score when many important <mark>page</mark>s link to it.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D026",
+        "explanation": "matched terms; top document terms: pagerank:2, random:2, surfer:2, model:2"
+      },
+      {
+        "doc_id": "D029",
+        "title": "Topic-Sensitive Link Ranking",
+        "score": 2.960003074388231,
+        "snippet": "Topic-sensitive <mark>Page</mark>Rank computes authority within topical subsets. It can help distinguish <mark>page</mark>s about search engines from <mark>page</mark>s about unrelated popular subjects.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D029",
+        "explanation": "matched terms; top document terms: topic:2, sensitive:2, page:2, link:1"
+      }
+    ]
+  },
+  "Q07": {
+    "query": "spelling correction k gram edit distance typo",
+    "bm25": [
+      {
+        "doc_id": "D032",
+        "title": "K-Gram Indexes for Tolerant Retrieval",
+        "score": 18.607186481109853,
+        "snippet": "... generates candidates for wildcard queries and <mark>spell</mark>ing <mark>correction</mark> before <mark>edit</mark> <mark>distance</mark> reranking.",
+        "category": "spelling",
+        "url": "https://example.edu/searchlens/D032",
+        "explanation": "matched terms; top document terms: gram:3, indexe:1, tolerant:1, retrieval:1"
+      },
+      {
+        "doc_id": "D031",
+        "title": "Edit Distance for Spelling Correction",
+        "score": 16.781137411605407,
+        "snippet": "<mark>Spell</mark>ing <mark>correction</mark> ranks candidate terms by <mark>edit</mark> <mark>distance</mark> from the mis<mark>spell</mark>ed query term. Insertions, deletions, substitutions, and transpositions approximate the effort needed to fix a wor...",
+        "category": "spelling",
+        "url": "https://example.edu/searchlens/D031",
+        "explanation": "matched terms; top document terms: edit:2, distance:2, spell:2, correction:2"
+      },
+      {
+        "doc_id": "D033",
+        "title": "Noisy Channel Ranking for Corrections",
+        "score": 8.733561516947765,
+        "snippet": "A noisy channel <mark>spell</mark>ing model combines the likelihood of an observed <mark>typo</mark> with the prior probability of the intended term. Frequent vocabulary terms receive more confidence after candidate ...",
+        "category": "spelling",
+        "url": "https://example.edu/searchlens/D033",
+        "explanation": "matched terms; top document terms: noisy:2, channel:2, term:2, rank:1"
+      },
+      {
+        "doc_id": "D034",
+        "title": "Context-Sensitive Query Correction",
+        "score": 3.284377636356314,
+        "snippet": "Context-sensitive <mark>correction</mark> uses surrounding query words to choose among valid alternatives. For example, search engine technolgy should become search engine technology rather than a differ...",
+        "category": "spelling",
+        "url": "https://example.edu/searchlens/D034",
+        "explanation": "matched terms; top document terms: context:2, sensitive:2, query:2, correction:2"
+      },
+      {
+        "doc_id": "D035",
+        "title": "When Not to Correct a Query",
+        "score": 2.530881224521735,
+        "snippet": "A search system should avoid aggressive <mark>correction</mark> for names, acronyms, and technical terms such as BM25 or nDCG. Showing a suggestion is safer than silently rewriting a specialized query.",
+        "category": "spelling",
+        "url": "https://example.edu/searchlens/D035",
+        "explanation": "matched terms; top document terms: query:2, correct:1, search:1, system:1"
+      }
+    ],
+    "bm25_prf": [
+      {
+        "doc_id": "D032",
+        "title": "K-Gram Indexes for Tolerant Retrieval",
+        "score": 28.757413737867967,
+        "snippet": "... <mark>generate</mark>s <mark>candidate</mark>s for wildcard queries and <mark>spell</mark>ing <mark>correction</mark> before <mark>edit</mark> <mark>distance</mark> reranking.",
+        "category": "spelling",
+        "url": "https://example.edu/searchlens/D032",
+        "explanation": "matched terms; top document terms: gram:3, indexe:1, tolerant:1, retrieval:1"
+      },
+      {
+        "doc_id": "D031",
+        "title": "Edit Distance for Spelling Correction",
+        "score": 19.045412156997212,
+        "snippet": "<mark>Spell</mark>ing <mark>correction</mark> ranks <mark>candidate</mark> terms by <mark>edit</mark> <mark>distance</mark> from the mis<mark>spell</mark>ed query term. Insertions, deletions, substitutions, and transpositions approximate the effort needed to fix a wor...",
+        "category": "spelling",
+        "url": "https://example.edu/searchlens/D031",
+        "explanation": "matched terms; top document terms: edit:2, distance:2, spell:2, correction:2"
+      },
+      {
+        "doc_id": "D033",
+        "title": "Noisy Channel Ranking for Corrections",
+        "score": 10.913700128672852,
+        "snippet": "A noisy channel <mark>spell</mark>ing model combines the likelihood of an observed <mark>typo</mark> with the prior probability of the intended term. Frequent vocabulary terms receive more confidence after <mark>candidate</mark> ...",
+        "category": "spelling",
+        "url": "https://example.edu/searchlens/D033",
+        "explanation": "matched terms; top document terms: noisy:2, channel:2, term:2, rank:1"
+      },
+      {
+        "doc_id": "D005",
+        "title": "Query-Time Candidate Generation",
+        "score": 3.7153754763875506,
+        "snippet": "<mark>Candidate</mark> generation starts by taking the union or intersection of postings for query terms. A ranked retrieval engine then scores only <mark>candidate</mark> documents instead of scanning the entire cor...",
+        "category": "indexing",
+        "url": "https://example.edu/searchlens/D005",
+        "explanation": "matched terms; top document terms: candidate:3, query:2, generation:2, time:1"
+      },
+      {
+        "doc_id": "D034",
+        "title": "Context-Sensitive Query Correction",
+        "score": 3.284377636356314,
+        "snippet": "Context-sensitive <mark>correction</mark> uses surrounding query words to choose among valid alternatives. For example, search engine technolgy should become search engine technology rather than a differ...",
+        "category": "spelling",
+        "url": "https://example.edu/searchlens/D034",
+        "explanation": "matched terms; top document terms: context:2, sensitive:2, query:2, correction:2"
+      }
+    ]
+  },
+  "Q08": {
+    "query": "pseudo relevance feedback rocchio query expansion",
+    "bm25": [
+      {
+        "doc_id": "D037",
+        "title": "Pseudo Relevance Feedback without User Labels",
+        "score": 14.833124617284048,
+        "snippet": "<mark>Pseudo</mark> <mark>relevance</mark> <mark>feedback</mark> assumes the top-ranked documents from an initial search are relevant. <mark>Expansion</mark> terms are selected from those documents and appended to the <mark>query</mark>.",
+        "category": "expansion",
+        "url": "https://example.edu/searchlens/D037",
+        "explanation": "matched terms; top document terms: pseudo:2, relevance:2, feedback:2, document:2"
+      },
+      {
+        "doc_id": "D036",
+        "title": "Rocchio Relevance Feedback",
+        "score": 12.17756152993206,
+        "snippet": "...thod for improving vector space retrieval when <mark>relevance</mark> judgments are available.",
+        "category": "expansion",
+        "url": "https://example.edu/searchlens/D036",
+        "explanation": "matched terms; top document terms: rocchio:2, relevance:2, feedback:2, vector:2"
+      },
+      {
+        "doc_id": "D040",
+        "title": "Risks of Topic Drift",
+        "score": 6.970604154701974,
+        "snippet": "...ts include nonrelevant documents. Conservative <mark>feedback</mark> depth and a small number of <mark>expansion</mark> terms reduce the risk.",
+        "category": "expansion",
+        "url": "https://example.edu/searchlens/D040",
+        "explanation": "matched terms; top document terms: risk:2, drift:2, expansion:2, topic:1"
+      },
+      {
+        "doc_id": "D039",
+        "title": "Term Selection for Feedback",
+        "score": 6.853922843775889,
+        "snippet": "<mark>Feedback</mark> term selection favors high-idf terms that occur frequently in top documents. Filtering stopwords and original <mark>query</mark> terms keeps <mark>expansion</mark> concise.",
+        "category": "expansion",
+        "url": "https://example.edu/searchlens/D039",
+        "explanation": "matched terms; top document terms: term:4, selection:2, feedback:2, favor:1"
+      },
+      {
+        "doc_id": "D015",
+        "title": "BM25 Failure Cases",
+        "score": 6.1794798574080305,
+        "snippet": "... <mark>expansion</mark>, thesauri, dense retrieval, or user <mark>feedback</mark> can reduce this vocabulary mismatch problem.",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D015",
+        "explanation": "matched terms; top document terms: bm25:2, vocabulary:2, query:2, failure:1"
+      }
+    ],
+    "bm25_prf": [
+      {
+        "doc_id": "D037",
+        "title": "Pseudo Relevance Feedback without User Labels",
+        "score": 26.295657078203376,
+        "snippet": "<mark>Pseudo</mark> <mark>relevance</mark> <mark>feedback</mark> <mark>assume</mark>s the top-ranked documents from an <mark>initial</mark> search are relevant. <mark>Expansion</mark> terms are selected from those documents and <mark>append</mark>ed to the <mark>query</mark>.",
+        "category": "expansion",
+        "url": "https://example.edu/searchlens/D037",
+        "explanation": "matched terms; top document terms: pseudo:2, relevance:2, feedback:2, document:2"
+      },
+      {
+        "doc_id": "D036",
+        "title": "Rocchio Relevance Feedback",
+        "score": 12.17756152993206,
+        "snippet": "...thod for improving vector space retrieval when <mark>relevance</mark> judgments are available.",
+        "category": "expansion",
+        "url": "https://example.edu/searchlens/D036",
+        "explanation": "matched terms; top document terms: rocchio:2, relevance:2, feedback:2, vector:2"
+      },
+      {
+        "doc_id": "D040",
+        "title": "Risks of Topic Drift",
+        "score": 6.970604154701974,
+        "snippet": "...ts include nonrelevant documents. Conservative <mark>feedback</mark> depth and a small number of <mark>expansion</mark> terms reduce the risk.",
+        "category": "expansion",
+        "url": "https://example.edu/searchlens/D040",
+        "explanation": "matched terms; top document terms: risk:2, drift:2, expansion:2, topic:1"
+      },
+      {
+        "doc_id": "D039",
+        "title": "Term Selection for Feedback",
+        "score": 6.853922843775889,
+        "snippet": "<mark>Feedback</mark> term selection favors high-idf terms that occur frequently in top documents. Filtering stopwords and original <mark>query</mark> terms keeps <mark>expansion</mark> concise.",
+        "category": "expansion",
+        "url": "https://example.edu/searchlens/D039",
+        "explanation": "matched terms; top document terms: term:4, selection:2, feedback:2, favor:1"
+      },
+      {
+        "doc_id": "D015",
+        "title": "BM25 Failure Cases",
+        "score": 6.1794798574080305,
+        "snippet": "... <mark>expansion</mark>, thesauri, dense retrieval, or user <mark>feedback</mark> can reduce this vocabulary mismatch problem.",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D015",
+        "explanation": "matched terms; top document terms: bm25:2, vocabulary:2, query:2, failure:1"
+      }
+    ]
+  },
+  "Q09": {
+    "query": "precision recall map ndcg evaluation metrics",
+    "bm25": [
+      {
+        "doc_id": "D041",
+        "title": "Precision Recall and F-Measure",
+        "score": 11.615468267666873,
+        "snippet": "... retrieved documents with relevance judgments. <mark>Precision</mark> measures the fraction of retrieved documents that are relevant, while <mark>recall</mark> measures coverage of all relevant documents.",
+        "category": "evaluation",
+        "url": "https://example.edu/searchlens/D041",
+        "explanation": "matched terms; top document terms: measure:3, document:3, precision:2, recall:2"
+      },
+      {
+        "doc_id": "D042",
+        "title": "Mean Average Precision",
+        "score": 8.665680233165729,
+        "snippet": "Mean average <mark>precision</mark> summarizes the <mark>precision</mark> observed at every rank where a relevant document appears. <mark>MAP</mark> rewards systems that retrieve relevant documents early and consistently.",
+        "category": "evaluation",
+        "url": "https://example.edu/searchlens/D042",
+        "explanation": "matched terms; top document terms: precision:3, mean:2, average:2, relevant:2"
+      },
+      {
+        "doc_id": "D045",
+        "title": "Limitations of Offline Evaluation",
+        "score": 6.068544658019581,
+        "snippet": "...ine test collection results with user-centered <mark>evaluation</mark>.",
+        "category": "evaluation",
+        "url": "https://example.edu/searchlens/D045",
+        "explanation": "matched terms; top document terms: offline:2, evaluation:2, user:2, limitation:1"
+      },
+      {
+        "doc_id": "D044",
+        "title": "TREC-Style Test Collections",
+        "score": 5.544493099686188,
+        "snippet": "...ins a corpus, topics, relevance judgments, and <mark>evaluation</mark> <mark>metric</mark>s. This structure supports reproducible comparison among retrieval models.",
+        "category": "evaluation",
+        "url": "https://example.edu/searchlens/D044",
+        "explanation": "matched terms; top document terms: test:2, collection:2, trec:1, style:1"
+      },
+      {
+        "doc_id": "D035",
+        "title": "When Not to Correct a Query",
+        "score": 3.3602193883689324,
+        "snippet": "... acronyms, and technical terms such as BM25 or <mark>nDCG</mark>. Showing a suggestion is safer than silently rewriting a specialized query.",
+        "category": "spelling",
+        "url": "https://example.edu/searchlens/D035",
+        "explanation": "matched terms; top document terms: query:2, correct:1, search:1, system:1"
+      }
+    ],
+    "bm25_prf": [
+      {
+        "doc_id": "D041",
+        "title": "Precision Recall and F-Measure",
+        "score": 25.62120634035017,
+        "snippet": "... <mark>retriev</mark>ed documents with relevance judgments. <mark>Precision</mark> <mark>measure</mark>s the fraction of <mark>retriev</mark>ed documents that are <mark>relevant</mark>, while <mark>recall</mark> <mark>measure</mark>s coverage of all <mark>relevant</mark> documents.",
+        "category": "evaluation",
+        "url": "https://example.edu/searchlens/D041",
+        "explanation": "matched terms; top document terms: measure:3, document:3, precision:2, recall:2"
+      },
+      {
+        "doc_id": "D042",
+        "title": "Mean Average Precision",
+        "score": 11.725965277652177,
+        "snippet": "Mean average <mark>precision</mark> summarizes the <mark>precision</mark> observed at every rank where a <mark>relevant</mark> document appears. <mark>MAP</mark> rewards systems that <mark>retriev</mark>e <mark>relevant</mark> documents early and consistently.",
+        "category": "evaluation",
+        "url": "https://example.edu/searchlens/D042",
+        "explanation": "matched terms; top document terms: precision:3, mean:2, average:2, relevant:2"
+      },
+      {
+        "doc_id": "D045",
+        "title": "Limitations of Offline Evaluation",
+        "score": 6.068544658019581,
+        "snippet": "...ine test collection results with user-centered <mark>evaluation</mark>.",
+        "category": "evaluation",
+        "url": "https://example.edu/searchlens/D045",
+        "explanation": "matched terms; top document terms: offline:2, evaluation:2, user:2, limitation:1"
+      },
+      {
+        "doc_id": "D044",
+        "title": "TREC-Style Test Collections",
+        "score": 5.544493099686188,
+        "snippet": "...ins a corpus, topics, relevance judgments, and <mark>evaluation</mark> <mark>metric</mark>s. This structure supports reproducible comparison among <mark>retriev</mark>al models.",
+        "category": "evaluation",
+        "url": "https://example.edu/searchlens/D044",
+        "explanation": "matched terms; top document terms: test:2, collection:2, trec:1, style:1"
+      },
+      {
+        "doc_id": "D043",
+        "title": "nDCG for Graded Relevance",
+        "score": 5.350104610284964,
+        "snippet": "...tes ranked lists with graded relevance. Highly <mark>relevant</mark> documents receive larger gain, and the discount factor rewards early ranks.",
+        "category": "evaluation",
+        "url": "https://example.edu/searchlens/D043",
+        "explanation": "matched terms; top document terms: grad:2, relevance:2, discount:2, gain:2"
+      }
+    ]
+  },
+  "Q10": {
+    "query": "index compression variable byte gamma skip pointers",
+    "bm25": [
+      {
+        "doc_id": "D046",
+        "title": "Variable Byte Encoding for Postings",
+        "score": 13.815663022712668,
+        "snippet": "... gap-encode sorted document identifiers before <mark>compression</mark> to reduce postings list size.",
+        "category": "compression",
+        "url": "https://example.edu/searchlens/D046",
+        "explanation": "matched terms; top document terms: byte:3, variable:2, encod:2, posting:2"
+      },
+      {
+        "doc_id": "D048",
+        "title": "Skip Pointers for Faster Intersections",
+        "score": 10.527099289410831,
+        "snippet": "<mark>Skip</mark> <mark>pointer</mark>s accelerate postings intersection by allowing query processing to jump over blocks that cannot contain a match. They trade extra storage for faster Boolean evaluation.",
+        "category": "compression",
+        "url": "https://example.edu/searchlens/D048",
+        "explanation": "matched terms; top document terms: skip:2, pointer:2, faster:2, intersection:2"
+      },
+      {
+        "doc_id": "D047",
+        "title": "Gamma Codes and Integer Compression",
+        "score": 8.22857876695217,
+        "snippet": "<mark>Gamma</mark> codes encode positive integers using a unary length and binary offset. They are useful for compact postings but require bit-level processing.",
+        "category": "compression",
+        "url": "https://example.edu/searchlens/D047",
+        "explanation": "matched terms; top document terms: gamma:2, code:2, integer:2, compression:1"
+      },
+      {
+        "doc_id": "D050",
+        "title": "Compression Trade-Offs in Search Engines",
+        "score": 5.620443951746289,
+        "snippet": "<mark>Index</mark> <mark>compression</mark> reduces disk and memory footprint but increases decoding cost. Practical systems balance latency, storage, and implementation complexity.",
+        "category": "compression",
+        "url": "https://example.edu/searchlens/D050",
+        "explanation": "matched terms; top document terms: compression:2, trade:1, offs:1, search:1"
+      },
+      {
+        "doc_id": "D049",
+        "title": "Dictionary Compression",
+        "score": 4.217369731446971,
+        "snippet": "...pressed with blocked storage and front coding. <mark>Compression</mark> improves memory locality for large vocabularies.",
+        "category": "compression",
+        "url": "https://example.edu/searchlens/D049",
+        "explanation": "matched terms; top document terms: dictionary:2, compression:2, term:1, compress:1"
+      }
+    ],
+    "bm25_prf": [
+      {
+        "doc_id": "D046",
+        "title": "Variable Byte Encoding for Postings",
+        "score": 24.55382428252766,
+        "snippet": "... gap-<mark><mark>encod</mark>e</mark> sorted document identifiers before <mark>compression</mark> to reduce <mark>posting</mark>s list size.",
+        "category": "compression",
+        "url": "https://example.edu/searchlens/D046",
+        "explanation": "matched terms; top document terms: byte:3, variable:2, encod:2, posting:2"
+      },
+      {
+        "doc_id": "D047",
+        "title": "Gamma Codes and Integer Compression",
+        "score": 13.30787244012987,
+        "snippet": "<mark>Gamma</mark> codes <mark><mark>encod</mark>e</mark> positive integers using a unary length and binary offset. They are useful for compact <mark>posting</mark>s but require bit-level processing.",
+        "category": "compression",
+        "url": "https://example.edu/searchlens/D047",
+        "explanation": "matched terms; top document terms: gamma:2, code:2, integer:2, compression:1"
+      },
+      {
+        "doc_id": "D048",
+        "title": "Skip Pointers for Faster Intersections",
+        "score": 12.482361618215748,
+        "snippet": "<mark>Skip</mark> <mark>pointer</mark>s accelerate <mark>posting</mark>s intersection by allowing query processing to jump over blocks that cannot contain a match. They trade extra storage for faster Boolean evaluation.",
+        "category": "compression",
+        "url": "https://example.edu/searchlens/D048",
+        "explanation": "matched terms; top document terms: skip:2, pointer:2, faster:2, intersection:2"
+      },
+      {
+        "doc_id": "D050",
+        "title": "Compression Trade-Offs in Search Engines",
+        "score": 5.620443951746289,
+        "snippet": "<mark>Index</mark> <mark>compression</mark> reduces disk and memory footprint but increases decoding cost. Practical systems balance latency, storage, and implementation complexity.",
+        "category": "compression",
+        "url": "https://example.edu/searchlens/D050",
+        "explanation": "matched terms; top document terms: compression:2, trade:1, offs:1, search:1"
+      },
+      {
+        "doc_id": "D001",
+        "title": "Building an Inverted Index with Postings Lists",
+        "score": 5.328066488342716,
+        "snippet": "An inverted <mark>index</mark> maps each normalized term to a <mark>posting</mark>s list of documents. The pipeline tokenizes text, builds a term dictionary, records term frequency, and sorts document identifiers so ...",
+        "category": "indexing",
+        "url": "https://example.edu/searchlens/D001",
+        "explanation": "matched terms; top document terms: posting:3, term:3, build:2, invert:2"
+      }
+    ]
+  },
+  "Q11": {
+    "query": "dense retrieval hybrid bm25 reranking embeddings",
+    "bm25": [
+      {
+        "doc_id": "D052",
+        "title": "Hybrid Lexical and Dense Retrieval",
+        "score": 12.323612725614517,
+        "snippet": "...id <mark>retrieval</mark> combines <mark>BM25</mark> lexical scores with <mark>dense</mark> vector similarity. The lexical component preserves exact matching, while <mark>dense</mark> <mark>retrieval</mark> can address synonymy and paraphrases.",
+        "category": "neural",
+        "url": "https://example.edu/searchlens/D052",
+        "explanation": "matched terms; top document terms: lexical:3, dense:3, retrieval:3, hybrid:2"
+      },
+      {
+        "doc_id": "D013",
+        "title": "Why BM25 is a Strong Lexical Baseline",
+        "score": 11.707237206179068,
+        "snippet": "...llections. Modern <mark>hybrid</mark> systems often compare <mark>dense</mark> <mark>retrieval</mark> against <mark>BM25</mark> before adding <mark>rerank</mark>ing.",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D013",
+        "explanation": "matched terms; top document terms: bm25:3, lexical:2, baseline:2, retrieval:2"
+      },
+      {
+        "doc_id": "D051",
+        "title": "Dense Retrieval with Learned Embeddings",
+        "score": 8.788901859154215,
+        "snippet": "<mark>Dense</mark> <mark>retrieval</mark> encodes queries and documents into continuous vectors. Approximate nearest neighbor search retrieves semantically similar documents even when exact query terms are absent.",
+        "category": "neural",
+        "url": "https://example.edu/searchlens/D051",
+        "explanation": "matched terms; top document terms: dense:2, retrieval:2, query:2, document:2"
+      },
+      {
+        "doc_id": "D055",
+        "title": "Evaluating Dense Retrieval Against BM25",
+        "score": 7.585675473300247,
+        "snippet": "<mark>Dense</mark> systems should be compared with <mark>BM25</mark> baselines on the same queries and relevance judgments. Without a lexical baseline, semantic <mark>retrieval</mark> improvements are hard to interpret.",
+        "category": "neural",
+        "url": "https://example.edu/searchlens/D055",
+        "explanation": "matched terms; top document terms: dense:2, retrieval:2, bm25:2, baseline:2"
+      },
+      {
+        "doc_id": "D015",
+        "title": "BM25 Failure Cases",
+        "score": 6.147539058333603,
+        "snippet": "...ary from the query. Query expansion, thesauri, <mark>dense</mark> <mark>retrieval</mark>, or user feedback can reduce this vocabulary mismatch problem.",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D015",
+        "explanation": "matched terms; top document terms: bm25:2, vocabulary:2, query:2, failure:1"
+      }
+    ],
+    "bm25_prf": [
+      {
+        "doc_id": "D052",
+        "title": "Hybrid Lexical and Dense Retrieval",
+        "score": 23.572852770240722,
+        "snippet": "...id <mark>retrieval</mark> combines <mark>BM25</mark> <mark>lexical</mark> scores with <mark>dense</mark> vector similarity. The <mark>lexical</mark> component preserves exact matching, while <mark>dense</mark> <mark>retrieval</mark> can <mark>address</mark> synonymy and <mark>paraphrase</mark>s.",
+        "category": "neural",
+        "url": "https://example.edu/searchlens/D052",
+        "explanation": "matched terms; top document terms: lexical:3, dense:3, retrieval:3, hybrid:2"
+      },
+      {
+        "doc_id": "D013",
+        "title": "Why BM25 is a Strong Lexical Baseline",
+        "score": 14.64866595167238,
+        "snippet": "...llections. Modern <mark>hybrid</mark> systems often compare <mark>dense</mark> <mark>retrieval</mark> against <mark>BM25</mark> before adding <mark>rerank</mark>ing.",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D013",
+        "explanation": "matched terms; top document terms: bm25:3, lexical:2, baseline:2, retrieval:2"
+      },
+      {
+        "doc_id": "D055",
+        "title": "Evaluating Dense Retrieval Against BM25",
+        "score": 9.849950218692053,
+        "snippet": "<mark>Dense</mark> systems should be compared with <mark>BM25</mark> baselines on the same queries and relevance judgments. Without a <mark>lexical</mark> baseline, semantic <mark>retrieval</mark> improvements are hard to interpret.",
+        "category": "neural",
+        "url": "https://example.edu/searchlens/D055",
+        "explanation": "matched terms; top document terms: dense:2, retrieval:2, bm25:2, baseline:2"
+      },
+      {
+        "doc_id": "D051",
+        "title": "Dense Retrieval with Learned Embeddings",
+        "score": 8.788901859154215,
+        "snippet": "<mark>Dense</mark> <mark>retrieval</mark> encodes queries and documents into continuous vectors. Approximate nearest neighbor search retrieves semantically similar documents even when exact query terms are absent.",
+        "category": "neural",
+        "url": "https://example.edu/searchlens/D051",
+        "explanation": "matched terms; top document terms: dense:2, retrieval:2, query:2, document:2"
+      },
+      {
+        "doc_id": "D015",
+        "title": "BM25 Failure Cases",
+        "score": 8.456365028448001,
+        "snippet": "...ary from the query. Query expansion, thesauri, <mark>dense</mark> <mark>retrieval</mark>, or user feedback can reduce this vocabulary mismatch problem.",
+        "category": "bm25",
+        "url": "https://example.edu/searchlens/D015",
+        "explanation": "matched terms; top document terms: bm25:2, vocabulary:2, query:2, failure:1"
+      }
+    ]
+  },
+  "Q12": {
+    "query": "search spam adversarial ranking robustness",
+    "bm25": [
+      {
+        "doc_id": "D056",
+        "title": "Search Spam and Keyword Stuffing",
+        "score": 7.062223622836415,
+        "snippet": "<mark>Search</mark> <mark>spam</mark> attempts to manipulate <mark>rank</mark>ing by repeating popular terms, hiding text, or creating low-quality pages. Robust <mark>rank</mark>ing should detect unnatural term distributions.",
+        "category": "robustness",
+        "url": "https://example.edu/searchlens/D056",
+        "explanation": "matched terms; top document terms: search:2, spam:2, rank:2, term:2"
+      },
+      {
+        "doc_id": "D057",
+        "title": "Adversarial Documents in Retrieval",
+        "score": 5.410193101851858,
+        "snippet": "<mark>Adversarial</mark> documents can exploit lexical matchers by including many query terms without satisfying the information need. Evaluation should include difficult negative examples.",
+        "category": "robustness",
+        "url": "https://example.edu/searchlens/D057",
+        "explanation": "matched terms; top document terms: adversarial:2, document:2, retrieval:1, exploit:1"
+      },
+      {
+        "doc_id": "D030",
+        "title": "Link Spam and Authority Manipulation",
+        "score": 5.21846096720621,
+        "snippet": "...d <mark>rank</mark>ing can be manipulated by link farms and <mark>spam</mark> networks. Robust systems monitor suspicious link patterns and combine authority with content quality signals.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D030",
+        "explanation": "matched terms; top document terms: link:4, spam:2, authority:2, manipulation:1"
+      },
+      {
+        "doc_id": "D060",
+        "title": "Robust Evaluation of Search Systems",
+        "score": 3.9174143532306767,
+        "snippet": "...aluation tests performance under misspellings, <mark>spam</mark>, ambiguous queries, and distribution shift. Stress tests reveal limitations not visible in easy benchmark topics.",
+        "category": "robustness",
+        "url": "https://example.edu/searchlens/D060",
+        "explanation": "matched terms; top document terms: robust:2, evaluation:2, test:2, search:1"
+      },
+      {
+        "doc_id": "D027",
+        "title": "Combining Link Analysis with Text Ranking",
+        "score": 2.5900236665376077,
+        "snippet": "Web <mark>search</mark> systems can combine content relevance from BM25 with link authority from Page<mark>Rank</mark>. The combined score improves <mark>rank</mark>ing when anchor text and links indicate popularity or trust.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D027",
+        "explanation": "matched terms; top document terms: link:3, combin:2, text:2, rank:2"
+      }
+    ],
+    "bm25_prf": [
+      {
+        "doc_id": "D056",
+        "title": "Search Spam and Keyword Stuffing",
+        "score": 17.885867297012606,
+        "snippet": "<mark>Search</mark> <mark>spam</mark> <mark>attempt</mark>s to manipulate <mark>rank</mark>ing by repeating popular terms, <mark>hiding</mark> text, or <mark>creat</mark>ing low-quality pages. Robust <mark>rank</mark>ing should detect unnatural term distributions.",
+        "category": "robustness",
+        "url": "https://example.edu/searchlens/D056",
+        "explanation": "matched terms; top document terms: search:2, spam:2, rank:2, term:2"
+      },
+      {
+        "doc_id": "D057",
+        "title": "Adversarial Documents in Retrieval",
+        "score": 5.410193101851858,
+        "snippet": "<mark>Adversarial</mark> documents can exploit lexical matchers by including many query terms without satisfying the information need. Evaluation should include difficult negative examples.",
+        "category": "robustness",
+        "url": "https://example.edu/searchlens/D057",
+        "explanation": "matched terms; top document terms: adversarial:2, document:2, retrieval:1, exploit:1"
+      },
+      {
+        "doc_id": "D030",
+        "title": "Link Spam and Authority Manipulation",
+        "score": 5.21846096720621,
+        "snippet": "...d <mark>rank</mark>ing can be manipulated by link farms and <mark>spam</mark> networks. Robust systems monitor suspicious link patterns and combine authority with content quality signals.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D030",
+        "explanation": "matched terms; top document terms: link:4, spam:2, authority:2, manipulation:1"
+      },
+      {
+        "doc_id": "D060",
+        "title": "Robust Evaluation of Search Systems",
+        "score": 3.9174143532306767,
+        "snippet": "...aluation tests performance under misspellings, <mark>spam</mark>, ambiguous queries, and distribution shift. Stress tests reveal limitations not visible in easy benchmark topics.",
+        "category": "robustness",
+        "url": "https://example.edu/searchlens/D060",
+        "explanation": "matched terms; top document terms: robust:2, evaluation:2, test:2, search:1"
+      },
+      {
+        "doc_id": "D027",
+        "title": "Combining Link Analysis with Text Ranking",
+        "score": 2.5900236665376077,
+        "snippet": "Web <mark>search</mark> systems can combine content relevance from BM25 with link authority from Page<mark>Rank</mark>. The combined score improves <mark>rank</mark>ing when anchor text and links indicate popularity or trust.",
+        "category": "pagerank",
+        "url": "https://example.edu/searchlens/D027",
+        "explanation": "matched terms; top document terms: link:3, combin:2, text:2, rank:2"
+      }
+    ]
+  }
+}

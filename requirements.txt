@@ -1,0 +1,2 @@
+# SearchLens has no required third-party Python packages.
+# Python 3.10+ is recommended.

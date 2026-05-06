@@ -1,0 +1,11534 @@
+{
+  "documents": {
+    "D001": {
+      "doc_id": "D001",
+      "title": "Building an Inverted Index with Postings Lists",
+      "body": "An inverted index maps each normalized term to a postings list of documents. The pipeline tokenizes text, builds a term dictionary, records term frequency, and sorts document identifiers so query processing can intersect postings efficiently.",
+      "url": "https://example.edu/searchlens/D001",
+      "category": "indexing",
+      "tags": [
+        "inverted index",
+        "postings",
+        "term frequency"
+      ]
+    },
+    "D002": {
+      "doc_id": "D002",
+      "title": "Positional Postings for Phrase Search",
+      "body": "A positional index stores the exact token positions where a term occurs. Phrase queries such as information retrieval are answered by checking whether positions for adjacent terms appear consecutively in the same document.",
+      "url": "https://example.edu/searchlens/D002",
+      "category": "indexing",
+      "tags": [
+        "positional postings",
+        "phrase queries",
+        "proximity"
+      ]
+    },
+    "D003": {
+      "doc_id": "D003",
+      "title": "Tokenization and Term Normalization",
+      "body": "Index construction starts with tokenization, lowercasing, stopword filtering, and light stemming. These choices define the term vocabulary and determine whether queries like ranking and ranked retrieve the same documents.",
+      "url": "https://example.edu/searchlens/D003",
+      "category": "indexing",
+      "tags": [
+        "tokenization",
+        "normalization",
+        "stemming"
+      ]
+    },
+    "D004": {
+      "doc_id": "D004",
+      "title": "Dynamic Index Updates for Small Search Engines",
+      "body": "A small search engine can maintain an in-memory index and periodically write the dictionary and postings to disk. Dynamic updates add new documents, remove deleted identifiers, and rebuild summary statistics such as average document length.",
+      "url": "https://example.edu/searchlens/D004",
+      "category": "indexing",
+      "tags": [
+        "dynamic indexing",
+        "persistence",
+        "average length"
+      ]
+    },
+    "D005": {
+      "doc_id": "D005",
+      "title": "Query-Time Candidate Generation",
+      "body": "Candidate generation starts by taking the union or intersection of postings for query terms. A ranked retrieval engine then scores only candidate documents instead of scanning the entire corpus.",
+      "url": "https://example.edu/searchlens/D005",
+      "category": "indexing",
+      "tags": [
+        "candidate generation",
+        "postings",
+        "ranking"
+      ]
+    },
+    "D006": {
+      "doc_id": "D006",
+      "title": "Boolean Retrieval with AND OR and NOT",
+      "body": "Boolean retrieval treats queries as set expressions over postings lists. AND computes an intersection, OR computes a union, and NOT subtracts a set from the document universe.",
+      "url": "https://example.edu/searchlens/D006",
+      "category": "boolean",
+      "tags": [
+        "boolean",
+        "set operations",
+        "postings"
+      ]
+    },
+    "D007": {
+      "doc_id": "D007",
+      "title": "Phrase Search as a Hard Filter",
+      "body": "A phrase search requires all quoted terms to occur in the specified order. SearchLens applies phrase constraints before scoring so a document must contain the exact phrase to be ranked.",
+      "url": "https://example.edu/searchlens/D007",
+      "category": "boolean",
+      "tags": [
+        "phrase search",
+        "positional index",
+        "filtering"
+      ]
+    },
+    "D008": {
+      "doc_id": "D008",
+      "title": "Proximity Matching Beyond Exact Phrases",
+      "body": "Proximity ranking rewards documents where query terms occur near each other. This can improve user satisfaction for verbose queries because related terms in the same passage usually signal topical relevance.",
+      "url": "https://example.edu/searchlens/D008",
+      "category": "boolean",
+      "tags": [
+        "proximity",
+        "ranking",
+        "phrases"
+      ]
+    },
+    "D009": {
+      "doc_id": "D009",
+      "title": "Limitations of Pure Boolean Search",
+      "body": "Pure Boolean search returns an unordered set, so users must inspect every matching document. Ranked retrieval addresses this limitation by ordering results with tf-idf, BM25, or other scoring functions.",
+      "url": "https://example.edu/searchlens/D009",
+      "category": "boolean",
+      "tags": [
+        "boolean",
+        "ranked retrieval",
+        "tfidf",
+        "bm25"
+      ]
+    },
+    "D010": {
+      "doc_id": "D010",
+      "title": "Parsing User Queries into Search Operators",
+      "body": "A query parser recognizes parentheses and operators, normalizes ordinary terms, and builds an executable expression. Even a compact parser can support AND, OR, NOT, and simple precedence rules.",
+      "url": "https://example.edu/searchlens/D010",
+      "category": "boolean",
+      "tags": [
+        "query parsing",
+        "operators",
+        "precedence"
+      ]
+    },
+    "D011": {
+      "doc_id": "D011",
+      "title": "BM25 Ranking with Term Frequency Saturation",
+      "body": "BM25 ranks documents by combining inverse document frequency with a saturated term frequency component. Repeating a query term helps at first, but the gain decreases so long documents do not dominate unfairly.",
+      "url": "https://example.edu/searchlens/D011",
+      "category": "bm25",
+      "tags": [
+        "bm25",
+        "term frequency",
+        "idf",
+        "saturation"
+      ]
+    },
+    "D012": {
+      "doc_id": "D012",
+      "title": "Document Length Normalization in BM25",
+      "body": "The BM25 b parameter controls document length normalization. A higher value penalizes documents that are much longer than the collection average, while k1 controls the strength of term frequency saturation.",
+      "url": "https://example.edu/searchlens/D012",
+      "category": "bm25",
+      "tags": [
+        "bm25",
+        "length normalization",
+        "k1",
+        "b parameter"
+      ]
+    },
+    "D013": {
+      "doc_id": "D013",
+      "title": "Why BM25 is a Strong Lexical Baseline",
+      "body": "BM25 is a durable lexical baseline because it is simple, efficient, and robust across many ad hoc retrieval collections. Modern hybrid systems often compare dense retrieval against BM25 before adding reranking.",
+      "url": "https://example.edu/searchlens/D013",
+      "category": "bm25",
+      "tags": [
+        "bm25",
+        "lexical retrieval",
+        "hybrid",
+        "baseline"
+      ]
+    },
+    "D014": {
+      "doc_id": "D014",
+      "title": "BM25 Implementation Notes",
+      "body": "A practical BM25 implementation needs document frequency, document length, average length, and term frequency statistics. Scores can be computed over a candidate set from the inverted index.",
+      "url": "https://example.edu/searchlens/D014",
+      "category": "bm25",
+      "tags": [
+        "bm25",
+        "implementation",
+        "statistics"
+      ]
+    },
+    "D015": {
+      "doc_id": "D015",
+      "title": "BM25 Failure Cases",
+      "body": "Lexical BM25 may miss relevant documents that use different vocabulary from the query. Query expansion, thesauri, dense retrieval, or user feedback can reduce this vocabulary mismatch problem.",
+      "url": "https://example.edu/searchlens/D015",
+      "category": "bm25",
+      "tags": [
+        "bm25",
+        "vocabulary mismatch",
+        "query expansion"
+      ]
+    },
+    "D016": {
+      "doc_id": "D016",
+      "title": "Vector Space Ranking with TF-IDF",
+      "body": "The vector space model represents documents and queries as weighted term vectors. TF-IDF combines term frequency with inverse document frequency, and cosine similarity compares the angle between vectors.",
+      "url": "https://example.edu/searchlens/D016",
+      "category": "tfidf",
+      "tags": [
+        "tfidf",
+        "vector space",
+        "cosine similarity"
+      ]
+    },
+    "D017": {
+      "doc_id": "D017",
+      "title": "Inverse Document Frequency and Specificity",
+      "body": "Inverse document frequency assigns higher weights to terms that occur in fewer documents. Specific terms help discriminate relevant documents, while very common terms contribute less to ranking.",
+      "url": "https://example.edu/searchlens/D017",
+      "category": "tfidf",
+      "tags": [
+        "idf",
+        "term specificity",
+        "ranking"
+      ]
+    },
+    "D018": {
+      "doc_id": "D018",
+      "title": "Cosine Normalization for Different Document Lengths",
+      "body": "Cosine normalization divides by vector length so longer documents do not automatically receive higher scores. This is useful when corpus documents vary in length and verbosity.",
+      "url": "https://example.edu/searchlens/D018",
+      "category": "tfidf",
+      "tags": [
+        "cosine",
+        "normalization",
+        "document length"
+      ]
+    },
+    "D019": {
+      "doc_id": "D019",
+      "title": "Comparing TF-IDF and BM25",
+      "body": "TF-IDF cosine and BM25 are both lexical ranking models. BM25 adds saturation and length normalization, while tf-idf cosine offers a simple geometric interpretation.",
+      "url": "https://example.edu/searchlens/D019",
+      "category": "tfidf",
+      "tags": [
+        "tfidf",
+        "bm25",
+        "comparison"
+      ]
+    },
+    "D020": {
+      "doc_id": "D020",
+      "title": "Term Weighting in a Complete Search System",
+      "body": "A complete scoring system often starts with tf-idf term weighting, candidate generation, and efficient top-k ranking. Engineering decisions determine latency, memory use, and reproducibility.",
+      "url": "https://example.edu/searchlens/D020",
+      "category": "tfidf",
+      "tags": [
+        "term weighting",
+        "top k",
+        "efficiency"
+      ]
+    },
+    "D021": {
+      "doc_id": "D021",
+      "title": "Crawler Politeness and Robots Exclusion",
+      "body": "A web crawler should respect robots.txt, throttle requests to each host, and avoid overloading servers. Politeness policies are essential for responsible collection of web pages.",
+      "url": "https://example.edu/searchlens/D021",
+      "category": "crawling",
+      "tags": [
+        "crawler",
+        "robots",
+        "politeness"
+      ]
+    },
+    "D022": {
+      "doc_id": "D022",
+      "title": "URL Frontier Scheduling",
+      "body": "The URL frontier stores discovered links and selects the next page to fetch. Good scheduling balances freshness, host politeness, priority, and coverage of important pages.",
+      "url": "https://example.edu/searchlens/D022",
+      "category": "crawling",
+      "tags": [
+        "crawler",
+        "url frontier",
+        "scheduling"
+      ]
+    },
+    "D023": {
+      "doc_id": "D023",
+      "title": "Duplicate and Near-Duplicate Detection",
+      "body": "Crawlers often encounter mirrored pages and repeated templates. Fingerprinting and shingling can detect near duplicates before they waste index space and distort retrieval evaluation.",
+      "url": "https://example.edu/searchlens/D023",
+      "category": "crawling",
+      "tags": [
+        "duplicate detection",
+        "shingling",
+        "crawler"
+      ]
+    },
+    "D024": {
+      "doc_id": "D024",
+      "title": "Parsing HTML into Indexable Text",
+      "body": "A crawler must extract readable text from HTML, remove boilerplate navigation, preserve useful anchor text, and pass clean content to the indexing pipeline.",
+      "url": "https://example.edu/searchlens/D024",
+      "category": "crawling",
+      "tags": [
+        "html parsing",
+        "anchor text",
+        "indexing"
+      ]
+    },
+    "D025": {
+      "doc_id": "D025",
+      "title": "Freshness in Incremental Crawling",
+      "body": "Incremental crawling revisits pages according to expected change frequency. Freshness is especially important for news, prices, schedules, and other dynamic search collections.",
+      "url": "https://example.edu/searchlens/D025",
+      "category": "crawling",
+      "tags": [
+        "freshness",
+        "incremental crawling",
+        "web search"
+      ]
+    },
+    "D026": {
+      "doc_id": "D026",
+      "title": "PageRank and the Random Surfer Model",
+      "body": "PageRank models a random surfer following links with occasional teleportation. A page receives high score when many important pages link to it.",
+      "url": "https://example.edu/searchlens/D026",
+      "category": "pagerank",
+      "tags": [
+        "pagerank",
+        "link analysis",
+        "random surfer"
+      ]
+    },
+    "D027": {
+      "doc_id": "D027",
+      "title": "Combining Link Analysis with Text Ranking",
+      "body": "Web search systems can combine content relevance from BM25 with link authority from PageRank. The combined score improves ranking when anchor text and links indicate popularity or trust.",
+      "url": "https://example.edu/searchlens/D027",
+      "category": "pagerank",
+      "tags": [
+        "pagerank",
+        "bm25",
+        "hybrid scoring"
+      ]
+    },
+    "D028": {
+      "doc_id": "D028",
+      "title": "Anchor Text as External Evidence",
+      "body": "Anchor text often describes the destination page using words chosen by other authors. Indexing anchor text can improve retrieval for pages whose own content lacks the query terms.",
+      "url": "https://example.edu/searchlens/D028",
+      "category": "pagerank",
+      "tags": [
+        "anchor text",
+        "link analysis",
+        "web search"
+      ]
+    },
+    "D029": {
+      "doc_id": "D029",
+      "title": "Topic-Sensitive Link Ranking",
+      "body": "Topic-sensitive PageRank computes authority within topical subsets. It can help distinguish pages about search engines from pages about unrelated popular subjects.",
+      "url": "https://example.edu/searchlens/D029",
+      "category": "pagerank",
+      "tags": [
+        "topic-sensitive pagerank",
+        "authority",
+        "ranking"
+      ]
+    },
+    "D030": {
+      "doc_id": "D030",
+      "title": "Link Spam and Authority Manipulation",
+      "body": "Link-based ranking can be manipulated by link farms and spam networks. Robust systems monitor suspicious link patterns and combine authority with content quality signals.",
+      "url": "https://example.edu/searchlens/D030",
+      "category": "pagerank",
+      "tags": [
+        "link spam",
+        "pagerank",
+        "robustness"
+      ]
+    },
+    "D031": {
+      "doc_id": "D031",
+      "title": "Edit Distance for Spelling Correction",
+      "body": "Spelling correction ranks candidate terms by edit distance from the misspelled query term. Insertions, deletions, substitutions, and transpositions approximate the effort needed to fix a word.",
+      "url": "https://example.edu/searchlens/D031",
+      "category": "spelling",
+      "tags": [
+        "spelling",
+        "edit distance",
+        "candidate terms"
+      ]
+    },
+    "D032": {
+      "doc_id": "D032",
+      "title": "K-Gram Indexes for Tolerant Retrieval",
+      "body": "A k-gram index stores character n-grams for each vocabulary term. It generates candidates for wildcard queries and spelling correction before edit distance reranking.",
+      "url": "https://example.edu/searchlens/D032",
+      "category": "spelling",
+      "tags": [
+        "k gram",
+        "wildcard",
+        "spelling"
+      ]
+    },
+    "D033": {
+      "doc_id": "D033",
+      "title": "Noisy Channel Ranking for Corrections",
+      "body": "A noisy channel spelling model combines the likelihood of an observed typo with the prior probability of the intended term. Frequent vocabulary terms receive more confidence after candidate generation.",
+      "url": "https://example.edu/searchlens/D033",
+      "category": "spelling",
+      "tags": [
+        "noisy channel",
+        "spelling",
+        "term prior"
+      ]
+    },
+    "D034": {
+      "doc_id": "D034",
+      "title": "Context-Sensitive Query Correction",
+      "body": "Context-sensitive correction uses surrounding query words to choose among valid alternatives. For example, search engine technolgy should become search engine technology rather than a different rare word.",
+      "url": "https://example.edu/searchlens/D034",
+      "category": "spelling",
+      "tags": [
+        "context",
+        "spelling",
+        "query correction"
+      ]
+    },
+    "D035": {
+      "doc_id": "D035",
+      "title": "When Not to Correct a Query",
+      "body": "A search system should avoid aggressive correction for names, acronyms, and technical terms such as BM25 or nDCG. Showing a suggestion is safer than silently rewriting a specialized query.",
+      "url": "https://example.edu/searchlens/D035",
+      "category": "spelling",
+      "tags": [
+        "spelling",
+        "acronyms",
+        "user interface"
+      ]
+    },
+    "D036": {
+      "doc_id": "D036",
+      "title": "Rocchio Relevance Feedback",
+      "body": "Rocchio feedback moves a query vector toward relevant documents and away from nonrelevant documents. It is a classic method for improving vector space retrieval when relevance judgments are available.",
+      "url": "https://example.edu/searchlens/D036",
+      "category": "expansion",
+      "tags": [
+        "rocchio",
+        "relevance feedback",
+        "vector space"
+      ]
+    },
+    "D037": {
+      "doc_id": "D037",
+      "title": "Pseudo Relevance Feedback without User Labels",
+      "body": "Pseudo relevance feedback assumes the top-ranked documents from an initial search are relevant. Expansion terms are selected from those documents and appended to the query.",
+      "url": "https://example.edu/searchlens/D037",
+      "category": "expansion",
+      "tags": [
+        "pseudo relevance feedback",
+        "query expansion",
+        "bm25"
+      ]
+    },
+    "D038": {
+      "doc_id": "D038",
+      "title": "Thesaurus-Based Query Expansion",
+      "body": "A thesaurus can add synonyms and related concepts to a query. This helps with vocabulary mismatch but can reduce precision if broad terms introduce topic drift.",
+      "url": "https://example.edu/searchlens/D038",
+      "category": "expansion",
+      "tags": [
+        "thesaurus",
+        "query expansion",
+        "vocabulary mismatch"
+      ]
+    },
+    "D039": {
+      "doc_id": "D039",
+      "title": "Term Selection for Feedback",
+      "body": "Feedback term selection favors high-idf terms that occur frequently in top documents. Filtering stopwords and original query terms keeps expansion concise.",
+      "url": "https://example.edu/searchlens/D039",
+      "category": "expansion",
+      "tags": [
+        "term selection",
+        "idf",
+        "feedback"
+      ]
+    },
+    "D040": {
+      "doc_id": "D040",
+      "title": "Risks of Topic Drift",
+      "body": "Query expansion can drift when the first-pass results include nonrelevant documents. Conservative feedback depth and a small number of expansion terms reduce the risk.",
+      "url": "https://example.edu/searchlens/D040",
+      "category": "expansion",
+      "tags": [
+        "topic drift",
+        "query expansion",
+        "evaluation"
+      ]
+    },
+    "D041": {
+      "doc_id": "D041",
+      "title": "Precision Recall and F-Measure",
+      "body": "Evaluation begins by comparing retrieved documents with relevance judgments. Precision measures the fraction of retrieved documents that are relevant, while recall measures coverage of all relevant documents.",
+      "url": "https://example.edu/searchlens/D041",
+      "category": "evaluation",
+      "tags": [
+        "precision",
+        "recall",
+        "relevance judgments"
+      ]
+    },
+    "D042": {
+      "doc_id": "D042",
+      "title": "Mean Average Precision",
+      "body": "Mean average precision summarizes the precision observed at every rank where a relevant document appears. MAP rewards systems that retrieve relevant documents early and consistently.",
+      "url": "https://example.edu/searchlens/D042",
+      "category": "evaluation",
+      "tags": [
+        "map",
+        "average precision",
+        "ranked retrieval"
+      ]
+    },
+    "D043": {
+      "doc_id": "D043",
+      "title": "nDCG for Graded Relevance",
+      "body": "Normalized discounted cumulative gain evaluates ranked lists with graded relevance. Highly relevant documents receive larger gain, and the discount factor rewards early ranks.",
+      "url": "https://example.edu/searchlens/D043",
+      "category": "evaluation",
+      "tags": [
+        "ndcg",
+        "graded relevance",
+        "discount"
+      ]
+    },
+    "D044": {
+      "doc_id": "D044",
+      "title": "TREC-Style Test Collections",
+      "body": "A test collection contains a corpus, topics, relevance judgments, and evaluation metrics. This structure supports reproducible comparison among retrieval models.",
+      "url": "https://example.edu/searchlens/D044",
+      "category": "evaluation",
+      "tags": [
+        "test collection",
+        "trec",
+        "reproducibility"
+      ]
+    },
+    "D045": {
+      "doc_id": "D045",
+      "title": "Limitations of Offline Evaluation",
+      "body": "Offline metrics may not capture user satisfaction, presentation quality, or interactive search behavior. A deployed system should combine test collection results with user-centered evaluation.",
+      "url": "https://example.edu/searchlens/D045",
+      "category": "evaluation",
+      "tags": [
+        "user satisfaction",
+        "limitations",
+        "metrics"
+      ]
+    },
+    "D046": {
+      "doc_id": "D046",
+      "title": "Variable Byte Encoding for Postings",
+      "body": "Variable byte encoding stores small gaps with fewer bytes. Search engines gap-encode sorted document identifiers before compression to reduce postings list size.",
+      "url": "https://example.edu/searchlens/D046",
+      "category": "compression",
+      "tags": [
+        "variable byte",
+        "gap encoding",
+        "postings compression"
+      ]
+    },
+    "D047": {
+      "doc_id": "D047",
+      "title": "Gamma Codes and Integer Compression",
+      "body": "Gamma codes encode positive integers using a unary length and binary offset. They are useful for compact postings but require bit-level processing.",
+      "url": "https://example.edu/searchlens/D047",
+      "category": "compression",
+      "tags": [
+        "gamma code",
+        "integer compression",
+        "postings"
+      ]
+    },
+    "D048": {
+      "doc_id": "D048",
+      "title": "Skip Pointers for Faster Intersections",
+      "body": "Skip pointers accelerate postings intersection by allowing query processing to jump over blocks that cannot contain a match. They trade extra storage for faster Boolean evaluation.",
+      "url": "https://example.edu/searchlens/D048",
+      "category": "compression",
+      "tags": [
+        "skip pointers",
+        "postings intersection",
+        "boolean"
+      ]
+    },
+    "D049": {
+      "doc_id": "D049",
+      "title": "Dictionary Compression",
+      "body": "The term dictionary can be compressed with blocked storage and front coding. Compression improves memory locality for large vocabularies.",
+      "url": "https://example.edu/searchlens/D049",
+      "category": "compression",
+      "tags": [
+        "dictionary compression",
+        "front coding",
+        "vocabulary"
+      ]
+    },
+    "D050": {
+      "doc_id": "D050",
+      "title": "Compression Trade-Offs in Search Engines",
+      "body": "Index compression reduces disk and memory footprint but increases decoding cost. Practical systems balance latency, storage, and implementation complexity.",
+      "url": "https://example.edu/searchlens/D050",
+      "category": "compression",
+      "tags": [
+        "compression",
+        "latency",
+        "storage"
+      ]
+    },
+    "D051": {
+      "doc_id": "D051",
+      "title": "Dense Retrieval with Learned Embeddings",
+      "body": "Dense retrieval encodes queries and documents into continuous vectors. Approximate nearest neighbor search retrieves semantically similar documents even when exact query terms are absent.",
+      "url": "https://example.edu/searchlens/D051",
+      "category": "neural",
+      "tags": [
+        "dense retrieval",
+        "embeddings",
+        "semantic search"
+      ]
+    },
+    "D052": {
+      "doc_id": "D052",
+      "title": "Hybrid Lexical and Dense Retrieval",
+      "body": "Hybrid retrieval combines BM25 lexical scores with dense vector similarity. The lexical component preserves exact matching, while dense retrieval can address synonymy and paraphrases.",
+      "url": "https://example.edu/searchlens/D052",
+      "category": "neural",
+      "tags": [
+        "hybrid",
+        "bm25",
+        "dense retrieval"
+      ]
+    },
+    "D053": {
+      "doc_id": "D053",
+      "title": "Cross-Encoder Reranking",
+      "body": "A cross-encoder reranker reads the query and document together to estimate relevance. It is often more accurate than first-stage retrieval but too expensive to run over the whole corpus.",
+      "url": "https://example.edu/searchlens/D053",
+      "category": "neural",
+      "tags": [
+        "reranking",
+        "cross encoder",
+        "latency"
+      ]
+    },
+    "D054": {
+      "doc_id": "D054",
+      "title": "Retrieval-Augmented Generation",
+      "body": "Retrieval-augmented generation uses a search component to supply evidence to a language model. The quality of retrieved passages directly affects answer faithfulness.",
+      "url": "https://example.edu/searchlens/D054",
+      "category": "neural",
+      "tags": [
+        "rag",
+        "retrieval augmented generation",
+        "evidence"
+      ]
+    },
+    "D055": {
+      "doc_id": "D055",
+      "title": "Evaluating Dense Retrieval Against BM25",
+      "body": "Dense systems should be compared with BM25 baselines on the same queries and relevance judgments. Without a lexical baseline, semantic retrieval improvements are hard to interpret.",
+      "url": "https://example.edu/searchlens/D055",
+      "category": "neural",
+      "tags": [
+        "dense retrieval",
+        "bm25",
+        "evaluation"
+      ]
+    },
+    "D056": {
+      "doc_id": "D056",
+      "title": "Search Spam and Keyword Stuffing",
+      "body": "Search spam attempts to manipulate ranking by repeating popular terms, hiding text, or creating low-quality pages. Robust ranking should detect unnatural term distributions.",
+      "url": "https://example.edu/searchlens/D056",
+      "category": "robustness",
+      "tags": [
+        "search spam",
+        "keyword stuffing",
+        "robustness"
+      ]
+    },
+    "D057": {
+      "doc_id": "D057",
+      "title": "Adversarial Documents in Retrieval",
+      "body": "Adversarial documents can exploit lexical matchers by including many query terms without satisfying the information need. Evaluation should include difficult negative examples.",
+      "url": "https://example.edu/searchlens/D057",
+      "category": "robustness",
+      "tags": [
+        "adversarial",
+        "lexical matching",
+        "negative examples"
+      ]
+    },
+    "D058": {
+      "doc_id": "D058",
+      "title": "Trust Signals for Web Search",
+      "body": "Trust signals include domain reputation, link quality, author information, and content consistency. They complement textual relevance in open web environments.",
+      "url": "https://example.edu/searchlens/D058",
+      "category": "robustness",
+      "tags": [
+        "trust",
+        "web search",
+        "content quality"
+      ]
+    },
+    "D059": {
+      "doc_id": "D059",
+      "title": "Bias and Fairness in Ranking",
+      "body": "Ranking systems can amplify exposure disparities when popular documents receive more clicks and authority. Fairness-aware evaluation studies whether different groups receive equitable visibility.",
+      "url": "https://example.edu/searchlens/D059",
+      "category": "robustness",
+      "tags": [
+        "fairness",
+        "ranking",
+        "exposure"
+      ]
+    },
+    "D060": {
+      "doc_id": "D060",
+      "title": "Robust Evaluation of Search Systems",
+      "body": "Robust retrieval evaluation tests performance under misspellings, spam, ambiguous queries, and distribution shift. Stress tests reveal limitations not visible in easy benchmark topics.",
+      "url": "https://example.edu/searchlens/D060",
+      "category": "robustness",
+      "tags": [
+        "robust evaluation",
+        "spam",
+        "ambiguity"
+      ]
+    }
+  },
+  "postings": {
+    "build": {
+      "D001": [
+        0,
+        16
+      ],
+      "D010": [
+        13
+      ]
+    },
+    "invert": {
+      "D001": [
+        1,
+        5
+      ],
+      "D014": [
+        21
+      ]
+    },
+    "index": {
+      "D001": [
+        2,
+        6
+      ],
+      "D002": [
+        5
+      ],
+      "D003": [
+        3
+      ],
+      "D004": [
+        1,
+        11
+      ],
+      "D014": [
+        22
+      ],
+      "D023": [
+        18
+      ],
+      "D024": [
+        20
+      ],
+      "D028": [
+        14
+      ],
+      "D032": [
+        5
+      ],
+      "D050": [
+        5
+      ]
+    },
+    "posting": {
+      "D001": [
+        3,
+        10,
+        29
+      ],
+      "D002": [
+        1
+      ],
+      "D004": [
+        15
+      ],
+      "D005": [
+        10
+      ],
+      "D006": [
+        9
+      ],
+      "D046": [
+        3,
+        22
+      ],
+      "D047": [
+        15
+      ],
+      "D048": [
+        7
+      ]
+    },
+    "list": {
+      "D001": [
+        4,
+        11
+      ],
+      "D006": [
+        10
+      ],
+      "D043": [
+        9
+      ],
+      "D046": [
+        23
+      ]
+    },
+    "maps": {
+      "D001": [
+        7
+      ]
+    },
+    "normaliz": {
+      "D001": [
+        8
+      ],
+      "D043": [
+        3
+      ]
+    },
+    "term": {
+      "D001": [
+        9,
+        17,
+        20
+      ],
+      "D002": [
+        10,
+        21
+      ],
+      "D003": [
+        1,
+        14
+      ],
+      "D005": [
+        12
+      ],
+      "D007": [
+        9
+      ],
+      "D008": [
+        10,
+        21
+      ],
+      "D010": [
+        12
+      ],
+      "D011": [
+        2,
+        13,
+        18
+      ],
+      "D012": [
+        21
+      ],
+      "D014": [
+        13
+      ],
+      "D016": [
+        12,
+        17
+      ],
+      "D017": [
+        10,
+        15,
+        22
+      ],
+      "D020": [
+        0,
+        12
+      ],
+      "D028": [
+        25
+      ],
+      "D031": [
+        8,
+        13
+      ],
+      "D032": [
+        10
+      ],
+      "D033": [
+        15,
+        18
+      ],
+      "D035": [
+        11
+      ],
+      "D037": [
+        17
+      ],
+      "D038": [
+        17
+      ],
+      "D039": [
+        0,
+        4,
+        9,
+        18
+      ],
+      "D040": [
+        18
+      ],
+      "D049": [
+        2
+      ],
+      "D051": [
+        22
+      ],
+      "D056": [
+        11,
+        23
+      ],
+      "D057": [
+        11
+      ]
+    },
+    "document": {
+      "D001": [
+        12,
+        23
+      ],
+      "D002": [
+        25
+      ],
+      "D003": [
+        24
+      ],
+      "D004": [
+        21,
+        29
+      ],
+      "D005": [
+        19
+      ],
+      "D006": [
+        17
+      ],
+      "D007": [
+        20
+      ],
+      "D008": [
+        8
+      ],
+      "D009": [
+        16
+      ],
+      "D011": [
+        7,
+        10,
+        26
+      ],
+      "D012": [
+        0,
+        7,
+        13
+      ],
+      "D014": [
+        7,
+        9
+      ],
+      "D015": [
+        7
+      ],
+      "D016": [
+        9,
+        20
+      ],
+      "D017": [
+        1,
+        5,
+        13,
+        19
+      ],
+      "D018": [
+        3,
+        12,
+        20
+      ],
+      "D036": [
+        10,
+        13
+      ],
+      "D037": [
+        12,
+        19
+      ],
+      "D039": [
+        13
+      ],
+      "D040": [
+        11
+      ],
+      "D041": [
+        7,
+        14,
+        21
+      ],
+      "D042": [
+        12,
+        19
+      ],
+      "D043": [
+        14
+      ],
+      "D046": [
+        17
+      ],
+      "D051": [
+        8,
+        18
+      ],
+      "D053": [
+        8
+      ],
+      "D057": [
+        1,
+        4
+      ],
+      "D059": [
+        9
+      ]
+    },
+    "pipeline": {
+      "D001": [
+        13
+      ],
+      "D024": [
+        21
+      ]
+    },
+    "tokenize": {
+      "D001": [
+        14
+      ]
+    },
+    "text": {
+      "D001": [
+        15
+      ],
+      "D024": [
+        3,
+        8,
+        16
+      ],
+      "D027": [
+        3,
+        20
+      ],
+      "D028": [
+        1,
+        5,
+        16
+      ],
+      "D056": [
+        13
+      ]
+    },
+    "dictionary": {
+      "D001": [
+        18
+      ],
+      "D004": [
+        14
+      ],
+      "D049": [
+        0,
+        3
+      ]
+    },
+    "record": {
+      "D001": [
+        19
+      ]
+    },
+    "frequency": {
+      "D001": [
+        21
+      ],
+      "D011": [
+        3,
+        11,
+        14
+      ],
+      "D012": [
+        22
+      ],
+      "D014": [
+        8,
+        14
+      ],
+      "D016": [
+        18,
+        21
+      ],
+      "D017": [
+        2,
+        6
+      ],
+      "D025": [
+        10
+      ]
+    },
+    "sort": {
+      "D001": [
+        22
+      ],
+      "D046": [
+        16
+      ]
+    },
+    "identifier": {
+      "D001": [
+        24
+      ],
+      "D004": [
+        24
+      ],
+      "D046": [
+        18
+      ]
+    },
+    "so": {
+      "D001": [
+        25
+      ],
+      "D007": [
+        19
+      ],
+      "D009": [
+        10
+      ],
+      "D011": [
+        24
+      ],
+      "D018": [
+        10
+      ]
+    },
+    "query": {
+      "D001": [
+        26
+      ],
+      "D002": [
+        13
+      ],
+      "D003": [
+        18
+      ],
+      "D005": [
+        0,
+        11
+      ],
+      "D006": [
+        5
+      ],
+      "D008": [
+        9,
+        18
+      ],
+      "D010": [
+        2,
+        5
+      ],
+      "D011": [
+        17
+      ],
+      "D015": [
+        10,
+        11
+      ],
+      "D016": [
+        10
+      ],
+      "D028": [
+        24
+      ],
+      "D031": [
+        12
+      ],
+      "D032": [
+        14
+      ],
+      "D034": [
+        2,
+        8
+      ],
+      "D035": [
+        1,
+        20
+      ],
+      "D036": [
+        6
+      ],
+      "D037": [
+        21
+      ],
+      "D038": [
+        2,
+        9
+      ],
+      "D039": [
+        17
+      ],
+      "D040": [
+        3
+      ],
+      "D048": [
+        10
+      ],
+      "D051": [
+        7,
+        21
+      ],
+      "D053": [
+        7
+      ],
+      "D055": [
+        12
+      ],
+      "D057": [
+        10
+      ],
+      "D060": [
+        13
+      ]
+    },
+    "process": {
+      "D001": [
+        27
+      ],
+      "D047": [
+        20
+      ],
+      "D048": [
+        11
+      ]
+    },
+    "intersect": {
+      "D001": [
+        28
+      ]
+    },
+    "efficiently": {
+      "D001": [
+        30
+      ]
+    },
+    "positional": {
+      "D002": [
+        0,
+        4
+      ]
+    },
+    "phrase": {
+      "D002": [
+        2,
+        12
+      ],
+      "D007": [
+        0,
+        4,
+        15,
+        24
+      ],
+      "D008": [
+        4
+      ]
+    },
+    "search": {
+      "D002": [
+        3
+      ],
+      "D004": [
+        4,
+        7
+      ],
+      "D007": [
+        1,
+        5
+      ],
+      "D009": [
+        3,
+        6
+      ],
+      "D010": [
+        3
+      ],
+      "D020": [
+        3
+      ],
+      "D025": [
+        19
+      ],
+      "D027": [
+        6
+      ],
+      "D029": [
+        14
+      ],
+      "D034": [
+        15,
+        20
+      ],
+      "D035": [
+        2
+      ],
+      "D037": [
+        14
+      ],
+      "D045": [
+        11
+      ],
+      "D046": [
+        12
+      ],
+      "D050": [
+        3
+      ],
+      "D051": [
+        14
+      ],
+      "D054": [
+        6
+      ],
+      "D056": [
+        0,
+        4
+      ],
+      "D058": [
+        3
+      ],
+      "D060": [
+        2
+      ]
+    },
+    "store": {
+      "D002": [
+        6
+      ],
+      "D022": [
+        5
+      ],
+      "D032": [
+        6
+      ],
+      "D046": [
+        7
+      ]
+    },
+    "exact": {
+      "D002": [
+        7
+      ],
+      "D007": [
+        23
+      ],
+      "D008": [
+        3
+      ],
+      "D051": [
+        20
+      ],
+      "D052": [
+        16
+      ]
+    },
+    "token": {
+      "D002": [
+        8
+      ]
+    },
+    "position": {
+      "D002": [
+        9,
+        19
+      ]
+    },
+    "occur": {
+      "D002": [
+        11
+      ],
+      "D007": [
+        10
+      ],
+      "D008": [
+        11
+      ],
+      "D017": [
+        11
+      ],
+      "D039": [
+        10
+      ]
+    },
+    "information": {
+      "D002": [
+        14
+      ],
+      "D057": [
+        14
+      ],
+      "D058": [
+        12
+      ]
+    },
+    "retrieval": {
+      "D002": [
+        15
+      ],
+      "D005": [
+        14
+      ],
+      "D006": [
+        1,
+        3
+      ],
+      "D009": [
+        18
+      ],
+      "D013": [
+        16,
+        24
+      ],
+      "D015": [
+        15
+      ],
+      "D023": [
+        21
+      ],
+      "D028": [
+        18
+      ],
+      "D032": [
+        3
+      ],
+      "D036": [
+        19
+      ],
+      "D044": [
+        18
+      ],
+      "D051": [
+        1,
+        5
+      ],
+      "D052": [
+        3,
+        5,
+        19
+      ],
+      "D053": [
+        17
+      ],
+      "D054": [
+        0,
+        3
+      ],
+      "D055": [
+        2,
+        19
+      ],
+      "D057": [
+        2
+      ],
+      "D060": [
+        5
+      ]
+    },
+    "answer": {
+      "D002": [
+        16
+      ],
+      "D054": [
+        17
+      ]
+    },
+    "check": {
+      "D002": [
+        17
+      ]
+    },
+    "whether": {
+      "D002": [
+        18
+      ],
+      "D003": [
+        17
+      ],
+      "D059": [
+        18
+      ]
+    },
+    "adjacent": {
+      "D002": [
+        20
+      ]
+    },
+    "appear": {
+      "D002": [
+        22
+      ],
+      "D042": [
+        13
+      ]
+    },
+    "consecutively": {
+      "D002": [
+        23
+      ]
+    },
+    "same": {
+      "D002": [
+        24
+      ],
+      "D003": [
+        23
+      ],
+      "D008": [
+        22
+      ],
+      "D055": [
+        11
+      ]
+    },
+    "tokenization": {
+      "D003": [
+        0,
+        6
+      ]
+    },
+    "normalization": {
+      "D003": [
+        2
+      ],
+      "D012": [
+        2,
+        9
+      ],
+      "D018": [
+        1,
+        6
+      ],
+      "D019": [
+        16
+      ]
+    },
+    "construction": {
+      "D003": [
+        4
+      ]
+    },
+    "start": {
+      "D003": [
+        5
+      ],
+      "D005": [
+        6
+      ],
+      "D020": [
+        9
+      ]
+    },
+    "lowercas": {
+      "D003": [
+        7
+      ]
+    },
+    "stopword": {
+      "D003": [
+        8
+      ],
+      "D039": [
+        15
+      ]
+    },
+    "filter": {
+      "D003": [
+        9
+      ],
+      "D007": [
+        3
+      ],
+      "D039": [
+        14
+      ]
+    },
+    "light": {
+      "D003": [
+        10
+      ]
+    },
+    "stemm": {
+      "D003": [
+        11
+      ]
+    },
+    "choice": {
+      "D003": [
+        12
+      ]
+    },
+    "define": {
+      "D003": [
+        13
+      ]
+    },
+    "vocabulary": {
+      "D003": [
+        15
+      ],
+      "D015": [
+        9,
+        19
+      ],
+      "D032": [
+        9
+      ],
+      "D033": [
+        17
+      ],
+      "D038": [
+        11
+      ],
+      "D049": [
+        14
+      ]
+    },
+    "determine": {
+      "D003": [
+        16
+      ],
+      "D020": [
+        21
+      ]
+    },
+    "like": {
+      "D003": [
+        19
+      ]
+    },
+    "rank": {
+      "D003": [
+        20,
+        21
+      ],
+      "D005": [
+        13
+      ],
+      "D007": [
+        25
+      ],
+      "D008": [
+        6
+      ],
+      "D009": [
+        17
+      ],
+      "D011": [
+        1,
+        6
+      ],
+      "D016": [
+        2
+      ],
+      "D017": [
+        25
+      ],
+      "D019": [
+        10
+      ],
+      "D020": [
+        18
+      ],
+      "D027": [
+        4,
+        18
+      ],
+      "D029": [
+        3
+      ],
+      "D030": [
+        6
+      ],
+      "D031": [
+        6
+      ],
+      "D033": [
+        2
+      ],
+      "D037": [
+        11
+      ],
+      "D042": [
+        10
+      ],
+      "D043": [
+        8,
+        22
+      ],
+      "D056": [
+        8,
+        19
+      ],
+      "D059": [
+        2,
+        3
+      ]
+    },
+    "retrieve": {
+      "D003": [
+        22
+      ],
+      "D042": [
+        17
+      ],
+      "D051": [
+        15
+      ]
+    },
+    "dynamic": {
+      "D004": [
+        0,
+        17
+      ],
+      "D025": [
+        18
+      ]
+    },
+    "update": {
+      "D004": [
+        2,
+        18
+      ]
+    },
+    "small": {
+      "D004": [
+        3,
+        6
+      ],
+      "D040": [
+        15
+      ],
+      "D046": [
+        8
+      ]
+    },
+    "engine": {
+      "D004": [
+        5,
+        8
+      ],
+      "D005": [
+        15
+      ],
+      "D029": [
+        15
+      ],
+      "D034": [
+        16,
+        21
+      ],
+      "D046": [
+        13
+      ],
+      "D050": [
+        4
+      ]
+    },
+    "maintain": {
+      "D004": [
+        9
+      ]
+    },
+    "memory": {
+      "D004": [
+        10
+      ],
+      "D020": [
+        23
+      ],
+      "D049": [
+        11
+      ],
+      "D050": [
+        9
+      ]
+    },
+    "periodically": {
+      "D004": [
+        12
+      ]
+    },
+    "write": {
+      "D004": [
+        13
+      ]
+    },
+    "disk": {
+      "D004": [
+        16
+      ],
+      "D050": [
+        8
+      ]
+    },
+    "add": {
+      "D004": [
+        19
+      ],
+      "D038": [
+        5
+      ]
+    },
+    "new": {
+      "D004": [
+        20
+      ]
+    },
+    "remove": {
+      "D004": [
+        22
+      ],
+      "D024": [
+        10
+      ]
+    },
+    "delet": {
+      "D004": [
+        23
+      ]
+    },
+    "rebuild": {
+      "D004": [
+        25
+      ]
+    },
+    "summary": {
+      "D004": [
+        26
+      ]
+    },
+    "statistic": {
+      "D004": [
+        27
+      ],
+      "D014": [
+        15
+      ]
+    },
+    "average": {
+      "D004": [
+        28
+      ],
+      "D012": [
+        17
+      ],
+      "D014": [
+        11
+      ],
+      "D042": [
+        1,
+        4
+      ]
+    },
+    "length": {
+      "D004": [
+        30
+      ],
+      "D012": [
+        1,
+        8
+      ],
+      "D014": [
+        10,
+        12
+      ],
+      "D018": [
+        4,
+        9,
+        22
+      ],
+      "D019": [
+        15
+      ],
+      "D047": [
+        10
+      ]
+    },
+    "time": {
+      "D005": [
+        1
+      ]
+    },
+    "candidate": {
+      "D005": [
+        2,
+        4,
+        18
+      ],
+      "D014": [
+        19
+      ],
+      "D020": [
+        14
+      ],
+      "D031": [
+        7
+      ],
+      "D032": [
+        12
+      ],
+      "D033": [
+        23
+      ]
+    },
+    "generation": {
+      "D005": [
+        3,
+        5
+      ],
+      "D020": [
+        15
+      ],
+      "D033": [
+        24
+      ],
+      "D054": [
+        2,
+        5
+      ]
+    },
+    "taking": {
+      "D005": [
+        7
+      ]
+    },
+    "union": {
+      "D005": [
+        8
+      ],
+      "D006": [
+        14
+      ]
+    },
+    "intersection": {
+      "D005": [
+        9
+      ],
+      "D006": [
+        12
+      ],
+      "D048": [
+        3,
+        8
+      ]
+    },
+    "score": {
+      "D005": [
+        16
+      ],
+      "D014": [
+        16
+      ],
+      "D018": [
+        17
+      ],
+      "D026": [
+        15
+      ],
+      "D027": [
+        16
+      ],
+      "D052": [
+        9
+      ]
+    },
+    "only": {
+      "D005": [
+        17
+      ]
+    },
+    "instead": {
+      "D005": [
+        20
+      ]
+    },
+    "scann": {
+      "D005": [
+        21
+      ]
+    },
+    "entire": {
+      "D005": [
+        22
+      ]
+    },
+    "corpu": {
+      "D005": [
+        23
+      ],
+      "D018": [
+        19
+      ],
+      "D044": [
+        7
+      ],
+      "D053": [
+        24
+      ]
+    },
+    "boolean": {
+      "D006": [
+        0,
+        2
+      ],
+      "D009": [
+        2,
+        5
+      ],
+      "D048": [
+        22
+      ]
+    },
+    "treat": {
+      "D006": [
+        4
+      ]
+    },
+    "set": {
+      "D006": [
+        6,
+        16
+      ],
+      "D009": [
+        9
+      ],
+      "D014": [
+        20
+      ]
+    },
+    "expression": {
+      "D006": [
+        7
+      ],
+      "D010": [
+        15
+      ]
+    },
+    "over": {
+      "D006": [
+        8
+      ],
+      "D014": [
+        18
+      ],
+      "D048": [
+        13
+      ],
+      "D053": [
+        22
+      ]
+    },
+    "compute": {
+      "D006": [
+        11,
+        13
+      ],
+      "D029": [
+        7
+      ]
+    },
+    "subtract": {
+      "D006": [
+        15
+      ]
+    },
+    "universe": {
+      "D006": [
+        18
+      ]
+    },
+    "hard": {
+      "D007": [
+        2
+      ],
+      "D055": [
+        21
+      ]
+    },
+    "require": {
+      "D007": [
+        6
+      ],
+      "D047": [
+        17
+      ]
+    },
+    "all": {
+      "D007": [
+        7
+      ],
+      "D041": [
+        19
+      ]
+    },
+    "quot": {
+      "D007": [
+        8
+      ]
+    },
+    "specifi": {
+      "D007": [
+        11
+      ]
+    },
+    "order": {
+      "D007": [
+        12
+      ],
+      "D009": [
+        21
+      ]
+    },
+    "searchlen": {
+      "D007": [
+        13
+      ]
+    },
+    "apply": {
+      "D007": [
+        14
+      ]
+    },
+    "constraint": {
+      "D007": [
+        16
+      ]
+    },
+    "before": {
+      "D007": [
+        17
+      ],
+      "D013": [
+        27
+      ],
+      "D023": [
+        16
+      ],
+      "D032": [
+        17
+      ],
+      "D046": [
+        19
+      ]
+    },
+    "scor": {
+      "D007": [
+        18
+      ],
+      "D009": [
+        27
+      ],
+      "D020": [
+        6
+      ]
+    },
+    "must": {
+      "D007": [
+        21
+      ],
+      "D009": [
+        12
+      ],
+      "D024": [
+        5
+      ]
+    },
+    "contain": {
+      "D007": [
+        22
+      ],
+      "D044": [
+        6
+      ],
+      "D048": [
+        16
+      ]
+    },
+    "proximity": {
+      "D008": [
+        0,
+        5
+      ]
+    },
+    "match": {
+      "D008": [
+        1
+      ],
+      "D009": [
+        15
+      ],
+      "D048": [
+        17
+      ],
+      "D052": [
+        17
+      ]
+    },
+    "beyond": {
+      "D008": [
+        2
+      ]
+    },
+    "reward": {
+      "D008": [
+        7
+      ],
+      "D042": [
+        15
+      ],
+      "D043": [
+        20
+      ]
+    },
+    "near": {
+      "D008": [
+        12
+      ],
+      "D023": [
+        1,
+        14
+      ]
+    },
+    "other": {
+      "D008": [
+        13
+      ],
+      "D009": [
+        26
+      ],
+      "D025": [
+        17
+      ],
+      "D028": [
+        12
+      ]
+    },
+    "improve": {
+      "D008": [
+        14
+      ],
+      "D027": [
+        17
+      ],
+      "D028": [
+        17
+      ],
+      "D049": [
+        10
+      ]
+    },
+    "user": {
+      "D008": [
+        15
+      ],
+      "D009": [
+        11
+      ],
+      "D010": [
+        1
+      ],
+      "D015": [
+        16
+      ],
+      "D037": [
+        4
+      ],
+      "D045": [
+        6,
+        20
+      ]
+    },
+    "satisfaction": {
+      "D008": [
+        16
+      ],
+      "D045": [
+        7
+      ]
+    },
+    "verbose": {
+      "D008": [
+        17
+      ]
+    },
+    "because": {
+      "D008": [
+        19
+      ],
+      "D013": [
+        8
+      ]
+    },
+    "relat": {
+      "D008": [
+        20
+      ],
+      "D038": [
+        7
+      ]
+    },
+    "passage": {
+      "D008": [
+        23
+      ],
+      "D054": [
+        14
+      ]
+    },
+    "usually": {
+      "D008": [
+        24
+      ]
+    },
+    "signal": {
+      "D008": [
+        25
+      ],
+      "D030": [
+        22
+      ],
+      "D058": [
+        1,
+        5
+      ]
+    },
+    "topical": {
+      "D008": [
+        26
+      ],
+      "D029": [
+        9
+      ]
+    },
+    "relevance": {
+      "D008": [
+        27
+      ],
+      "D027": [
+        10
+      ],
+      "D036": [
+        1,
+        20
+      ],
+      "D037": [
+        1,
+        7
+      ],
+      "D041": [
+        8
+      ],
+      "D043": [
+        2,
+        11
+      ],
+      "D044": [
+        9
+      ],
+      "D053": [
+        11
+      ],
+      "D055": [
+        13
+      ],
+      "D058": [
+        17
+      ]
+    },
+    "limitation": {
+      "D009": [
+        0,
+        20
+      ],
+      "D045": [
+        0
+      ],
+      "D060": [
+        19
+      ]
+    },
+    "pure": {
+      "D009": [
+        1,
+        4
+      ]
+    },
+    "return": {
+      "D009": [
+        7
+      ]
+    },
+    "unorder": {
+      "D009": [
+        8
+      ]
+    },
+    "inspect": {
+      "D009": [
+        13
+      ]
+    },
+    "every": {
+      "D009": [
+        14
+      ],
+      "D042": [
+        9
+      ]
+    },
+    "addresse": {
+      "D009": [
+        19
+      ]
+    },
+    "result": {
+      "D009": [
+        22
+      ],
+      "D040": [
+        8
+      ],
+      "D045": [
+        19
+      ]
+    },
+    "tf": {
+      "D009": [
+        23
+      ],
+      "D016": [
+        3,
+        14
+      ],
+      "D019": [
+        1,
+        4,
+        17
+      ],
+      "D020": [
+        10
+      ]
+    },
+    "idf": {
+      "D009": [
+        24
+      ],
+      "D016": [
+        4,
+        15
+      ],
+      "D019": [
+        2,
+        5,
+        18
+      ],
+      "D020": [
+        11
+      ],
+      "D039": [
+        8
+      ]
+    },
+    "bm25": {
+      "D009": [
+        25
+      ],
+      "D011": [
+        0,
+        5
+      ],
+      "D012": [
+        3,
+        4
+      ],
+      "D013": [
+        0,
+        4,
+        26
+      ],
+      "D014": [
+        0,
+        4
+      ],
+      "D015": [
+        0,
+        4
+      ],
+      "D019": [
+        3,
+        7,
+        12
+      ],
+      "D027": [
+        11
+      ],
+      "D035": [
+        12
+      ],
+      "D052": [
+        7
+      ],
+      "D055": [
+        4,
+        9
+      ]
+    },
+    "function": {
+      "D009": [
+        28
+      ]
+    },
+    "pars": {
+      "D010": [
+        0
+      ],
+      "D024": [
+        0
+      ]
+    },
+    "operator": {
+      "D010": [
+        4,
+        9
+      ]
+    },
+    "parser": {
+      "D010": [
+        6,
+        18
+      ]
+    },
+    "recognize": {
+      "D010": [
+        7
+      ]
+    },
+    "parenthese": {
+      "D010": [
+        8
+      ]
+    },
+    "normalize": {
+      "D010": [
+        10
+      ]
+    },
+    "ordinary": {
+      "D010": [
+        11
+      ]
+    },
+    "executable": {
+      "D010": [
+        14
+      ]
+    },
+    "even": {
+      "D010": [
+        16
+      ],
+      "D051": [
+        19
+      ]
+    },
+    "compact": {
+      "D010": [
+        17
+      ],
+      "D047": [
+        14
+      ]
+    },
+    "support": {
+      "D010": [
+        19
+      ],
+      "D044": [
+        14
+      ]
+    },
+    "simple": {
+      "D010": [
+        20
+      ],
+      "D013": [
+        9
+      ],
+      "D019": [
+        21
+      ]
+    },
+    "precedence": {
+      "D010": [
+        21
+      ]
+    },
+    "rule": {
+      "D010": [
+        22
+      ]
+    },
+    "saturation": {
+      "D011": [
+        4
+      ],
+      "D012": [
+        23
+      ],
+      "D019": [
+        14
+      ]
+    },
+    "combin": {
+      "D011": [
+        8
+      ],
+      "D027": [
+        0,
+        15
+      ]
+    },
+    "inverse": {
+      "D011": [
+        9
+      ],
+      "D016": [
+        19
+      ],
+      "D017": [
+        0,
+        4
+      ]
+    },
+    "saturat": {
+      "D011": [
+        12
+      ]
+    },
+    "component": {
+      "D011": [
+        15
+      ],
+      "D052": [
+        14
+      ],
+      "D054": [
+        7
+      ]
+    },
+    "repeat": {
+      "D011": [
+        16
+      ],
+      "D023": [
+        9
+      ],
+      "D056": [
+        9
+      ]
+    },
+    "help": {
+      "D011": [
+        19
+      ],
+      "D017": [
+        16
+      ],
+      "D029": [
+        11
+      ],
+      "D038": [
+        10
+      ]
+    },
+    "first": {
+      "D011": [
+        20
+      ],
+      "D040": [
+        6
+      ],
+      "D053": [
+        15
+      ]
+    },
+    "but": {
+      "D011": [
+        21
+      ],
+      "D038": [
+        13
+      ],
+      "D047": [
+        16
+      ],
+      "D050": [
+        11
+      ],
+      "D053": [
+        18
+      ]
+    },
+    "gain": {
+      "D011": [
+        22
+      ],
+      "D043": [
+        6,
+        17
+      ]
+    },
+    "decrease": {
+      "D011": [
+        23
+      ]
+    },
+    "long": {
+      "D011": [
+        25
+      ]
+    },
+    "do": {
+      "D011": [
+        27
+      ],
+      "D018": [
+        13
+      ]
+    },
+    "dominate": {
+      "D011": [
+        28
+      ]
+    },
+    "unfairly": {
+      "D011": [
+        29
+      ]
+    },
+    "parameter": {
+      "D012": [
+        5
+      ]
+    },
+    "control": {
+      "D012": [
+        6,
+        19
+      ]
+    },
+    "higher": {
+      "D012": [
+        10
+      ],
+      "D017": [
+        8
+      ],
+      "D018": [
+        16
+      ]
+    },
+    "value": {
+      "D012": [
+        11
+      ]
+    },
+    "penalize": {
+      "D012": [
+        12
+      ]
+    },
+    "much": {
+      "D012": [
+        14
+      ]
+    },
+    "longer": {
+      "D012": [
+        15
+      ],
+      "D018": [
+        11
+      ]
+    },
+    "collection": {
+      "D012": [
+        16
+      ],
+      "D013": [
+        17
+      ],
+      "D021": [
+        20
+      ],
+      "D025": [
+        20
+      ],
+      "D044": [
+        3,
+        5
+      ],
+      "D045": [
+        18
+      ]
+    },
+    "k1": {
+      "D012": [
+        18
+      ]
+    },
+    "strength": {
+      "D012": [
+        20
+      ]
+    },
+    "strong": {
+      "D013": [
+        1
+      ]
+    },
+    "lexical": {
+      "D013": [
+        2,
+        6
+      ],
+      "D015": [
+        3
+      ],
+      "D019": [
+        9
+      ],
+      "D052": [
+        1,
+        8,
+        13
+      ],
+      "D055": [
+        16
+      ],
+      "D057": [
+        6
+      ]
+    },
+    "baseline": {
+      "D013": [
+        3,
+        7
+      ],
+      "D055": [
+        10,
+        17
+      ]
+    },
+    "durable": {
+      "D013": [
+        5
+      ]
+    },
+    "efficient": {
+      "D013": [
+        10
+      ],
+      "D020": [
+        16
+      ]
+    },
+    "robust": {
+      "D013": [
+        11
+      ],
+      "D030": [
+        12
+      ],
+      "D056": [
+        18
+      ],
+      "D060": [
+        0,
+        4
+      ]
+    },
+    "across": {
+      "D013": [
+        12
+      ]
+    },
+    "many": {
+      "D013": [
+        13
+      ],
+      "D026": [
+        16
+      ],
+      "D057": [
+        9
+      ]
+    },
+    "ad": {
+      "D013": [
+        14
+      ]
+    },
+    "hoc": {
+      "D013": [
+        15
+      ]
+    },
+    "modern": {
+      "D013": [
+        18
+      ]
+    },
+    "hybrid": {
+      "D013": [
+        19
+      ],
+      "D052": [
+        0,
+        4
+      ]
+    },
+    "system": {
+      "D013": [
+        20
+      ],
+      "D020": [
+        4,
+        7
+      ],
+      "D027": [
+        7
+      ],
+      "D030": [
+        13
+      ],
+      "D035": [
+        3
+      ],
+      "D042": [
+        16
+      ],
+      "D045": [
+        14
+      ],
+      "D050": [
+        16
+      ],
+      "D055": [
+        6
+      ],
+      "D059": [
+        4
+      ],
+      "D060": [
+        3
+      ]
+    },
+    "often": {
+      "D013": [
+        21
+      ],
+      "D020": [
+        8
+      ],
+      "D023": [
+        5
+      ],
+      "D028": [
+        6
+      ],
+      "D053": [
+        12
+      ]
+    },
+    "compare": {
+      "D013": [
+        22
+      ],
+      "D016": [
+        24
+      ]
+    },
+    "dense": {
+      "D013": [
+        23
+      ],
+      "D015": [
+        14
+      ],
+      "D051": [
+        0,
+        4
+      ],
+      "D052": [
+        2,
+        10,
+        18
+      ],
+      "D055": [
+        1,
+        5
+      ]
+    },
+    "against": {
+      "D013": [
+        25
+      ],
+      "D055": [
+        3
+      ]
+    },
+    "adding": {
+      "D013": [
+        28
+      ]
+    },
+    "rerank": {
+      "D013": [
+        29
+      ],
+      "D032": [
+        20
+      ],
+      "D053": [
+        2
+      ]
+    },
+    "implementation": {
+      "D014": [
+        1,
+        5
+      ],
+      "D050": [
+        20
+      ]
+    },
+    "note": {
+      "D014": [
+        2
+      ]
+    },
+    "practical": {
+      "D014": [
+        3
+      ],
+      "D050": [
+        15
+      ]
+    },
+    "need": {
+      "D014": [
+        6
+      ],
+      "D031": [
+        20
+      ],
+      "D057": [
+        15
+      ]
+    },
+    "comput": {
+      "D014": [
+        17
+      ]
+    },
+    "failure": {
+      "D015": [
+        1
+      ]
+    },
+    "case": {
+      "D015": [
+        2
+      ]
+    },
+    "miss": {
+      "D015": [
+        5
+      ]
+    },
+    "relevant": {
+      "D015": [
+        6
+      ],
+      "D017": [
+        18
+      ],
+      "D036": [
+        9
+      ],
+      "D037": [
+        15
+      ],
+      "D041": [
+        15,
+        20
+      ],
+      "D042": [
+        11,
+        18
+      ],
+      "D043": [
+        13
+      ]
+    },
+    "different": {
+      "D015": [
+        8
+      ],
+      "D018": [
+        2
+      ],
+      "D034": [
+        24
+      ],
+      "D059": [
+        19
+      ]
+    },
+    "expansion": {
+      "D015": [
+        12
+      ],
+      "D037": [
+        16
+      ],
+      "D038": [
+        3
+      ],
+      "D039": [
+        20
+      ],
+      "D040": [
+        4,
+        17
+      ]
+    },
+    "thesauri": {
+      "D015": [
+        13
+      ]
+    },
+    "feedback": {
+      "D015": [
+        17
+      ],
+      "D036": [
+        2,
+        4
+      ],
+      "D037": [
+        2,
+        8
+      ],
+      "D039": [
+        2,
+        3
+      ],
+      "D040": [
+        13
+      ]
+    },
+    "reduce": {
+      "D015": [
+        18
+      ],
+      "D038": [
+        14
+      ],
+      "D040": [
+        19
+      ],
+      "D046": [
+        21
+      ],
+      "D050": [
+        7
+      ]
+    },
+    "mismatch": {
+      "D015": [
+        20
+      ],
+      "D038": [
+        12
+      ]
+    },
+    "problem": {
+      "D015": [
+        21
+      ]
+    },
+    "vector": {
+      "D016": [
+        0,
+        5,
+        13,
+        26
+      ],
+      "D018": [
+        8
+      ],
+      "D036": [
+        7,
+        17
+      ],
+      "D051": [
+        10
+      ],
+      "D052": [
+        11
+      ]
+    },
+    "space": {
+      "D016": [
+        1,
+        6
+      ],
+      "D023": [
+        19
+      ],
+      "D036": [
+        18
+      ]
+    },
+    "model": {
+      "D016": [
+        7
+      ],
+      "D019": [
+        11
+      ],
+      "D026": [
+        3,
+        5
+      ],
+      "D033": [
+        7
+      ],
+      "D044": [
+        19
+      ],
+      "D054": [
+        11
+      ]
+    },
+    "represent": {
+      "D016": [
+        8
+      ]
+    },
+    "weight": {
+      "D016": [
+        11
+      ],
+      "D017": [
+        9
+      ],
+      "D020": [
+        1,
+        13
+      ]
+    },
+    "combine": {
+      "D016": [
+        16
+      ],
+      "D027": [
+        8
+      ],
+      "D030": [
+        18
+      ],
+      "D033": [
+        8
+      ],
+      "D045": [
+        16
+      ],
+      "D052": [
+        6
+      ]
+    },
+    "cosine": {
+      "D016": [
+        22
+      ],
+      "D018": [
+        0,
+        5
+      ],
+      "D019": [
+        6,
+        19
+      ]
+    },
+    "similarity": {
+      "D016": [
+        23
+      ],
+      "D052": [
+        12
+      ]
+    },
+    "angle": {
+      "D016": [
+        25
+      ]
+    },
+    "specificity": {
+      "D017": [
+        3
+      ]
+    },
+    "assign": {
+      "D017": [
+        7
+      ]
+    },
+    "fewer": {
+      "D017": [
+        12
+      ],
+      "D046": [
+        10
+      ]
+    },
+    "specific": {
+      "D017": [
+        14
+      ]
+    },
+    "discriminate": {
+      "D017": [
+        17
+      ]
+    },
+    "very": {
+      "D017": [
+        20
+      ]
+    },
+    "common": {
+      "D017": [
+        21
+      ]
+    },
+    "contribute": {
+      "D017": [
+        23
+      ]
+    },
+    "less": {
+      "D017": [
+        24
+      ]
+    },
+    "divide": {
+      "D018": [
+        7
+      ]
+    },
+    "automatically": {
+      "D018": [
+        14
+      ]
+    },
+    "receive": {
+      "D018": [
+        15
+      ],
+      "D026": [
+        13
+      ],
+      "D033": [
+        19
+      ],
+      "D043": [
+        15
+      ],
+      "D059": [
+        10,
+        21
+      ]
+    },
+    "useful": {
+      "D018": [
+        18
+      ],
+      "D024": [
+        14
+      ],
+      "D047": [
+        13
+      ]
+    },
+    "vary": {
+      "D018": [
+        21
+      ]
+    },
+    "verbosity": {
+      "D018": [
+        23
+      ]
+    },
+    "compar": {
+      "D019": [
+        0
+      ],
+      "D041": [
+        5
+      ],
+      "D055": [
+        8
+      ]
+    },
+    "both": {
+      "D019": [
+        8
+      ]
+    },
+    "adds": {
+      "D019": [
+        13
+      ]
+    },
+    "offer": {
+      "D019": [
+        20
+      ]
+    },
+    "geometric": {
+      "D019": [
+        22
+      ]
+    },
+    "interpretation": {
+      "D019": [
+        23
+      ]
+    },
+    "complete": {
+      "D020": [
+        2,
+        5
+      ]
+    },
+    "top": {
+      "D020": [
+        17
+      ],
+      "D037": [
+        10
+      ],
+      "D039": [
+        12
+      ]
+    },
+    "engineer": {
+      "D020": [
+        19
+      ]
+    },
+    "decision": {
+      "D020": [
+        20
+      ]
+    },
+    "latency": {
+      "D020": [
+        22
+      ],
+      "D050": [
+        18
+      ]
+    },
+    "reproducibility": {
+      "D020": [
+        24
+      ]
+    },
+    "crawler": {
+      "D021": [
+        0,
+        5
+      ],
+      "D023": [
+        4
+      ],
+      "D024": [
+        4
+      ]
+    },
+    "politeness": {
+      "D021": [
+        1,
+        16
+      ],
+      "D022": [
+        17
+      ]
+    },
+    "robot": {
+      "D021": [
+        2,
+        8
+      ]
+    },
+    "exclusion": {
+      "D021": [
+        3
+      ]
+    },
+    "web": {
+      "D021": [
+        4,
+        21
+      ],
+      "D027": [
+        5
+      ],
+      "D058": [
+        2,
+        19
+      ]
+    },
+    "should": {
+      "D021": [
+        6
+      ],
+      "D034": [
+        18
+      ],
+      "D035": [
+        4
+      ],
+      "D045": [
+        15
+      ],
+      "D055": [
+        7
+      ],
+      "D056": [
+        20
+      ],
+      "D057": [
+        17
+      ]
+    },
+    "respect": {
+      "D021": [
+        7
+      ]
+    },
+    "txt": {
+      "D021": [
+        9
+      ]
+    },
+    "throttle": {
+      "D021": [
+        10
+      ]
+    },
+    "request": {
+      "D021": [
+        11
+      ]
+    },
+    "host": {
+      "D021": [
+        12
+      ],
+      "D022": [
+        16
+      ]
+    },
+    "avoid": {
+      "D021": [
+        13
+      ],
+      "D035": [
+        5
+      ]
+    },
+    "overload": {
+      "D021": [
+        14
+      ]
+    },
+    "server": {
+      "D021": [
+        15
+      ]
+    },
+    "policy": {
+      "D021": [
+        17
+      ]
+    },
+    "essential": {
+      "D021": [
+        18
+      ]
+    },
+    "responsible": {
+      "D021": [
+        19
+      ]
+    },
+    "page": {
+      "D021": [
+        22
+      ],
+      "D022": [
+        10,
+        21
+      ],
+      "D023": [
+        8
+      ],
+      "D025": [
+        6
+      ],
+      "D026": [
+        12,
+        18
+      ],
+      "D028": [
+        9,
+        19
+      ],
+      "D029": [
+        13,
+        16
+      ],
+      "D056": [
+        17
+      ]
+    },
+    "url": {
+      "D022": [
+        0,
+        3
+      ]
+    },
+    "frontier": {
+      "D022": [
+        1,
+        4
+      ]
+    },
+    "schedul": {
+      "D022": [
+        2,
+        13
+      ]
+    },
+    "discover": {
+      "D022": [
+        6
+      ]
+    },
+    "link": {
+      "D022": [
+        7
+      ],
+      "D026": [
+        9,
+        19
+      ],
+      "D027": [
+        1,
+        12,
+        21
+      ],
+      "D029": [
+        2
+      ],
+      "D030": [
+        0,
+        4,
+        8,
+        16
+      ],
+      "D058": [
+        9
+      ]
+    },
+    "select": {
+      "D022": [
+        8
+      ],
+      "D037": [
+        18
+      ]
+    },
+    "next": {
+      "D022": [
+        9
+      ]
+    },
+    "fetch": {
+      "D022": [
+        11
+      ]
+    },
+    "good": {
+      "D022": [
+        12
+      ]
+    },
+    "balance": {
+      "D022": [
+        14
+      ],
+      "D050": [
+        17
+      ]
+    },
+    "freshness": {
+      "D022": [
+        15
+      ],
+      "D025": [
+        0,
+        11
+      ]
+    },
+    "priority": {
+      "D022": [
+        18
+      ]
+    },
+    "coverage": {
+      "D022": [
+        19
+      ],
+      "D041": [
+        18
+      ]
+    },
+    "important": {
+      "D022": [
+        20
+      ],
+      "D025": [
+        13
+      ],
+      "D026": [
+        17
+      ]
+    },
+    "duplicate": {
+      "D023": [
+        0,
+        2,
+        15
+      ]
+    },
+    "detection": {
+      "D023": [
+        3
+      ]
+    },
+    "encounter": {
+      "D023": [
+        6
+      ]
+    },
+    "mirror": {
+      "D023": [
+        7
+      ]
+    },
+    "template": {
+      "D023": [
+        10
+      ]
+    },
+    "fingerprint": {
+      "D023": [
+        11
+      ]
+    },
+    "shingl": {
+      "D023": [
+        12
+      ]
+    },
+    "detect": {
+      "D023": [
+        13
+      ],
+      "D056": [
+        21
+      ]
+    },
+    "waste": {
+      "D023": [
+        17
+      ]
+    },
+    "distort": {
+      "D023": [
+        20
+      ]
+    },
+    "evaluation": {
+      "D023": [
+        22
+      ],
+      "D041": [
+        3
+      ],
+      "D044": [
+        11
+      ],
+      "D045": [
+        2,
+        22
+      ],
+      "D048": [
+        23
+      ],
+      "D057": [
+        16
+      ],
+      "D059": [
+        16
+      ],
+      "D060": [
+        1,
+        6
+      ]
+    },
+    "html": {
+      "D024": [
+        1,
+        9
+      ]
+    },
+    "indexable": {
+      "D024": [
+        2
+      ]
+    },
+    "extract": {
+      "D024": [
+        6
+      ]
+    },
+    "readable": {
+      "D024": [
+        7
+      ]
+    },
+    "boilerplate": {
+      "D024": [
+        11
+      ]
+    },
+    "navigation": {
+      "D024": [
+        12
+      ]
+    },
+    "preserve": {
+      "D024": [
+        13
+      ],
+      "D052": [
+        15
+      ]
+    },
+    "anchor": {
+      "D024": [
+        15
+      ],
+      "D027": [
+        19
+      ],
+      "D028": [
+        0,
+        4,
+        15
+      ]
+    },
+    "pass": {
+      "D024": [
+        17
+      ],
+      "D040": [
+        7
+      ]
+    },
+    "clean": {
+      "D024": [
+        18
+      ]
+    },
+    "content": {
+      "D024": [
+        19
+      ],
+      "D027": [
+        9
+      ],
+      "D028": [
+        22
+      ],
+      "D030": [
+        20
+      ],
+      "D058": [
+        13
+      ]
+    },
+    "incremental": {
+      "D025": [
+        1,
+        3
+      ]
+    },
+    "crawl": {
+      "D025": [
+        2,
+        4
+      ]
+    },
+    "revisit": {
+      "D025": [
+        5
+      ]
+    },
+    "accord": {
+      "D025": [
+        7
+      ]
+    },
+    "expect": {
+      "D025": [
+        8
+      ]
+    },
+    "change": {
+      "D025": [
+        9
+      ]
+    },
+    "especially": {
+      "D025": [
+        12
+      ]
+    },
+    "news": {
+      "D025": [
+        14
+      ]
+    },
+    "price": {
+      "D025": [
+        15
+      ]
+    },
+    "schedule": {
+      "D025": [
+        16
+      ]
+    },
+    "pagerank": {
+      "D026": [
+        0,
+        4
+      ],
+      "D027": [
+        14
+      ],
+      "D029": [
+        6
+      ]
+    },
+    "random": {
+      "D026": [
+        1,
+        6
+      ]
+    },
+    "surfer": {
+      "D026": [
+        2,
+        7
+      ]
+    },
+    "follow": {
+      "D026": [
+        8
+      ]
+    },
+    "occasional": {
+      "D026": [
+        10
+      ]
+    },
+    "teleportation": {
+      "D026": [
+        11
+      ]
+    },
+    "high": {
+      "D026": [
+        14
+      ],
+      "D039": [
+        7
+      ]
+    },
+    "analysi": {
+      "D027": [
+        2
+      ]
+    },
+    "authority": {
+      "D027": [
+        13
+      ],
+      "D029": [
+        8
+      ],
+      "D030": [
+        2,
+        19
+      ],
+      "D059": [
+        13
+      ]
+    },
+    "indicate": {
+      "D027": [
+        22
+      ]
+    },
+    "popularity": {
+      "D027": [
+        23
+      ]
+    },
+    "trust": {
+      "D027": [
+        24
+      ],
+      "D058": [
+        0,
+        4
+      ]
+    },
+    "external": {
+      "D028": [
+        2
+      ]
+    },
+    "evidence": {
+      "D028": [
+        3
+      ],
+      "D054": [
+        9
+      ]
+    },
+    "describe": {
+      "D028": [
+        7
+      ]
+    },
+    "destination": {
+      "D028": [
+        8
+      ]
+    },
+    "word": {
+      "D028": [
+        10
+      ],
+      "D031": [
+        22
+      ],
+      "D034": [
+        9,
+        26
+      ]
+    },
+    "chosen": {
+      "D028": [
+        11
+      ]
+    },
+    "author": {
+      "D028": [
+        13
+      ],
+      "D058": [
+        11
+      ]
+    },
+    "whose": {
+      "D028": [
+        20
+      ]
+    },
+    "own": {
+      "D028": [
+        21
+      ]
+    },
+    "lack": {
+      "D028": [
+        23
+      ]
+    },
+    "topic": {
+      "D029": [
+        0,
+        4
+      ],
+      "D038": [
+        19
+      ],
+      "D040": [
+        1
+      ],
+      "D044": [
+        8
+      ],
+      "D060": [
+        23
+      ]
+    },
+    "sensitive": {
+      "D029": [
+        1,
+        5
+      ],
+      "D034": [
+        1,
+        5
+      ]
+    },
+    "subset": {
+      "D029": [
+        10
+      ]
+    },
+    "distinguish": {
+      "D029": [
+        12
+      ]
+    },
+    "unrelat": {
+      "D029": [
+        17
+      ]
+    },
+    "popular": {
+      "D029": [
+        18
+      ],
+      "D056": [
+        10
+      ],
+      "D059": [
+        8
+      ]
+    },
+    "subject": {
+      "D029": [
+        19
+      ]
+    },
+    "spam": {
+      "D030": [
+        1,
+        10
+      ],
+      "D056": [
+        1,
+        5
+      ],
+      "D060": [
+        11
+      ]
+    },
+    "manipulation": {
+      "D030": [
+        3
+      ]
+    },
+    "based": {
+      "D030": [
+        5
+      ],
+      "D038": [
+        1
+      ]
+    },
+    "manipulat": {
+      "D030": [
+        7
+      ]
+    },
+    "farm": {
+      "D030": [
+        9
+      ]
+    },
+    "network": {
+      "D030": [
+        11
+      ]
+    },
+    "monitor": {
+      "D030": [
+        14
+      ]
+    },
+    "suspiciou": {
+      "D030": [
+        15
+      ]
+    },
+    "pattern": {
+      "D030": [
+        17
+      ]
+    },
+    "quality": {
+      "D030": [
+        21
+      ],
+      "D045": [
+        9
+      ],
+      "D054": [
+        12
+      ],
+      "D056": [
+        16
+      ],
+      "D058": [
+        10
+      ]
+    },
+    "edit": {
+      "D031": [
+        0,
+        9
+      ],
+      "D032": [
+        18
+      ]
+    },
+    "distance": {
+      "D031": [
+        1,
+        10
+      ],
+      "D032": [
+        19
+      ]
+    },
+    "spell": {
+      "D031": [
+        2,
+        4
+      ],
+      "D032": [
+        15
+      ],
+      "D033": [
+        6
+      ]
+    },
+    "correction": {
+      "D031": [
+        3,
+        5
+      ],
+      "D032": [
+        16
+      ],
+      "D033": [
+        3
+      ],
+      "D034": [
+        3,
+        6
+      ],
+      "D035": [
+        7
+      ]
+    },
+    "misspell": {
+      "D031": [
+        11
+      ]
+    },
+    "insertion": {
+      "D031": [
+        14
+      ]
+    },
+    "deletion": {
+      "D031": [
+        15
+      ]
+    },
+    "substitution": {
+      "D031": [
+        16
+      ]
+    },
+    "transposition": {
+      "D031": [
+        17
+      ]
+    },
+    "approximate": {
+      "D031": [
+        18
+      ],
+      "D051": [
+        11
+      ]
+    },
+    "effort": {
+      "D031": [
+        19
+      ]
+    },
+    "fix": {
+      "D031": [
+        21
+      ]
+    },
+    "gram": {
+      "D032": [
+        0,
+        4,
+        8
+      ]
+    },
+    "indexe": {
+      "D032": [
+        1
+      ]
+    },
+    "tolerant": {
+      "D032": [
+        2
+      ]
+    },
+    "character": {
+      "D032": [
+        7
+      ]
+    },
+    "generate": {
+      "D032": [
+        11
+      ]
+    },
+    "wildcard": {
+      "D032": [
+        13
+      ]
+    },
+    "noisy": {
+      "D033": [
+        0,
+        4
+      ]
+    },
+    "channel": {
+      "D033": [
+        1,
+        5
+      ]
+    },
+    "likelihood": {
+      "D033": [
+        9
+      ]
+    },
+    "observ": {
+      "D033": [
+        10
+      ],
+      "D042": [
+        8
+      ]
+    },
+    "typo": {
+      "D033": [
+        11
+      ]
+    },
+    "prior": {
+      "D033": [
+        12
+      ]
+    },
+    "probability": {
+      "D033": [
+        13
+      ]
+    },
+    "intend": {
+      "D033": [
+        14
+      ]
+    },
+    "frequent": {
+      "D033": [
+        16
+      ]
+    },
+    "more": {
+      "D033": [
+        20
+      ],
+      "D053": [
+        13
+      ],
+      "D059": [
+        11
+      ]
+    },
+    "confidence": {
+      "D033": [
+        21
+      ]
+    },
+    "after": {
+      "D033": [
+        22
+      ]
+    },
+    "context": {
+      "D034": [
+        0,
+        4
+      ]
+    },
+    "surround": {
+      "D034": [
+        7
+      ]
+    },
+    "choose": {
+      "D034": [
+        10
+      ]
+    },
+    "among": {
+      "D034": [
+        11
+      ],
+      "D044": [
+        17
+      ]
+    },
+    "valid": {
+      "D034": [
+        12
+      ]
+    },
+    "alternative": {
+      "D034": [
+        13
+      ]
+    },
+    "example": {
+      "D034": [
+        14
+      ],
+      "D057": [
+        21
+      ]
+    },
+    "technolgy": {
+      "D034": [
+        17
+      ]
+    },
+    "become": {
+      "D034": [
+        19
+      ]
+    },
+    "technology": {
+      "D034": [
+        22
+      ]
+    },
+    "rather": {
+      "D034": [
+        23
+      ]
+    },
+    "rare": {
+      "D034": [
+        25
+      ]
+    },
+    "correct": {
+      "D035": [
+        0
+      ]
+    },
+    "aggressive": {
+      "D035": [
+        6
+      ]
+    },
+    "name": {
+      "D035": [
+        8
+      ]
+    },
+    "acronym": {
+      "D035": [
+        9
+      ]
+    },
+    "technical": {
+      "D035": [
+        10
+      ]
+    },
+    "ndcg": {
+      "D035": [
+        13
+      ],
+      "D043": [
+        0
+      ]
+    },
+    "show": {
+      "D035": [
+        14
+      ]
+    },
+    "suggestion": {
+      "D035": [
+        15
+      ]
+    },
+    "safer": {
+      "D035": [
+        16
+      ]
+    },
+    "silently": {
+      "D035": [
+        17
+      ]
+    },
+    "rewrit": {
+      "D035": [
+        18
+      ]
+    },
+    "specializ": {
+      "D035": [
+        19
+      ]
+    },
+    "rocchio": {
+      "D036": [
+        0,
+        3
+      ]
+    },
+    "move": {
+      "D036": [
+        5
+      ]
+    },
+    "toward": {
+      "D036": [
+        8
+      ]
+    },
+    "away": {
+      "D036": [
+        11
+      ]
+    },
+    "nonrelevant": {
+      "D036": [
+        12
+      ],
+      "D040": [
+        10
+      ]
+    },
+    "classic": {
+      "D036": [
+        14
+      ]
+    },
+    "method": {
+      "D036": [
+        15
+      ]
+    },
+    "improv": {
+      "D036": [
+        16
+      ]
+    },
+    "judgment": {
+      "D036": [
+        21
+      ],
+      "D041": [
+        9
+      ],
+      "D044": [
+        10
+      ],
+      "D055": [
+        14
+      ]
+    },
+    "available": {
+      "D036": [
+        22
+      ]
+    },
+    "pseudo": {
+      "D037": [
+        0,
+        6
+      ]
+    },
+    "without": {
+      "D037": [
+        3
+      ],
+      "D055": [
+        15
+      ],
+      "D057": [
+        12
+      ]
+    },
+    "label": {
+      "D037": [
+        5
+      ]
+    },
+    "assume": {
+      "D037": [
+        9
+      ]
+    },
+    "initial": {
+      "D037": [
+        13
+      ]
+    },
+    "append": {
+      "D037": [
+        20
+      ]
+    },
+    "thesauru": {
+      "D038": [
+        0,
+        4
+      ]
+    },
+    "synonym": {
+      "D038": [
+        6
+      ]
+    },
+    "concept": {
+      "D038": [
+        8
+      ]
+    },
+    "precision": {
+      "D038": [
+        15
+      ],
+      "D041": [
+        0,
+        10
+      ],
+      "D042": [
+        2,
+        5,
+        7
+      ]
+    },
+    "broad": {
+      "D038": [
+        16
+      ]
+    },
+    "introduce": {
+      "D038": [
+        18
+      ]
+    },
+    "drift": {
+      "D038": [
+        20
+      ],
+      "D040": [
+        2,
+        5
+      ]
+    },
+    "selection": {
+      "D039": [
+        1,
+        5
+      ]
+    },
+    "favor": {
+      "D039": [
+        6
+      ]
+    },
+    "frequently": {
+      "D039": [
+        11
+      ]
+    },
+    "original": {
+      "D039": [
+        16
+      ]
+    },
+    "keep": {
+      "D039": [
+        19
+      ]
+    },
+    "concise": {
+      "D039": [
+        21
+      ]
+    },
+    "risk": {
+      "D040": [
+        0,
+        20
+      ]
+    },
+    "include": {
+      "D040": [
+        9
+      ],
+      "D057": [
+        18
+      ],
+      "D058": [
+        6
+      ]
+    },
+    "conservative": {
+      "D040": [
+        12
+      ]
+    },
+    "depth": {
+      "D040": [
+        14
+      ]
+    },
+    "number": {
+      "D040": [
+        16
+      ]
+    },
+    "recall": {
+      "D041": [
+        1,
+        16
+      ]
+    },
+    "measure": {
+      "D041": [
+        2,
+        11,
+        17
+      ]
+    },
+    "begin": {
+      "D041": [
+        4
+      ]
+    },
+    "retriev": {
+      "D041": [
+        6,
+        13
+      ],
+      "D054": [
+        13
+      ]
+    },
+    "fraction": {
+      "D041": [
+        12
+      ]
+    },
+    "mean": {
+      "D042": [
+        0,
+        3
+      ]
+    },
+    "summarize": {
+      "D042": [
+        6
+      ]
+    },
+    "map": {
+      "D042": [
+        14
+      ]
+    },
+    "early": {
+      "D042": [
+        20
+      ],
+      "D043": [
+        21
+      ]
+    },
+    "consistently": {
+      "D042": [
+        21
+      ]
+    },
+    "grad": {
+      "D043": [
+        1,
+        10
+      ]
+    },
+    "discount": {
+      "D043": [
+        4,
+        18
+      ]
+    },
+    "cumulative": {
+      "D043": [
+        5
+      ]
+    },
+    "evaluate": {
+      "D043": [
+        7
+      ]
+    },
+    "highly": {
+      "D043": [
+        12
+      ]
+    },
+    "larger": {
+      "D043": [
+        16
+      ]
+    },
+    "factor": {
+      "D043": [
+        19
+      ]
+    },
+    "trec": {
+      "D044": [
+        0
+      ]
+    },
+    "style": {
+      "D044": [
+        1
+      ]
+    },
+    "test": {
+      "D044": [
+        2,
+        4
+      ],
+      "D045": [
+        17
+      ],
+      "D060": [
+        7,
+        17
+      ]
+    },
+    "metric": {
+      "D044": [
+        12
+      ],
+      "D045": [
+        4
+      ]
+    },
+    "structure": {
+      "D044": [
+        13
+      ]
+    },
+    "reproducible": {
+      "D044": [
+        15
+      ]
+    },
+    "comparison": {
+      "D044": [
+        16
+      ]
+    },
+    "offline": {
+      "D045": [
+        1,
+        3
+      ]
+    },
+    "capture": {
+      "D045": [
+        5
+      ]
+    },
+    "presentation": {
+      "D045": [
+        8
+      ]
+    },
+    "interactive": {
+      "D045": [
+        10
+      ]
+    },
+    "behavior": {
+      "D045": [
+        12
+      ]
+    },
+    "deploy": {
+      "D045": [
+        13
+      ]
+    },
+    "center": {
+      "D045": [
+        21
+      ]
+    },
+    "variable": {
+      "D046": [
+        0,
+        4
+      ]
+    },
+    "byte": {
+      "D046": [
+        1,
+        5,
+        11
+      ]
+    },
+    "encod": {
+      "D046": [
+        2,
+        6
+      ]
+    },
+    "gaps": {
+      "D046": [
+        9
+      ]
+    },
+    "gap": {
+      "D046": [
+        14
+      ]
+    },
+    "encode": {
+      "D046": [
+        15
+      ],
+      "D047": [
+        6
+      ],
+      "D051": [
+        6
+      ]
+    },
+    "compression": {
+      "D046": [
+        20
+      ],
+      "D047": [
+        3
+      ],
+      "D049": [
+        1,
+        9
+      ],
+      "D050": [
+        0,
+        6
+      ]
+    },
+    "size": {
+      "D046": [
+        24
+      ]
+    },
+    "gamma": {
+      "D047": [
+        0,
+        4
+      ]
+    },
+    "code": {
+      "D047": [
+        1,
+        5
+      ]
+    },
+    "integer": {
+      "D047": [
+        2,
+        8
+      ]
+    },
+    "positive": {
+      "D047": [
+        7
+      ]
+    },
+    "unary": {
+      "D047": [
+        9
+      ]
+    },
+    "binary": {
+      "D047": [
+        11
+      ]
+    },
+    "offset": {
+      "D047": [
+        12
+      ]
+    },
+    "bit": {
+      "D047": [
+        18
+      ]
+    },
+    "level": {
+      "D047": [
+        19
+      ]
+    },
+    "skip": {
+      "D048": [
+        0,
+        4
+      ]
+    },
+    "pointer": {
+      "D048": [
+        1,
+        5
+      ]
+    },
+    "faster": {
+      "D048": [
+        2,
+        21
+      ]
+    },
+    "accelerate": {
+      "D048": [
+        6
+      ]
+    },
+    "allow": {
+      "D048": [
+        9
+      ]
+    },
+    "jump": {
+      "D048": [
+        12
+      ]
+    },
+    "block": {
+      "D048": [
+        14
+      ],
+      "D049": [
+        5
+      ]
+    },
+    "cannot": {
+      "D048": [
+        15
+      ]
+    },
+    "trade": {
+      "D048": [
+        18
+      ],
+      "D050": [
+        1
+      ]
+    },
+    "extra": {
+      "D048": [
+        19
+      ]
+    },
+    "storage": {
+      "D048": [
+        20
+      ],
+      "D049": [
+        6
+      ],
+      "D050": [
+        19
+      ]
+    },
+    "compress": {
+      "D049": [
+        4
+      ]
+    },
+    "front": {
+      "D049": [
+        7
+      ]
+    },
+    "coding": {
+      "D049": [
+        8
+      ]
+    },
+    "locality": {
+      "D049": [
+        12
+      ]
+    },
+    "large": {
+      "D049": [
+        13
+      ]
+    },
+    "offs": {
+      "D050": [
+        2
+      ]
+    },
+    "footprint": {
+      "D050": [
+        10
+      ]
+    },
+    "increase": {
+      "D050": [
+        12
+      ]
+    },
+    "decod": {
+      "D050": [
+        13
+      ]
+    },
+    "cost": {
+      "D050": [
+        14
+      ]
+    },
+    "complexity": {
+      "D050": [
+        21
+      ]
+    },
+    "learn": {
+      "D051": [
+        2
+      ]
+    },
+    "embedding": {
+      "D051": [
+        3
+      ]
+    },
+    "continuou": {
+      "D051": [
+        9
+      ]
+    },
+    "nearest": {
+      "D051": [
+        12
+      ]
+    },
+    "neighbor": {
+      "D051": [
+        13
+      ]
+    },
+    "semantically": {
+      "D051": [
+        16
+      ]
+    },
+    "similar": {
+      "D051": [
+        17
+      ]
+    },
+    "absent": {
+      "D051": [
+        23
+      ]
+    },
+    "address": {
+      "D052": [
+        20
+      ]
+    },
+    "synonymy": {
+      "D052": [
+        21
+      ]
+    },
+    "paraphrase": {
+      "D052": [
+        22
+      ]
+    },
+    "cross": {
+      "D053": [
+        0,
+        3
+      ]
+    },
+    "encoder": {
+      "D053": [
+        1,
+        4
+      ]
+    },
+    "reranker": {
+      "D053": [
+        5
+      ]
+    },
+    "read": {
+      "D053": [
+        6
+      ]
+    },
+    "together": {
+      "D053": [
+        9
+      ]
+    },
+    "estimate": {
+      "D053": [
+        10
+      ]
+    },
+    "accurate": {
+      "D053": [
+        14
+      ]
+    },
+    "stage": {
+      "D053": [
+        16
+      ]
+    },
+    "too": {
+      "D053": [
+        19
+      ]
+    },
+    "expensive": {
+      "D053": [
+        20
+      ]
+    },
+    "run": {
+      "D053": [
+        21
+      ]
+    },
+    "whole": {
+      "D053": [
+        23
+      ]
+    },
+    "augment": {
+      "D054": [
+        1,
+        4
+      ]
+    },
+    "supply": {
+      "D054": [
+        8
+      ]
+    },
+    "language": {
+      "D054": [
+        10
+      ]
+    },
+    "directly": {
+      "D054": [
+        15
+      ]
+    },
+    "affect": {
+      "D054": [
+        16
+      ]
+    },
+    "faithfulness": {
+      "D054": [
+        18
+      ]
+    },
+    "evaluat": {
+      "D055": [
+        0
+      ]
+    },
+    "semantic": {
+      "D055": [
+        18
+      ]
+    },
+    "improvement": {
+      "D055": [
+        20
+      ]
+    },
+    "interpret": {
+      "D055": [
+        22
+      ]
+    },
+    "keyword": {
+      "D056": [
+        2
+      ]
+    },
+    "stuff": {
+      "D056": [
+        3
+      ]
+    },
+    "attempt": {
+      "D056": [
+        6
+      ]
+    },
+    "manipulate": {
+      "D056": [
+        7
+      ]
+    },
+    "hiding": {
+      "D056": [
+        12
+      ]
+    },
+    "creat": {
+      "D056": [
+        14
+      ]
+    },
+    "low": {
+      "D056": [
+        15
+      ]
+    },
+    "unnatural": {
+      "D056": [
+        22
+      ]
+    },
+    "distribution": {
+      "D056": [
+        24
+      ],
+      "D060": [
+        14
+      ]
+    },
+    "adversarial": {
+      "D057": [
+        0,
+        3
+      ]
+    },
+    "exploit": {
+      "D057": [
+        5
+      ]
+    },
+    "matcher": {
+      "D057": [
+        7
+      ]
+    },
+    "includ": {
+      "D057": [
+        8
+      ]
+    },
+    "satisfy": {
+      "D057": [
+        13
+      ]
+    },
+    "difficult": {
+      "D057": [
+        19
+      ]
+    },
+    "negative": {
+      "D057": [
+        20
+      ]
+    },
+    "domain": {
+      "D058": [
+        7
+      ]
+    },
+    "reputation": {
+      "D058": [
+        8
+      ]
+    },
+    "consistency": {
+      "D058": [
+        14
+      ]
+    },
+    "complement": {
+      "D058": [
+        15
+      ]
+    },
+    "textual": {
+      "D058": [
+        16
+      ]
+    },
+    "open": {
+      "D058": [
+        18
+      ]
+    },
+    "environment": {
+      "D058": [
+        20
+      ]
+    },
+    "bias": {
+      "D059": [
+        0
+      ]
+    },
+    "fairness": {
+      "D059": [
+        1,
+        14
+      ]
+    },
+    "amplify": {
+      "D059": [
+        5
+      ]
+    },
+    "exposure": {
+      "D059": [
+        6
+      ]
+    },
+    "disparity": {
+      "D059": [
+        7
+      ]
+    },
+    "click": {
+      "D059": [
+        12
+      ]
+    },
+    "aware": {
+      "D059": [
+        15
+      ]
+    },
+    "study": {
+      "D059": [
+        17
+      ]
+    },
+    "group": {
+      "D059": [
+        20
+      ]
+    },
+    "equitable": {
+      "D059": [
+        22
+      ]
+    },
+    "visibility": {
+      "D059": [
+        23
+      ]
+    },
+    "performance": {
+      "D060": [
+        8
+      ]
+    },
+    "under": {
+      "D060": [
+        9
+      ]
+    },
+    "misspelling": {
+      "D060": [
+        10
+      ]
+    },
+    "ambiguou": {
+      "D060": [
+        12
+      ]
+    },
+    "shift": {
+      "D060": [
+        15
+      ]
+    },
+    "stress": {
+      "D060": [
+        16
+      ]
+    },
+    "reveal": {
+      "D060": [
+        18
+      ]
+    },
+    "visible": {
+      "D060": [
+        20
+      ]
+    },
+    "easy": {
+      "D060": [
+        21
+      ]
+    },
+    "benchmark": {
+      "D060": [
+        22
+      ]
+    }
+  },
+  "term_freqs": {
+    "build": {
+      "D001": 2,
+      "D010": 1
+    },
+    "invert": {
+      "D001": 2,
+      "D014": 1
+    },
+    "index": {
+      "D001": 2,
+      "D002": 1,
+      "D003": 1,
+      "D004": 2,
+      "D014": 1,
+      "D023": 1,
+      "D024": 1,
+      "D028": 1,
+      "D032": 1,
+      "D050": 1
+    },
+    "posting": {
+      "D001": 3,
+      "D002": 1,
+      "D004": 1,
+      "D005": 1,
+      "D006": 1,
+      "D046": 2,
+      "D047": 1,
+      "D048": 1
+    },
+    "list": {
+      "D001": 2,
+      "D006": 1,
+      "D043": 1,
+      "D046": 1
+    },
+    "maps": {
+      "D001": 1
+    },
+    "normaliz": {
+      "D001": 1,
+      "D043": 1
+    },
+    "term": {
+      "D001": 3,
+      "D002": 2,
+      "D003": 2,
+      "D005": 1,
+      "D007": 1,
+      "D008": 2,
+      "D010": 1,
+      "D011": 3,
+      "D012": 1,
+      "D014": 1,
+      "D016": 2,
+      "D017": 3,
+      "D020": 2,
+      "D028": 1,
+      "D031": 2,
+      "D032": 1,
+      "D033": 2,
+      "D035": 1,
+      "D037": 1,
+      "D038": 1,
+      "D039": 4,
+      "D040": 1,
+      "D049": 1,
+      "D051": 1,
+      "D056": 2,
+      "D057": 1
+    },
+    "document": {
+      "D001": 2,
+      "D002": 1,
+      "D003": 1,
+      "D004": 2,
+      "D005": 1,
+      "D006": 1,
+      "D007": 1,
+      "D008": 1,
+      "D009": 1,
+      "D011": 3,
+      "D012": 3,
+      "D014": 2,
+      "D015": 1,
+      "D016": 2,
+      "D017": 4,
+      "D018": 3,
+      "D036": 2,
+      "D037": 2,
+      "D039": 1,
+      "D040": 1,
+      "D041": 3,
+      "D042": 2,
+      "D043": 1,
+      "D046": 1,
+      "D051": 2,
+      "D053": 1,
+      "D057": 2,
+      "D059": 1
+    },
+    "pipeline": {
+      "D001": 1,
+      "D024": 1
+    },
+    "tokenize": {
+      "D001": 1
+    },
+    "text": {
+      "D001": 1,
+      "D024": 3,
+      "D027": 2,
+      "D028": 3,
+      "D056": 1
+    },
+    "dictionary": {
+      "D001": 1,
+      "D004": 1,
+      "D049": 2
+    },
+    "record": {
+      "D001": 1
+    },
+    "frequency": {
+      "D001": 1,
+      "D011": 3,
+      "D012": 1,
+      "D014": 2,
+      "D016": 2,
+      "D017": 2,
+      "D025": 1
+    },
+    "sort": {
+      "D001": 1,
+      "D046": 1
+    },
+    "identifier": {
+      "D001": 1,
+      "D004": 1,
+      "D046": 1
+    },
+    "so": {
+      "D001": 1,
+      "D007": 1,
+      "D009": 1,
+      "D011": 1,
+      "D018": 1
+    },
+    "query": {
+      "D001": 1,
+      "D002": 1,
+      "D003": 1,
+      "D005": 2,
+      "D006": 1,
+      "D008": 2,
+      "D010": 2,
+      "D011": 1,
+      "D015": 2,
+      "D016": 1,
+      "D028": 1,
+      "D031": 1,
+      "D032": 1,
+      "D034": 2,
+      "D035": 2,
+      "D036": 1,
+      "D037": 1,
+      "D038": 2,
+      "D039": 1,
+      "D040": 1,
+      "D048": 1,
+      "D051": 2,
+      "D053": 1,
+      "D055": 1,
+      "D057": 1,
+      "D060": 1
+    },
+    "process": {
+      "D001": 1,
+      "D047": 1,
+      "D048": 1
+    },
+    "intersect": {
+      "D001": 1
+    },
+    "efficiently": {
+      "D001": 1
+    },
+    "positional": {
+      "D002": 2
+    },
+    "phrase": {
+      "D002": 2,
+      "D007": 4,
+      "D008": 1
+    },
+    "search": {
+      "D002": 1,
+      "D004": 2,
+      "D007": 2,
+      "D009": 2,
+      "D010": 1,
+      "D020": 1,
+      "D025": 1,
+      "D027": 1,
+      "D029": 1,
+      "D034": 2,
+      "D035": 1,
+      "D037": 1,
+      "D045": 1,
+      "D046": 1,
+      "D050": 1,
+      "D051": 1,
+      "D054": 1,
+      "D056": 2,
+      "D058": 1,
+      "D060": 1
+    },
+    "store": {
+      "D002": 1,
+      "D022": 1,
+      "D032": 1,
+      "D046": 1
+    },
+    "exact": {
+      "D002": 1,
+      "D007": 1,
+      "D008": 1,
+      "D051": 1,
+      "D052": 1
+    },
+    "token": {
+      "D002": 1
+    },
+    "position": {
+      "D002": 2
+    },
+    "occur": {
+      "D002": 1,
+      "D007": 1,
+      "D008": 1,
+      "D017": 1,
+      "D039": 1
+    },
+    "information": {
+      "D002": 1,
+      "D057": 1,
+      "D058": 1
+    },
+    "retrieval": {
+      "D002": 1,
+      "D005": 1,
+      "D006": 2,
+      "D009": 1,
+      "D013": 2,
+      "D015": 1,
+      "D023": 1,
+      "D028": 1,
+      "D032": 1,
+      "D036": 1,
+      "D044": 1,
+      "D051": 2,
+      "D052": 3,
+      "D053": 1,
+      "D054": 2,
+      "D055": 2,
+      "D057": 1,
+      "D060": 1
+    },
+    "answer": {
+      "D002": 1,
+      "D054": 1
+    },
+    "check": {
+      "D002": 1
+    },
+    "whether": {
+      "D002": 1,
+      "D003": 1,
+      "D059": 1
+    },
+    "adjacent": {
+      "D002": 1
+    },
+    "appear": {
+      "D002": 1,
+      "D042": 1
+    },
+    "consecutively": {
+      "D002": 1
+    },
+    "same": {
+      "D002": 1,
+      "D003": 1,
+      "D008": 1,
+      "D055": 1
+    },
+    "tokenization": {
+      "D003": 2
+    },
+    "normalization": {
+      "D003": 1,
+      "D012": 2,
+      "D018": 2,
+      "D019": 1
+    },
+    "construction": {
+      "D003": 1
+    },
+    "start": {
+      "D003": 1,
+      "D005": 1,
+      "D020": 1
+    },
+    "lowercas": {
+      "D003": 1
+    },
+    "stopword": {
+      "D003": 1,
+      "D039": 1
+    },
+    "filter": {
+      "D003": 1,
+      "D007": 1,
+      "D039": 1
+    },
+    "light": {
+      "D003": 1
+    },
+    "stemm": {
+      "D003": 1
+    },
+    "choice": {
+      "D003": 1
+    },
+    "define": {
+      "D003": 1
+    },
+    "vocabulary": {
+      "D003": 1,
+      "D015": 2,
+      "D032": 1,
+      "D033": 1,
+      "D038": 1,
+      "D049": 1
+    },
+    "determine": {
+      "D003": 1,
+      "D020": 1
+    },
+    "like": {
+      "D003": 1
+    },
+    "rank": {
+      "D003": 2,
+      "D005": 1,
+      "D007": 1,
+      "D008": 1,
+      "D009": 1,
+      "D011": 2,
+      "D016": 1,
+      "D017": 1,
+      "D019": 1,
+      "D020": 1,
+      "D027": 2,
+      "D029": 1,
+      "D030": 1,
+      "D031": 1,
+      "D033": 1,
+      "D037": 1,
+      "D042": 1,
+      "D043": 2,
+      "D056": 2,
+      "D059": 2
+    },
+    "retrieve": {
+      "D003": 1,
+      "D042": 1,
+      "D051": 1
+    },
+    "dynamic": {
+      "D004": 2,
+      "D025": 1
+    },
+    "update": {
+      "D004": 2
+    },
+    "small": {
+      "D004": 2,
+      "D040": 1,
+      "D046": 1
+    },
+    "engine": {
+      "D004": 2,
+      "D005": 1,
+      "D029": 1,
+      "D034": 2,
+      "D046": 1,
+      "D050": 1
+    },
+    "maintain": {
+      "D004": 1
+    },
+    "memory": {
+      "D004": 1,
+      "D020": 1,
+      "D049": 1,
+      "D050": 1
+    },
+    "periodically": {
+      "D004": 1
+    },
+    "write": {
+      "D004": 1
+    },
+    "disk": {
+      "D004": 1,
+      "D050": 1
+    },
+    "add": {
+      "D004": 1,
+      "D038": 1
+    },
+    "new": {
+      "D004": 1
+    },
+    "remove": {
+      "D004": 1,
+      "D024": 1
+    },
+    "delet": {
+      "D004": 1
+    },
+    "rebuild": {
+      "D004": 1
+    },
+    "summary": {
+      "D004": 1
+    },
+    "statistic": {
+      "D004": 1,
+      "D014": 1
+    },
+    "average": {
+      "D004": 1,
+      "D012": 1,
+      "D014": 1,
+      "D042": 2
+    },
+    "length": {
+      "D004": 1,
+      "D012": 2,
+      "D014": 2,
+      "D018": 3,
+      "D019": 1,
+      "D047": 1
+    },
+    "time": {
+      "D005": 1
+    },
+    "candidate": {
+      "D005": 3,
+      "D014": 1,
+      "D020": 1,
+      "D031": 1,
+      "D032": 1,
+      "D033": 1
+    },
+    "generation": {
+      "D005": 2,
+      "D020": 1,
+      "D033": 1,
+      "D054": 2
+    },
+    "taking": {
+      "D005": 1
+    },
+    "union": {
+      "D005": 1,
+      "D006": 1
+    },
+    "intersection": {
+      "D005": 1,
+      "D006": 1,
+      "D048": 2
+    },
+    "score": {
+      "D005": 1,
+      "D014": 1,
+      "D018": 1,
+      "D026": 1,
+      "D027": 1,
+      "D052": 1
+    },
+    "only": {
+      "D005": 1
+    },
+    "instead": {
+      "D005": 1
+    },
+    "scann": {
+      "D005": 1
+    },
+    "entire": {
+      "D005": 1
+    },
+    "corpu": {
+      "D005": 1,
+      "D018": 1,
+      "D044": 1,
+      "D053": 1
+    },
+    "boolean": {
+      "D006": 2,
+      "D009": 2,
+      "D048": 1
+    },
+    "treat": {
+      "D006": 1
+    },
+    "set": {
+      "D006": 2,
+      "D009": 1,
+      "D014": 1
+    },
+    "expression": {
+      "D006": 1,
+      "D010": 1
+    },
+    "over": {
+      "D006": 1,
+      "D014": 1,
+      "D048": 1,
+      "D053": 1
+    },
+    "compute": {
+      "D006": 2,
+      "D029": 1
+    },
+    "subtract": {
+      "D006": 1
+    },
+    "universe": {
+      "D006": 1
+    },
+    "hard": {
+      "D007": 1,
+      "D055": 1
+    },
+    "require": {
+      "D007": 1,
+      "D047": 1
+    },
+    "all": {
+      "D007": 1,
+      "D041": 1
+    },
+    "quot": {
+      "D007": 1
+    },
+    "specifi": {
+      "D007": 1
+    },
+    "order": {
+      "D007": 1,
+      "D009": 1
+    },
+    "searchlen": {
+      "D007": 1
+    },
+    "apply": {
+      "D007": 1
+    },
+    "constraint": {
+      "D007": 1
+    },
+    "before": {
+      "D007": 1,
+      "D013": 1,
+      "D023": 1,
+      "D032": 1,
+      "D046": 1
+    },
+    "scor": {
+      "D007": 1,
+      "D009": 1,
+      "D020": 1
+    },
+    "must": {
+      "D007": 1,
+      "D009": 1,
+      "D024": 1
+    },
+    "contain": {
+      "D007": 1,
+      "D044": 1,
+      "D048": 1
+    },
+    "proximity": {
+      "D008": 2
+    },
+    "match": {
+      "D008": 1,
+      "D009": 1,
+      "D048": 1,
+      "D052": 1
+    },
+    "beyond": {
+      "D008": 1
+    },
+    "reward": {
+      "D008": 1,
+      "D042": 1,
+      "D043": 1
+    },
+    "near": {
+      "D008": 1,
+      "D023": 2
+    },
+    "other": {
+      "D008": 1,
+      "D009": 1,
+      "D025": 1,
+      "D028": 1
+    },
+    "improve": {
+      "D008": 1,
+      "D027": 1,
+      "D028": 1,
+      "D049": 1
+    },
+    "user": {
+      "D008": 1,
+      "D009": 1,
+      "D010": 1,
+      "D015": 1,
+      "D037": 1,
+      "D045": 2
+    },
+    "satisfaction": {
+      "D008": 1,
+      "D045": 1
+    },
+    "verbose": {
+      "D008": 1
+    },
+    "because": {
+      "D008": 1,
+      "D013": 1
+    },
+    "relat": {
+      "D008": 1,
+      "D038": 1
+    },
+    "passage": {
+      "D008": 1,
+      "D054": 1
+    },
+    "usually": {
+      "D008": 1
+    },
+    "signal": {
+      "D008": 1,
+      "D030": 1,
+      "D058": 2
+    },
+    "topical": {
+      "D008": 1,
+      "D029": 1
+    },
+    "relevance": {
+      "D008": 1,
+      "D027": 1,
+      "D036": 2,
+      "D037": 2,
+      "D041": 1,
+      "D043": 2,
+      "D044": 1,
+      "D053": 1,
+      "D055": 1,
+      "D058": 1
+    },
+    "limitation": {
+      "D009": 2,
+      "D045": 1,
+      "D060": 1
+    },
+    "pure": {
+      "D009": 2
+    },
+    "return": {
+      "D009": 1
+    },
+    "unorder": {
+      "D009": 1
+    },
+    "inspect": {
+      "D009": 1
+    },
+    "every": {
+      "D009": 1,
+      "D042": 1
+    },
+    "addresse": {
+      "D009": 1
+    },
+    "result": {
+      "D009": 1,
+      "D040": 1,
+      "D045": 1
+    },
+    "tf": {
+      "D009": 1,
+      "D016": 2,
+      "D019": 3,
+      "D020": 1
+    },
+    "idf": {
+      "D009": 1,
+      "D016": 2,
+      "D019": 3,
+      "D020": 1,
+      "D039": 1
+    },
+    "bm25": {
+      "D009": 1,
+      "D011": 2,
+      "D012": 2,
+      "D013": 3,
+      "D014": 2,
+      "D015": 2,
+      "D019": 3,
+      "D027": 1,
+      "D035": 1,
+      "D052": 1,
+      "D055": 2
+    },
+    "function": {
+      "D009": 1
+    },
+    "pars": {
+      "D010": 1,
+      "D024": 1
+    },
+    "operator": {
+      "D010": 2
+    },
+    "parser": {
+      "D010": 2
+    },
+    "recognize": {
+      "D010": 1
+    },
+    "parenthese": {
+      "D010": 1
+    },
+    "normalize": {
+      "D010": 1
+    },
+    "ordinary": {
+      "D010": 1
+    },
+    "executable": {
+      "D010": 1
+    },
+    "even": {
+      "D010": 1,
+      "D051": 1
+    },
+    "compact": {
+      "D010": 1,
+      "D047": 1
+    },
+    "support": {
+      "D010": 1,
+      "D044": 1
+    },
+    "simple": {
+      "D010": 1,
+      "D013": 1,
+      "D019": 1
+    },
+    "precedence": {
+      "D010": 1
+    },
+    "rule": {
+      "D010": 1
+    },
+    "saturation": {
+      "D011": 1,
+      "D012": 1,
+      "D019": 1
+    },
+    "combin": {
+      "D011": 1,
+      "D027": 2
+    },
+    "inverse": {
+      "D011": 1,
+      "D016": 1,
+      "D017": 2
+    },
+    "saturat": {
+      "D011": 1
+    },
+    "component": {
+      "D011": 1,
+      "D052": 1,
+      "D054": 1
+    },
+    "repeat": {
+      "D011": 1,
+      "D023": 1,
+      "D056": 1
+    },
+    "help": {
+      "D011": 1,
+      "D017": 1,
+      "D029": 1,
+      "D038": 1
+    },
+    "first": {
+      "D011": 1,
+      "D040": 1,
+      "D053": 1
+    },
+    "but": {
+      "D011": 1,
+      "D038": 1,
+      "D047": 1,
+      "D050": 1,
+      "D053": 1
+    },
+    "gain": {
+      "D011": 1,
+      "D043": 2
+    },
+    "decrease": {
+      "D011": 1
+    },
+    "long": {
+      "D011": 1
+    },
+    "do": {
+      "D011": 1,
+      "D018": 1
+    },
+    "dominate": {
+      "D011": 1
+    },
+    "unfairly": {
+      "D011": 1
+    },
+    "parameter": {
+      "D012": 1
+    },
+    "control": {
+      "D012": 2
+    },
+    "higher": {
+      "D012": 1,
+      "D017": 1,
+      "D018": 1
+    },
+    "value": {
+      "D012": 1
+    },
+    "penalize": {
+      "D012": 1
+    },
+    "much": {
+      "D012": 1
+    },
+    "longer": {
+      "D012": 1,
+      "D018": 1
+    },
+    "collection": {
+      "D012": 1,
+      "D013": 1,
+      "D021": 1,
+      "D025": 1,
+      "D044": 2,
+      "D045": 1
+    },
+    "k1": {
+      "D012": 1
+    },
+    "strength": {
+      "D012": 1
+    },
+    "strong": {
+      "D013": 1
+    },
+    "lexical": {
+      "D013": 2,
+      "D015": 1,
+      "D019": 1,
+      "D052": 3,
+      "D055": 1,
+      "D057": 1
+    },
+    "baseline": {
+      "D013": 2,
+      "D055": 2
+    },
+    "durable": {
+      "D013": 1
+    },
+    "efficient": {
+      "D013": 1,
+      "D020": 1
+    },
+    "robust": {
+      "D013": 1,
+      "D030": 1,
+      "D056": 1,
+      "D060": 2
+    },
+    "across": {
+      "D013": 1
+    },
+    "many": {
+      "D013": 1,
+      "D026": 1,
+      "D057": 1
+    },
+    "ad": {
+      "D013": 1
+    },
+    "hoc": {
+      "D013": 1
+    },
+    "modern": {
+      "D013": 1
+    },
+    "hybrid": {
+      "D013": 1,
+      "D052": 2
+    },
+    "system": {
+      "D013": 1,
+      "D020": 2,
+      "D027": 1,
+      "D030": 1,
+      "D035": 1,
+      "D042": 1,
+      "D045": 1,
+      "D050": 1,
+      "D055": 1,
+      "D059": 1,
+      "D060": 1
+    },
+    "often": {
+      "D013": 1,
+      "D020": 1,
+      "D023": 1,
+      "D028": 1,
+      "D053": 1
+    },
+    "compare": {
+      "D013": 1,
+      "D016": 1
+    },
+    "dense": {
+      "D013": 1,
+      "D015": 1,
+      "D051": 2,
+      "D052": 3,
+      "D055": 2
+    },
+    "against": {
+      "D013": 1,
+      "D055": 1
+    },
+    "adding": {
+      "D013": 1
+    },
+    "rerank": {
+      "D013": 1,
+      "D032": 1,
+      "D053": 1
+    },
+    "implementation": {
+      "D014": 2,
+      "D050": 1
+    },
+    "note": {
+      "D014": 1
+    },
+    "practical": {
+      "D014": 1,
+      "D050": 1
+    },
+    "need": {
+      "D014": 1,
+      "D031": 1,
+      "D057": 1
+    },
+    "comput": {
+      "D014": 1
+    },
+    "failure": {
+      "D015": 1
+    },
+    "case": {
+      "D015": 1
+    },
+    "miss": {
+      "D015": 1
+    },
+    "relevant": {
+      "D015": 1,
+      "D017": 1,
+      "D036": 1,
+      "D037": 1,
+      "D041": 2,
+      "D042": 2,
+      "D043": 1
+    },
+    "different": {
+      "D015": 1,
+      "D018": 1,
+      "D034": 1,
+      "D059": 1
+    },
+    "expansion": {
+      "D015": 1,
+      "D037": 1,
+      "D038": 1,
+      "D039": 1,
+      "D040": 2
+    },
+    "thesauri": {
+      "D015": 1
+    },
+    "feedback": {
+      "D015": 1,
+      "D036": 2,
+      "D037": 2,
+      "D039": 2,
+      "D040": 1
+    },
+    "reduce": {
+      "D015": 1,
+      "D038": 1,
+      "D040": 1,
+      "D046": 1,
+      "D050": 1
+    },
+    "mismatch": {
+      "D015": 1,
+      "D038": 1
+    },
+    "problem": {
+      "D015": 1
+    },
+    "vector": {
+      "D016": 4,
+      "D018": 1,
+      "D036": 2,
+      "D051": 1,
+      "D052": 1
+    },
+    "space": {
+      "D016": 2,
+      "D023": 1,
+      "D036": 1
+    },
+    "model": {
+      "D016": 1,
+      "D019": 1,
+      "D026": 2,
+      "D033": 1,
+      "D044": 1,
+      "D054": 1
+    },
+    "represent": {
+      "D016": 1
+    },
+    "weight": {
+      "D016": 1,
+      "D017": 1,
+      "D020": 2
+    },
+    "combine": {
+      "D016": 1,
+      "D027": 1,
+      "D030": 1,
+      "D033": 1,
+      "D045": 1,
+      "D052": 1
+    },
+    "cosine": {
+      "D016": 1,
+      "D018": 2,
+      "D019": 2
+    },
+    "similarity": {
+      "D016": 1,
+      "D052": 1
+    },
+    "angle": {
+      "D016": 1
+    },
+    "specificity": {
+      "D017": 1
+    },
+    "assign": {
+      "D017": 1
+    },
+    "fewer": {
+      "D017": 1,
+      "D046": 1
+    },
+    "specific": {
+      "D017": 1
+    },
+    "discriminate": {
+      "D017": 1
+    },
+    "very": {
+      "D017": 1
+    },
+    "common": {
+      "D017": 1
+    },
+    "contribute": {
+      "D017": 1
+    },
+    "less": {
+      "D017": 1
+    },
+    "divide": {
+      "D018": 1
+    },
+    "automatically": {
+      "D018": 1
+    },
+    "receive": {
+      "D018": 1,
+      "D026": 1,
+      "D033": 1,
+      "D043": 1,
+      "D059": 2
+    },
+    "useful": {
+      "D018": 1,
+      "D024": 1,
+      "D047": 1
+    },
+    "vary": {
+      "D018": 1
+    },
+    "verbosity": {
+      "D018": 1
+    },
+    "compar": {
+      "D019": 1,
+      "D041": 1,
+      "D055": 1
+    },
+    "both": {
+      "D019": 1
+    },
+    "adds": {
+      "D019": 1
+    },
+    "offer": {
+      "D019": 1
+    },
+    "geometric": {
+      "D019": 1
+    },
+    "interpretation": {
+      "D019": 1
+    },
+    "complete": {
+      "D020": 2
+    },
+    "top": {
+      "D020": 1,
+      "D037": 1,
+      "D039": 1
+    },
+    "engineer": {
+      "D020": 1
+    },
+    "decision": {
+      "D020": 1
+    },
+    "latency": {
+      "D020": 1,
+      "D050": 1
+    },
+    "reproducibility": {
+      "D020": 1
+    },
+    "crawler": {
+      "D021": 2,
+      "D023": 1,
+      "D024": 1
+    },
+    "politeness": {
+      "D021": 2,
+      "D022": 1
+    },
+    "robot": {
+      "D021": 2
+    },
+    "exclusion": {
+      "D021": 1
+    },
+    "web": {
+      "D021": 2,
+      "D027": 1,
+      "D058": 2
+    },
+    "should": {
+      "D021": 1,
+      "D034": 1,
+      "D035": 1,
+      "D045": 1,
+      "D055": 1,
+      "D056": 1,
+      "D057": 1
+    },
+    "respect": {
+      "D021": 1
+    },
+    "txt": {
+      "D021": 1
+    },
+    "throttle": {
+      "D021": 1
+    },
+    "request": {
+      "D021": 1
+    },
+    "host": {
+      "D021": 1,
+      "D022": 1
+    },
+    "avoid": {
+      "D021": 1,
+      "D035": 1
+    },
+    "overload": {
+      "D021": 1
+    },
+    "server": {
+      "D021": 1
+    },
+    "policy": {
+      "D021": 1
+    },
+    "essential": {
+      "D021": 1
+    },
+    "responsible": {
+      "D021": 1
+    },
+    "page": {
+      "D021": 1,
+      "D022": 2,
+      "D023": 1,
+      "D025": 1,
+      "D026": 2,
+      "D028": 2,
+      "D029": 2,
+      "D056": 1
+    },
+    "url": {
+      "D022": 2
+    },
+    "frontier": {
+      "D022": 2
+    },
+    "schedul": {
+      "D022": 2
+    },
+    "discover": {
+      "D022": 1
+    },
+    "link": {
+      "D022": 1,
+      "D026": 2,
+      "D027": 3,
+      "D029": 1,
+      "D030": 4,
+      "D058": 1
+    },
+    "select": {
+      "D022": 1,
+      "D037": 1
+    },
+    "next": {
+      "D022": 1
+    },
+    "fetch": {
+      "D022": 1
+    },
+    "good": {
+      "D022": 1
+    },
+    "balance": {
+      "D022": 1,
+      "D050": 1
+    },
+    "freshness": {
+      "D022": 1,
+      "D025": 2
+    },
+    "priority": {
+      "D022": 1
+    },
+    "coverage": {
+      "D022": 1,
+      "D041": 1
+    },
+    "important": {
+      "D022": 1,
+      "D025": 1,
+      "D026": 1
+    },
+    "duplicate": {
+      "D023": 3
+    },
+    "detection": {
+      "D023": 1
+    },
+    "encounter": {
+      "D023": 1
+    },
+    "mirror": {
+      "D023": 1
+    },
+    "template": {
+      "D023": 1
+    },
+    "fingerprint": {
+      "D023": 1
+    },
+    "shingl": {
+      "D023": 1
+    },
+    "detect": {
+      "D023": 1,
+      "D056": 1
+    },
+    "waste": {
+      "D023": 1
+    },
+    "distort": {
+      "D023": 1
+    },
+    "evaluation": {
+      "D023": 1,
+      "D041": 1,
+      "D044": 1,
+      "D045": 2,
+      "D048": 1,
+      "D057": 1,
+      "D059": 1,
+      "D060": 2
+    },
+    "html": {
+      "D024": 2
+    },
+    "indexable": {
+      "D024": 1
+    },
+    "extract": {
+      "D024": 1
+    },
+    "readable": {
+      "D024": 1
+    },
+    "boilerplate": {
+      "D024": 1
+    },
+    "navigation": {
+      "D024": 1
+    },
+    "preserve": {
+      "D024": 1,
+      "D052": 1
+    },
+    "anchor": {
+      "D024": 1,
+      "D027": 1,
+      "D028": 3
+    },
+    "pass": {
+      "D024": 1,
+      "D040": 1
+    },
+    "clean": {
+      "D024": 1
+    },
+    "content": {
+      "D024": 1,
+      "D027": 1,
+      "D028": 1,
+      "D030": 1,
+      "D058": 1
+    },
+    "incremental": {
+      "D025": 2
+    },
+    "crawl": {
+      "D025": 2
+    },
+    "revisit": {
+      "D025": 1
+    },
+    "accord": {
+      "D025": 1
+    },
+    "expect": {
+      "D025": 1
+    },
+    "change": {
+      "D025": 1
+    },
+    "especially": {
+      "D025": 1
+    },
+    "news": {
+      "D025": 1
+    },
+    "price": {
+      "D025": 1
+    },
+    "schedule": {
+      "D025": 1
+    },
+    "pagerank": {
+      "D026": 2,
+      "D027": 1,
+      "D029": 1
+    },
+    "random": {
+      "D026": 2
+    },
+    "surfer": {
+      "D026": 2
+    },
+    "follow": {
+      "D026": 1
+    },
+    "occasional": {
+      "D026": 1
+    },
+    "teleportation": {
+      "D026": 1
+    },
+    "high": {
+      "D026": 1,
+      "D039": 1
+    },
+    "analysi": {
+      "D027": 1
+    },
+    "authority": {
+      "D027": 1,
+      "D029": 1,
+      "D030": 2,
+      "D059": 1
+    },
+    "indicate": {
+      "D027": 1
+    },
+    "popularity": {
+      "D027": 1
+    },
+    "trust": {
+      "D027": 1,
+      "D058": 2
+    },
+    "external": {
+      "D028": 1
+    },
+    "evidence": {
+      "D028": 1,
+      "D054": 1
+    },
+    "describe": {
+      "D028": 1
+    },
+    "destination": {
+      "D028": 1
+    },
+    "word": {
+      "D028": 1,
+      "D031": 1,
+      "D034": 2
+    },
+    "chosen": {
+      "D028": 1
+    },
+    "author": {
+      "D028": 1,
+      "D058": 1
+    },
+    "whose": {
+      "D028": 1
+    },
+    "own": {
+      "D028": 1
+    },
+    "lack": {
+      "D028": 1
+    },
+    "topic": {
+      "D029": 2,
+      "D038": 1,
+      "D040": 1,
+      "D044": 1,
+      "D060": 1
+    },
+    "sensitive": {
+      "D029": 2,
+      "D034": 2
+    },
+    "subset": {
+      "D029": 1
+    },
+    "distinguish": {
+      "D029": 1
+    },
+    "unrelat": {
+      "D029": 1
+    },
+    "popular": {
+      "D029": 1,
+      "D056": 1,
+      "D059": 1
+    },
+    "subject": {
+      "D029": 1
+    },
+    "spam": {
+      "D030": 2,
+      "D056": 2,
+      "D060": 1
+    },
+    "manipulation": {
+      "D030": 1
+    },
+    "based": {
+      "D030": 1,
+      "D038": 1
+    },
+    "manipulat": {
+      "D030": 1
+    },
+    "farm": {
+      "D030": 1
+    },
+    "network": {
+      "D030": 1
+    },
+    "monitor": {
+      "D030": 1
+    },
+    "suspiciou": {
+      "D030": 1
+    },
+    "pattern": {
+      "D030": 1
+    },
+    "quality": {
+      "D030": 1,
+      "D045": 1,
+      "D054": 1,
+      "D056": 1,
+      "D058": 1
+    },
+    "edit": {
+      "D031": 2,
+      "D032": 1
+    },
+    "distance": {
+      "D031": 2,
+      "D032": 1
+    },
+    "spell": {
+      "D031": 2,
+      "D032": 1,
+      "D033": 1
+    },
+    "correction": {
+      "D031": 2,
+      "D032": 1,
+      "D033": 1,
+      "D034": 2,
+      "D035": 1
+    },
+    "misspell": {
+      "D031": 1
+    },
+    "insertion": {
+      "D031": 1
+    },
+    "deletion": {
+      "D031": 1
+    },
+    "substitution": {
+      "D031": 1
+    },
+    "transposition": {
+      "D031": 1
+    },
+    "approximate": {
+      "D031": 1,
+      "D051": 1
+    },
+    "effort": {
+      "D031": 1
+    },
+    "fix": {
+      "D031": 1
+    },
+    "gram": {
+      "D032": 3
+    },
+    "indexe": {
+      "D032": 1
+    },
+    "tolerant": {
+      "D032": 1
+    },
+    "character": {
+      "D032": 1
+    },
+    "generate": {
+      "D032": 1
+    },
+    "wildcard": {
+      "D032": 1
+    },
+    "noisy": {
+      "D033": 2
+    },
+    "channel": {
+      "D033": 2
+    },
+    "likelihood": {
+      "D033": 1
+    },
+    "observ": {
+      "D033": 1,
+      "D042": 1
+    },
+    "typo": {
+      "D033": 1
+    },
+    "prior": {
+      "D033": 1
+    },
+    "probability": {
+      "D033": 1
+    },
+    "intend": {
+      "D033": 1
+    },
+    "frequent": {
+      "D033": 1
+    },
+    "more": {
+      "D033": 1,
+      "D053": 1,
+      "D059": 1
+    },
+    "confidence": {
+      "D033": 1
+    },
+    "after": {
+      "D033": 1
+    },
+    "context": {
+      "D034": 2
+    },
+    "surround": {
+      "D034": 1
+    },
+    "choose": {
+      "D034": 1
+    },
+    "among": {
+      "D034": 1,
+      "D044": 1
+    },
+    "valid": {
+      "D034": 1
+    },
+    "alternative": {
+      "D034": 1
+    },
+    "example": {
+      "D034": 1,
+      "D057": 1
+    },
+    "technolgy": {
+      "D034": 1
+    },
+    "become": {
+      "D034": 1
+    },
+    "technology": {
+      "D034": 1
+    },
+    "rather": {
+      "D034": 1
+    },
+    "rare": {
+      "D034": 1
+    },
+    "correct": {
+      "D035": 1
+    },
+    "aggressive": {
+      "D035": 1
+    },
+    "name": {
+      "D035": 1
+    },
+    "acronym": {
+      "D035": 1
+    },
+    "technical": {
+      "D035": 1
+    },
+    "ndcg": {
+      "D035": 1,
+      "D043": 1
+    },
+    "show": {
+      "D035": 1
+    },
+    "suggestion": {
+      "D035": 1
+    },
+    "safer": {
+      "D035": 1
+    },
+    "silently": {
+      "D035": 1
+    },
+    "rewrit": {
+      "D035": 1
+    },
+    "specializ": {
+      "D035": 1
+    },
+    "rocchio": {
+      "D036": 2
+    },
+    "move": {
+      "D036": 1
+    },
+    "toward": {
+      "D036": 1
+    },
+    "away": {
+      "D036": 1
+    },
+    "nonrelevant": {
+      "D036": 1,
+      "D040": 1
+    },
+    "classic": {
+      "D036": 1
+    },
+    "method": {
+      "D036": 1
+    },
+    "improv": {
+      "D036": 1
+    },
+    "judgment": {
+      "D036": 1,
+      "D041": 1,
+      "D044": 1,
+      "D055": 1
+    },
+    "available": {
+      "D036": 1
+    },
+    "pseudo": {
+      "D037": 2
+    },
+    "without": {
+      "D037": 1,
+      "D055": 1,
+      "D057": 1
+    },
+    "label": {
+      "D037": 1
+    },
+    "assume": {
+      "D037": 1
+    },
+    "initial": {
+      "D037": 1
+    },
+    "append": {
+      "D037": 1
+    },
+    "thesauru": {
+      "D038": 2
+    },
+    "synonym": {
+      "D038": 1
+    },
+    "concept": {
+      "D038": 1
+    },
+    "precision": {
+      "D038": 1,
+      "D041": 2,
+      "D042": 3
+    },
+    "broad": {
+      "D038": 1
+    },
+    "introduce": {
+      "D038": 1
+    },
+    "drift": {
+      "D038": 1,
+      "D040": 2
+    },
+    "selection": {
+      "D039": 2
+    },
+    "favor": {
+      "D039": 1
+    },
+    "frequently": {
+      "D039": 1
+    },
+    "original": {
+      "D039": 1
+    },
+    "keep": {
+      "D039": 1
+    },
+    "concise": {
+      "D039": 1
+    },
+    "risk": {
+      "D040": 2
+    },
+    "include": {
+      "D040": 1,
+      "D057": 1,
+      "D058": 1
+    },
+    "conservative": {
+      "D040": 1
+    },
+    "depth": {
+      "D040": 1
+    },
+    "number": {
+      "D040": 1
+    },
+    "recall": {
+      "D041": 2
+    },
+    "measure": {
+      "D041": 3
+    },
+    "begin": {
+      "D041": 1
+    },
+    "retriev": {
+      "D041": 2,
+      "D054": 1
+    },
+    "fraction": {
+      "D041": 1
+    },
+    "mean": {
+      "D042": 2
+    },
+    "summarize": {
+      "D042": 1
+    },
+    "map": {
+      "D042": 1
+    },
+    "early": {
+      "D042": 1,
+      "D043": 1
+    },
+    "consistently": {
+      "D042": 1
+    },
+    "grad": {
+      "D043": 2
+    },
+    "discount": {
+      "D043": 2
+    },
+    "cumulative": {
+      "D043": 1
+    },
+    "evaluate": {
+      "D043": 1
+    },
+    "highly": {
+      "D043": 1
+    },
+    "larger": {
+      "D043": 1
+    },
+    "factor": {
+      "D043": 1
+    },
+    "trec": {
+      "D044": 1
+    },
+    "style": {
+      "D044": 1
+    },
+    "test": {
+      "D044": 2,
+      "D045": 1,
+      "D060": 2
+    },
+    "metric": {
+      "D044": 1,
+      "D045": 1
+    },
+    "structure": {
+      "D044": 1
+    },
+    "reproducible": {
+      "D044": 1
+    },
+    "comparison": {
+      "D044": 1
+    },
+    "offline": {
+      "D045": 2
+    },
+    "capture": {
+      "D045": 1
+    },
+    "presentation": {
+      "D045": 1
+    },
+    "interactive": {
+      "D045": 1
+    },
+    "behavior": {
+      "D045": 1
+    },
+    "deploy": {
+      "D045": 1
+    },
+    "center": {
+      "D045": 1
+    },
+    "variable": {
+      "D046": 2
+    },
+    "byte": {
+      "D046": 3
+    },
+    "encod": {
+      "D046": 2
+    },
+    "gaps": {
+      "D046": 1
+    },
+    "gap": {
+      "D046": 1
+    },
+    "encode": {
+      "D046": 1,
+      "D047": 1,
+      "D051": 1
+    },
+    "compression": {
+      "D046": 1,
+      "D047": 1,
+      "D049": 2,
+      "D050": 2
+    },
+    "size": {
+      "D046": 1
+    },
+    "gamma": {
+      "D047": 2
+    },
+    "code": {
+      "D047": 2
+    },
+    "integer": {
+      "D047": 2
+    },
+    "positive": {
+      "D047": 1
+    },
+    "unary": {
+      "D047": 1
+    },
+    "binary": {
+      "D047": 1
+    },
+    "offset": {
+      "D047": 1
+    },
+    "bit": {
+      "D047": 1
+    },
+    "level": {
+      "D047": 1
+    },
+    "skip": {
+      "D048": 2
+    },
+    "pointer": {
+      "D048": 2
+    },
+    "faster": {
+      "D048": 2
+    },
+    "accelerate": {
+      "D048": 1
+    },
+    "allow": {
+      "D048": 1
+    },
+    "jump": {
+      "D048": 1
+    },
+    "block": {
+      "D048": 1,
+      "D049": 1
+    },
+    "cannot": {
+      "D048": 1
+    },
+    "trade": {
+      "D048": 1,
+      "D050": 1
+    },
+    "extra": {
+      "D048": 1
+    },
+    "storage": {
+      "D048": 1,
+      "D049": 1,
+      "D050": 1
+    },
+    "compress": {
+      "D049": 1
+    },
+    "front": {
+      "D049": 1
+    },
+    "coding": {
+      "D049": 1
+    },
+    "locality": {
+      "D049": 1
+    },
+    "large": {
+      "D049": 1
+    },
+    "offs": {
+      "D050": 1
+    },
+    "footprint": {
+      "D050": 1
+    },
+    "increase": {
+      "D050": 1
+    },
+    "decod": {
+      "D050": 1
+    },
+    "cost": {
+      "D050": 1
+    },
+    "complexity": {
+      "D050": 1
+    },
+    "learn": {
+      "D051": 1
+    },
+    "embedding": {
+      "D051": 1
+    },
+    "continuou": {
+      "D051": 1
+    },
+    "nearest": {
+      "D051": 1
+    },
+    "neighbor": {
+      "D051": 1
+    },
+    "semantically": {
+      "D051": 1
+    },
+    "similar": {
+      "D051": 1
+    },
+    "absent": {
+      "D051": 1
+    },
+    "address": {
+      "D052": 1
+    },
+    "synonymy": {
+      "D052": 1
+    },
+    "paraphrase": {
+      "D052": 1
+    },
+    "cross": {
+      "D053": 2
+    },
+    "encoder": {
+      "D053": 2
+    },
+    "reranker": {
+      "D053": 1
+    },
+    "read": {
+      "D053": 1
+    },
+    "together": {
+      "D053": 1
+    },
+    "estimate": {
+      "D053": 1
+    },
+    "accurate": {
+      "D053": 1
+    },
+    "stage": {
+      "D053": 1
+    },
+    "too": {
+      "D053": 1
+    },
+    "expensive": {
+      "D053": 1
+    },
+    "run": {
+      "D053": 1
+    },
+    "whole": {
+      "D053": 1
+    },
+    "augment": {
+      "D054": 2
+    },
+    "supply": {
+      "D054": 1
+    },
+    "language": {
+      "D054": 1
+    },
+    "directly": {
+      "D054": 1
+    },
+    "affect": {
+      "D054": 1
+    },
+    "faithfulness": {
+      "D054": 1
+    },
+    "evaluat": {
+      "D055": 1
+    },
+    "semantic": {
+      "D055": 1
+    },
+    "improvement": {
+      "D055": 1
+    },
+    "interpret": {
+      "D055": 1
+    },
+    "keyword": {
+      "D056": 1
+    },
+    "stuff": {
+      "D056": 1
+    },
+    "attempt": {
+      "D056": 1
+    },
+    "manipulate": {
+      "D056": 1
+    },
+    "hiding": {
+      "D056": 1
+    },
+    "creat": {
+      "D056": 1
+    },
+    "low": {
+      "D056": 1
+    },
+    "unnatural": {
+      "D056": 1
+    },
+    "distribution": {
+      "D056": 1,
+      "D060": 1
+    },
+    "adversarial": {
+      "D057": 2
+    },
+    "exploit": {
+      "D057": 1
+    },
+    "matcher": {
+      "D057": 1
+    },
+    "includ": {
+      "D057": 1
+    },
+    "satisfy": {
+      "D057": 1
+    },
+    "difficult": {
+      "D057": 1
+    },
+    "negative": {
+      "D057": 1
+    },
+    "domain": {
+      "D058": 1
+    },
+    "reputation": {
+      "D058": 1
+    },
+    "consistency": {
+      "D058": 1
+    },
+    "complement": {
+      "D058": 1
+    },
+    "textual": {
+      "D058": 1
+    },
+    "open": {
+      "D058": 1
+    },
+    "environment": {
+      "D058": 1
+    },
+    "bias": {
+      "D059": 1
+    },
+    "fairness": {
+      "D059": 2
+    },
+    "amplify": {
+      "D059": 1
+    },
+    "exposure": {
+      "D059": 1
+    },
+    "disparity": {
+      "D059": 1
+    },
+    "click": {
+      "D059": 1
+    },
+    "aware": {
+      "D059": 1
+    },
+    "study": {
+      "D059": 1
+    },
+    "group": {
+      "D059": 1
+    },
+    "equitable": {
+      "D059": 1
+    },
+    "visibility": {
+      "D059": 1
+    },
+    "performance": {
+      "D060": 1
+    },
+    "under": {
+      "D060": 1
+    },
+    "misspelling": {
+      "D060": 1
+    },
+    "ambiguou": {
+      "D060": 1
+    },
+    "shift": {
+      "D060": 1
+    },
+    "stress": {
+      "D060": 1
+    },
+    "reveal": {
+      "D060": 1
+    },
+    "visible": {
+      "D060": 1
+    },
+    "easy": {
+      "D060": 1
+    },
+    "benchmark": {
+      "D060": 1
+    }
+  },
+  "doc_lengths": {
+    "D001": 31,
+    "D002": 26,
+    "D003": 25,
+    "D004": 31,
+    "D005": 24,
+    "D006": 19,
+    "D007": 26,
+    "D008": 28,
+    "D009": 29,
+    "D010": 23,
+    "D011": 30,
+    "D012": 24,
+    "D013": 30,
+    "D014": 23,
+    "D015": 22,
+    "D016": 27,
+    "D017": 26,
+    "D018": 24,
+    "D019": 24,
+    "D020": 25,
+    "D021": 23,
+    "D022": 22,
+    "D023": 23,
+    "D024": 22,
+    "D025": 21,
+    "D026": 20,
+    "D027": 25,
+    "D028": 26,
+    "D029": 20,
+    "D030": 23,
+    "D031": 23,
+    "D032": 21,
+    "D033": 25,
+    "D034": 27,
+    "D035": 21,
+    "D036": 23,
+    "D037": 22,
+    "D038": 21,
+    "D039": 22,
+    "D040": 21,
+    "D041": 22,
+    "D042": 22,
+    "D043": 23,
+    "D044": 20,
+    "D045": 23,
+    "D046": 25,
+    "D047": 21,
+    "D048": 24,
+    "D049": 15,
+    "D050": 22,
+    "D051": 24,
+    "D052": 23,
+    "D053": 25,
+    "D054": 19,
+    "D055": 23,
+    "D056": 25,
+    "D057": 22,
+    "D058": 21,
+    "D059": 24,
+    "D060": 24
+  },
+  "doc_tokens": {
+    "D001": [
+      "build",
+      "invert",
+      "index",
+      "posting",
+      "list",
+      "invert",
+      "index",
+      "maps",
+      "normaliz",
+      "term",
+      "posting",
+      "list",
+      "document",
+      "pipeline",
+      "tokenize",
+      "text",
+      "build",
+      "term",
+      "dictionary",
+      "record",
+      "term",
+      "frequency",
+      "sort",
+      "document",
+      "identifier",
+      "so",
+      "query",
+      "process",
+      "intersect",
+      "posting",
+      "efficiently"
+    ],
+    "D002": [
+      "positional",
+      "posting",
+      "phrase",
+      "search",
+      "positional",
+      "index",
+      "store",
+      "exact",
+      "token",
+      "position",
+      "term",
+      "occur",
+      "phrase",
+      "query",
+      "information",
+      "retrieval",
+      "answer",
+      "check",
+      "whether",
+      "position",
+      "adjacent",
+      "term",
+      "appear",
+      "consecutively",
+      "same",
+      "document"
+    ],
+    "D003": [
+      "tokenization",
+      "term",
+      "normalization",
+      "index",
+      "construction",
+      "start",
+      "tokenization",
+      "lowercas",
+      "stopword",
+      "filter",
+      "light",
+      "stemm",
+      "choice",
+      "define",
+      "term",
+      "vocabulary",
+      "determine",
+      "whether",
+      "query",
+      "like",
+      "rank",
+      "rank",
+      "retrieve",
+      "same",
+      "document"
+    ],
+    "D004": [
+      "dynamic",
+      "index",
+      "update",
+      "small",
+      "search",
+      "engine",
+      "small",
+      "search",
+      "engine",
+      "maintain",
+      "memory",
+      "index",
+      "periodically",
+      "write",
+      "dictionary",
+      "posting",
+      "disk",
+      "dynamic",
+      "update",
+      "add",
+      "new",
+      "document",
+      "remove",
+      "delet",
+      "identifier",
+      "rebuild",
+      "summary",
+      "statistic",
+      "average",
+      "document",
+      "length"
+    ],
+    "D005": [
+      "query",
+      "time",
+      "candidate",
+      "generation",
+      "candidate",
+      "generation",
+      "start",
+      "taking",
+      "union",
+      "intersection",
+      "posting",
+      "query",
+      "term",
+      "rank",
+      "retrieval",
+      "engine",
+      "score",
+      "only",
+      "candidate",
+      "document",
+      "instead",
+      "scann",
+      "entire",
+      "corpu"
+    ],
+    "D006": [
+      "boolean",
+      "retrieval",
+      "boolean",
+      "retrieval",
+      "treat",
+      "query",
+      "set",
+      "expression",
+      "over",
+      "posting",
+      "list",
+      "compute",
+      "intersection",
+      "compute",
+      "union",
+      "subtract",
+      "set",
+      "document",
+      "universe"
+    ],
+    "D007": [
+      "phrase",
+      "search",
+      "hard",
+      "filter",
+      "phrase",
+      "search",
+      "require",
+      "all",
+      "quot",
+      "term",
+      "occur",
+      "specifi",
+      "order",
+      "searchlen",
+      "apply",
+      "phrase",
+      "constraint",
+      "before",
+      "scor",
+      "so",
+      "document",
+      "must",
+      "contain",
+      "exact",
+      "phrase",
+      "rank"
+    ],
+    "D008": [
+      "proximity",
+      "match",
+      "beyond",
+      "exact",
+      "phrase",
+      "proximity",
+      "rank",
+      "reward",
+      "document",
+      "query",
+      "term",
+      "occur",
+      "near",
+      "other",
+      "improve",
+      "user",
+      "satisfaction",
+      "verbose",
+      "query",
+      "because",
+      "relat",
+      "term",
+      "same",
+      "passage",
+      "usually",
+      "signal",
+      "topical",
+      "relevance"
+    ],
+    "D009": [
+      "limitation",
+      "pure",
+      "boolean",
+      "search",
+      "pure",
+      "boolean",
+      "search",
+      "return",
+      "unorder",
+      "set",
+      "so",
+      "user",
+      "must",
+      "inspect",
+      "every",
+      "match",
+      "document",
+      "rank",
+      "retrieval",
+      "addresse",
+      "limitation",
+      "order",
+      "result",
+      "tf",
+      "idf",
+      "bm25",
+      "other",
+      "scor",
+      "function"
+    ],
+    "D010": [
+      "pars",
+      "user",
+      "query",
+      "search",
+      "operator",
+      "query",
+      "parser",
+      "recognize",
+      "parenthese",
+      "operator",
+      "normalize",
+      "ordinary",
+      "term",
+      "build",
+      "executable",
+      "expression",
+      "even",
+      "compact",
+      "parser",
+      "support",
+      "simple",
+      "precedence",
+      "rule"
+    ],
+    "D011": [
+      "bm25",
+      "rank",
+      "term",
+      "frequency",
+      "saturation",
+      "bm25",
+      "rank",
+      "document",
+      "combin",
+      "inverse",
+      "document",
+      "frequency",
+      "saturat",
+      "term",
+      "frequency",
+      "component",
+      "repeat",
+      "query",
+      "term",
+      "help",
+      "first",
+      "but",
+      "gain",
+      "decrease",
+      "so",
+      "long",
+      "document",
+      "do",
+      "dominate",
+      "unfairly"
+    ],
+    "D012": [
+      "document",
+      "length",
+      "normalization",
+      "bm25",
+      "bm25",
+      "parameter",
+      "control",
+      "document",
+      "length",
+      "normalization",
+      "higher",
+      "value",
+      "penalize",
+      "document",
+      "much",
+      "longer",
+      "collection",
+      "average",
+      "k1",
+      "control",
+      "strength",
+      "term",
+      "frequency",
+      "saturation"
+    ],
+    "D013": [
+      "bm25",
+      "strong",
+      "lexical",
+      "baseline",
+      "bm25",
+      "durable",
+      "lexical",
+      "baseline",
+      "because",
+      "simple",
+      "efficient",
+      "robust",
+      "across",
+      "many",
+      "ad",
+      "hoc",
+      "retrieval",
+      "collection",
+      "modern",
+      "hybrid",
+      "system",
+      "often",
+      "compare",
+      "dense",
+      "retrieval",
+      "against",
+      "bm25",
+      "before",
+      "adding",
+      "rerank"
+    ],
+    "D014": [
+      "bm25",
+      "implementation",
+      "note",
+      "practical",
+      "bm25",
+      "implementation",
+      "need",
+      "document",
+      "frequency",
+      "document",
+      "length",
+      "average",
+      "length",
+      "term",
+      "frequency",
+      "statistic",
+      "score",
+      "comput",
+      "over",
+      "candidate",
+      "set",
+      "invert",
+      "index"
+    ],
+    "D015": [
+      "bm25",
+      "failure",
+      "case",
+      "lexical",
+      "bm25",
+      "miss",
+      "relevant",
+      "document",
+      "different",
+      "vocabulary",
+      "query",
+      "query",
+      "expansion",
+      "thesauri",
+      "dense",
+      "retrieval",
+      "user",
+      "feedback",
+      "reduce",
+      "vocabulary",
+      "mismatch",
+      "problem"
+    ],
+    "D016": [
+      "vector",
+      "space",
+      "rank",
+      "tf",
+      "idf",
+      "vector",
+      "space",
+      "model",
+      "represent",
+      "document",
+      "query",
+      "weight",
+      "term",
+      "vector",
+      "tf",
+      "idf",
+      "combine",
+      "term",
+      "frequency",
+      "inverse",
+      "document",
+      "frequency",
+      "cosine",
+      "similarity",
+      "compare",
+      "angle",
+      "vector"
+    ],
+    "D017": [
+      "inverse",
+      "document",
+      "frequency",
+      "specificity",
+      "inverse",
+      "document",
+      "frequency",
+      "assign",
+      "higher",
+      "weight",
+      "term",
+      "occur",
+      "fewer",
+      "document",
+      "specific",
+      "term",
+      "help",
+      "discriminate",
+      "relevant",
+      "document",
+      "very",
+      "common",
+      "term",
+      "contribute",
+      "less",
+      "rank"
+    ],
+    "D018": [
+      "cosine",
+      "normalization",
+      "different",
+      "document",
+      "length",
+      "cosine",
+      "normalization",
+      "divide",
+      "vector",
+      "length",
+      "so",
+      "longer",
+      "document",
+      "do",
+      "automatically",
+      "receive",
+      "higher",
+      "score",
+      "useful",
+      "corpu",
+      "document",
+      "vary",
+      "length",
+      "verbosity"
+    ],
+    "D019": [
+      "compar",
+      "tf",
+      "idf",
+      "bm25",
+      "tf",
+      "idf",
+      "cosine",
+      "bm25",
+      "both",
+      "lexical",
+      "rank",
+      "model",
+      "bm25",
+      "adds",
+      "saturation",
+      "length",
+      "normalization",
+      "tf",
+      "idf",
+      "cosine",
+      "offer",
+      "simple",
+      "geometric",
+      "interpretation"
+    ],
+    "D020": [
+      "term",
+      "weight",
+      "complete",
+      "search",
+      "system",
+      "complete",
+      "scor",
+      "system",
+      "often",
+      "start",
+      "tf",
+      "idf",
+      "term",
+      "weight",
+      "candidate",
+      "generation",
+      "efficient",
+      "top",
+      "rank",
+      "engineer",
+      "decision",
+      "determine",
+      "latency",
+      "memory",
+      "reproducibility"
+    ],
+    "D021": [
+      "crawler",
+      "politeness",
+      "robot",
+      "exclusion",
+      "web",
+      "crawler",
+      "should",
+      "respect",
+      "robot",
+      "txt",
+      "throttle",
+      "request",
+      "host",
+      "avoid",
+      "overload",
+      "server",
+      "politeness",
+      "policy",
+      "essential",
+      "responsible",
+      "collection",
+      "web",
+      "page"
+    ],
+    "D022": [
+      "url",
+      "frontier",
+      "schedul",
+      "url",
+      "frontier",
+      "store",
+      "discover",
+      "link",
+      "select",
+      "next",
+      "page",
+      "fetch",
+      "good",
+      "schedul",
+      "balance",
+      "freshness",
+      "host",
+      "politeness",
+      "priority",
+      "coverage",
+      "important",
+      "page"
+    ],
+    "D023": [
+      "duplicate",
+      "near",
+      "duplicate",
+      "detection",
+      "crawler",
+      "often",
+      "encounter",
+      "mirror",
+      "page",
+      "repeat",
+      "template",
+      "fingerprint",
+      "shingl",
+      "detect",
+      "near",
+      "duplicate",
+      "before",
+      "waste",
+      "index",
+      "space",
+      "distort",
+      "retrieval",
+      "evaluation"
+    ],
+    "D024": [
+      "pars",
+      "html",
+      "indexable",
+      "text",
+      "crawler",
+      "must",
+      "extract",
+      "readable",
+      "text",
+      "html",
+      "remove",
+      "boilerplate",
+      "navigation",
+      "preserve",
+      "useful",
+      "anchor",
+      "text",
+      "pass",
+      "clean",
+      "content",
+      "index",
+      "pipeline"
+    ],
+    "D025": [
+      "freshness",
+      "incremental",
+      "crawl",
+      "incremental",
+      "crawl",
+      "revisit",
+      "page",
+      "accord",
+      "expect",
+      "change",
+      "frequency",
+      "freshness",
+      "especially",
+      "important",
+      "news",
+      "price",
+      "schedule",
+      "other",
+      "dynamic",
+      "search",
+      "collection"
+    ],
+    "D026": [
+      "pagerank",
+      "random",
+      "surfer",
+      "model",
+      "pagerank",
+      "model",
+      "random",
+      "surfer",
+      "follow",
+      "link",
+      "occasional",
+      "teleportation",
+      "page",
+      "receive",
+      "high",
+      "score",
+      "many",
+      "important",
+      "page",
+      "link"
+    ],
+    "D027": [
+      "combin",
+      "link",
+      "analysi",
+      "text",
+      "rank",
+      "web",
+      "search",
+      "system",
+      "combine",
+      "content",
+      "relevance",
+      "bm25",
+      "link",
+      "authority",
+      "pagerank",
+      "combin",
+      "score",
+      "improve",
+      "rank",
+      "anchor",
+      "text",
+      "link",
+      "indicate",
+      "popularity",
+      "trust"
+    ],
+    "D028": [
+      "anchor",
+      "text",
+      "external",
+      "evidence",
+      "anchor",
+      "text",
+      "often",
+      "describe",
+      "destination",
+      "page",
+      "word",
+      "chosen",
+      "other",
+      "author",
+      "index",
+      "anchor",
+      "text",
+      "improve",
+      "retrieval",
+      "page",
+      "whose",
+      "own",
+      "content",
+      "lack",
+      "query",
+      "term"
+    ],
+    "D029": [
+      "topic",
+      "sensitive",
+      "link",
+      "rank",
+      "topic",
+      "sensitive",
+      "pagerank",
+      "compute",
+      "authority",
+      "topical",
+      "subset",
+      "help",
+      "distinguish",
+      "page",
+      "search",
+      "engine",
+      "page",
+      "unrelat",
+      "popular",
+      "subject"
+    ],
+    "D030": [
+      "link",
+      "spam",
+      "authority",
+      "manipulation",
+      "link",
+      "based",
+      "rank",
+      "manipulat",
+      "link",
+      "farm",
+      "spam",
+      "network",
+      "robust",
+      "system",
+      "monitor",
+      "suspiciou",
+      "link",
+      "pattern",
+      "combine",
+      "authority",
+      "content",
+      "quality",
+      "signal"
+    ],
+    "D031": [
+      "edit",
+      "distance",
+      "spell",
+      "correction",
+      "spell",
+      "correction",
+      "rank",
+      "candidate",
+      "term",
+      "edit",
+      "distance",
+      "misspell",
+      "query",
+      "term",
+      "insertion",
+      "deletion",
+      "substitution",
+      "transposition",
+      "approximate",
+      "effort",
+      "need",
+      "fix",
+      "word"
+    ],
+    "D032": [
+      "gram",
+      "indexe",
+      "tolerant",
+      "retrieval",
+      "gram",
+      "index",
+      "store",
+      "character",
+      "gram",
+      "vocabulary",
+      "term",
+      "generate",
+      "candidate",
+      "wildcard",
+      "query",
+      "spell",
+      "correction",
+      "before",
+      "edit",
+      "distance",
+      "rerank"
+    ],
+    "D033": [
+      "noisy",
+      "channel",
+      "rank",
+      "correction",
+      "noisy",
+      "channel",
+      "spell",
+      "model",
+      "combine",
+      "likelihood",
+      "observ",
+      "typo",
+      "prior",
+      "probability",
+      "intend",
+      "term",
+      "frequent",
+      "vocabulary",
+      "term",
+      "receive",
+      "more",
+      "confidence",
+      "after",
+      "candidate",
+      "generation"
+    ],
+    "D034": [
+      "context",
+      "sensitive",
+      "query",
+      "correction",
+      "context",
+      "sensitive",
+      "correction",
+      "surround",
+      "query",
+      "word",
+      "choose",
+      "among",
+      "valid",
+      "alternative",
+      "example",
+      "search",
+      "engine",
+      "technolgy",
+      "should",
+      "become",
+      "search",
+      "engine",
+      "technology",
+      "rather",
+      "different",
+      "rare",
+      "word"
+    ],
+    "D035": [
+      "correct",
+      "query",
+      "search",
+      "system",
+      "should",
+      "avoid",
+      "aggressive",
+      "correction",
+      "name",
+      "acronym",
+      "technical",
+      "term",
+      "bm25",
+      "ndcg",
+      "show",
+      "suggestion",
+      "safer",
+      "silently",
+      "rewrit",
+      "specializ",
+      "query"
+    ],
+    "D036": [
+      "rocchio",
+      "relevance",
+      "feedback",
+      "rocchio",
+      "feedback",
+      "move",
+      "query",
+      "vector",
+      "toward",
+      "relevant",
+      "document",
+      "away",
+      "nonrelevant",
+      "document",
+      "classic",
+      "method",
+      "improv",
+      "vector",
+      "space",
+      "retrieval",
+      "relevance",
+      "judgment",
+      "available"
+    ],
+    "D037": [
+      "pseudo",
+      "relevance",
+      "feedback",
+      "without",
+      "user",
+      "label",
+      "pseudo",
+      "relevance",
+      "feedback",
+      "assume",
+      "top",
+      "rank",
+      "document",
+      "initial",
+      "search",
+      "relevant",
+      "expansion",
+      "term",
+      "select",
+      "document",
+      "append",
+      "query"
+    ],
+    "D038": [
+      "thesauru",
+      "based",
+      "query",
+      "expansion",
+      "thesauru",
+      "add",
+      "synonym",
+      "relat",
+      "concept",
+      "query",
+      "help",
+      "vocabulary",
+      "mismatch",
+      "but",
+      "reduce",
+      "precision",
+      "broad",
+      "term",
+      "introduce",
+      "topic",
+      "drift"
+    ],
+    "D039": [
+      "term",
+      "selection",
+      "feedback",
+      "feedback",
+      "term",
+      "selection",
+      "favor",
+      "high",
+      "idf",
+      "term",
+      "occur",
+      "frequently",
+      "top",
+      "document",
+      "filter",
+      "stopword",
+      "original",
+      "query",
+      "term",
+      "keep",
+      "expansion",
+      "concise"
+    ],
+    "D040": [
+      "risk",
+      "topic",
+      "drift",
+      "query",
+      "expansion",
+      "drift",
+      "first",
+      "pass",
+      "result",
+      "include",
+      "nonrelevant",
+      "document",
+      "conservative",
+      "feedback",
+      "depth",
+      "small",
+      "number",
+      "expansion",
+      "term",
+      "reduce",
+      "risk"
+    ],
+    "D041": [
+      "precision",
+      "recall",
+      "measure",
+      "evaluation",
+      "begin",
+      "compar",
+      "retriev",
+      "document",
+      "relevance",
+      "judgment",
+      "precision",
+      "measure",
+      "fraction",
+      "retriev",
+      "document",
+      "relevant",
+      "recall",
+      "measure",
+      "coverage",
+      "all",
+      "relevant",
+      "document"
+    ],
+    "D042": [
+      "mean",
+      "average",
+      "precision",
+      "mean",
+      "average",
+      "precision",
+      "summarize",
+      "precision",
+      "observ",
+      "every",
+      "rank",
+      "relevant",
+      "document",
+      "appear",
+      "map",
+      "reward",
+      "system",
+      "retrieve",
+      "relevant",
+      "document",
+      "early",
+      "consistently"
+    ],
+    "D043": [
+      "ndcg",
+      "grad",
+      "relevance",
+      "normaliz",
+      "discount",
+      "cumulative",
+      "gain",
+      "evaluate",
+      "rank",
+      "list",
+      "grad",
+      "relevance",
+      "highly",
+      "relevant",
+      "document",
+      "receive",
+      "larger",
+      "gain",
+      "discount",
+      "factor",
+      "reward",
+      "early",
+      "rank"
+    ],
+    "D044": [
+      "trec",
+      "style",
+      "test",
+      "collection",
+      "test",
+      "collection",
+      "contain",
+      "corpu",
+      "topic",
+      "relevance",
+      "judgment",
+      "evaluation",
+      "metric",
+      "structure",
+      "support",
+      "reproducible",
+      "comparison",
+      "among",
+      "retrieval",
+      "model"
+    ],
+    "D045": [
+      "limitation",
+      "offline",
+      "evaluation",
+      "offline",
+      "metric",
+      "capture",
+      "user",
+      "satisfaction",
+      "presentation",
+      "quality",
+      "interactive",
+      "search",
+      "behavior",
+      "deploy",
+      "system",
+      "should",
+      "combine",
+      "test",
+      "collection",
+      "result",
+      "user",
+      "center",
+      "evaluation"
+    ],
+    "D046": [
+      "variable",
+      "byte",
+      "encod",
+      "posting",
+      "variable",
+      "byte",
+      "encod",
+      "store",
+      "small",
+      "gaps",
+      "fewer",
+      "byte",
+      "search",
+      "engine",
+      "gap",
+      "encode",
+      "sort",
+      "document",
+      "identifier",
+      "before",
+      "compression",
+      "reduce",
+      "posting",
+      "list",
+      "size"
+    ],
+    "D047": [
+      "gamma",
+      "code",
+      "integer",
+      "compression",
+      "gamma",
+      "code",
+      "encode",
+      "positive",
+      "integer",
+      "unary",
+      "length",
+      "binary",
+      "offset",
+      "useful",
+      "compact",
+      "posting",
+      "but",
+      "require",
+      "bit",
+      "level",
+      "process"
+    ],
+    "D048": [
+      "skip",
+      "pointer",
+      "faster",
+      "intersection",
+      "skip",
+      "pointer",
+      "accelerate",
+      "posting",
+      "intersection",
+      "allow",
+      "query",
+      "process",
+      "jump",
+      "over",
+      "block",
+      "cannot",
+      "contain",
+      "match",
+      "trade",
+      "extra",
+      "storage",
+      "faster",
+      "boolean",
+      "evaluation"
+    ],
+    "D049": [
+      "dictionary",
+      "compression",
+      "term",
+      "dictionary",
+      "compress",
+      "block",
+      "storage",
+      "front",
+      "coding",
+      "compression",
+      "improve",
+      "memory",
+      "locality",
+      "large",
+      "vocabulary"
+    ],
+    "D050": [
+      "compression",
+      "trade",
+      "offs",
+      "search",
+      "engine",
+      "index",
+      "compression",
+      "reduce",
+      "disk",
+      "memory",
+      "footprint",
+      "but",
+      "increase",
+      "decod",
+      "cost",
+      "practical",
+      "system",
+      "balance",
+      "latency",
+      "storage",
+      "implementation",
+      "complexity"
+    ],
+    "D051": [
+      "dense",
+      "retrieval",
+      "learn",
+      "embedding",
+      "dense",
+      "retrieval",
+      "encode",
+      "query",
+      "document",
+      "continuou",
+      "vector",
+      "approximate",
+      "nearest",
+      "neighbor",
+      "search",
+      "retrieve",
+      "semantically",
+      "similar",
+      "document",
+      "even",
+      "exact",
+      "query",
+      "term",
+      "absent"
+    ],
+    "D052": [
+      "hybrid",
+      "lexical",
+      "dense",
+      "retrieval",
+      "hybrid",
+      "retrieval",
+      "combine",
+      "bm25",
+      "lexical",
+      "score",
+      "dense",
+      "vector",
+      "similarity",
+      "lexical",
+      "component",
+      "preserve",
+      "exact",
+      "match",
+      "dense",
+      "retrieval",
+      "address",
+      "synonymy",
+      "paraphrase"
+    ],
+    "D053": [
+      "cross",
+      "encoder",
+      "rerank",
+      "cross",
+      "encoder",
+      "reranker",
+      "read",
+      "query",
+      "document",
+      "together",
+      "estimate",
+      "relevance",
+      "often",
+      "more",
+      "accurate",
+      "first",
+      "stage",
+      "retrieval",
+      "but",
+      "too",
+      "expensive",
+      "run",
+      "over",
+      "whole",
+      "corpu"
+    ],
+    "D054": [
+      "retrieval",
+      "augment",
+      "generation",
+      "retrieval",
+      "augment",
+      "generation",
+      "search",
+      "component",
+      "supply",
+      "evidence",
+      "language",
+      "model",
+      "quality",
+      "retriev",
+      "passage",
+      "directly",
+      "affect",
+      "answer",
+      "faithfulness"
+    ],
+    "D055": [
+      "evaluat",
+      "dense",
+      "retrieval",
+      "against",
+      "bm25",
+      "dense",
+      "system",
+      "should",
+      "compar",
+      "bm25",
+      "baseline",
+      "same",
+      "query",
+      "relevance",
+      "judgment",
+      "without",
+      "lexical",
+      "baseline",
+      "semantic",
+      "retrieval",
+      "improvement",
+      "hard",
+      "interpret"
+    ],
+    "D056": [
+      "search",
+      "spam",
+      "keyword",
+      "stuff",
+      "search",
+      "spam",
+      "attempt",
+      "manipulate",
+      "rank",
+      "repeat",
+      "popular",
+      "term",
+      "hiding",
+      "text",
+      "creat",
+      "low",
+      "quality",
+      "page",
+      "robust",
+      "rank",
+      "should",
+      "detect",
+      "unnatural",
+      "term",
+      "distribution"
+    ],
+    "D057": [
+      "adversarial",
+      "document",
+      "retrieval",
+      "adversarial",
+      "document",
+      "exploit",
+      "lexical",
+      "matcher",
+      "includ",
+      "many",
+      "query",
+      "term",
+      "without",
+      "satisfy",
+      "information",
+      "need",
+      "evaluation",
+      "should",
+      "include",
+      "difficult",
+      "negative",
+      "example"
+    ],
+    "D058": [
+      "trust",
+      "signal",
+      "web",
+      "search",
+      "trust",
+      "signal",
+      "include",
+      "domain",
+      "reputation",
+      "link",
+      "quality",
+      "author",
+      "information",
+      "content",
+      "consistency",
+      "complement",
+      "textual",
+      "relevance",
+      "open",
+      "web",
+      "environment"
+    ],
+    "D059": [
+      "bias",
+      "fairness",
+      "rank",
+      "rank",
+      "system",
+      "amplify",
+      "exposure",
+      "disparity",
+      "popular",
+      "document",
+      "receive",
+      "more",
+      "click",
+      "authority",
+      "fairness",
+      "aware",
+      "evaluation",
+      "study",
+      "whether",
+      "different",
+      "group",
+      "receive",
+      "equitable",
+      "visibility"
+    ],
+    "D060": [
+      "robust",
+      "evaluation",
+      "search",
+      "system",
+      "robust",
+      "retrieval",
+      "evaluation",
+      "test",
+      "performance",
+      "under",
+      "misspelling",
+      "spam",
+      "ambiguou",
+      "query",
+      "distribution",
+      "shift",
+      "stress",
+      "test",
+      "reveal",
+      "limitation",
+      "visible",
+      "easy",
+      "benchmark",
+      "topic"
+    ]
+  },
+  "phrase_tokens": {
+    "D001": [
+      "build",
+      "an",
+      "invert",
+      "index",
+      "with",
+      "posting",
+      "list",
+      "an",
+      "invert",
+      "index",
+      "maps",
+      "each",
+      "normaliz",
+      "term",
+      "to",
+      "a",
+      "posting",
+      "list",
+      "of",
+      "document",
+      "the",
+      "pipeline",
+      "tokenize",
+      "text",
+      "build",
+      "a",
+      "term",
+      "dictionary",
+      "record",
+      "term",
+      "frequency",
+      "and",
+      "sort",
+      "document",
+      "identifier",
+      "so",
+      "query",
+      "process",
+      "can",
+      "intersect",
+      "posting",
+      "efficiently"
+    ],
+    "D002": [
+      "positional",
+      "posting",
+      "for",
+      "phrase",
+      "search",
+      "a",
+      "positional",
+      "index",
+      "store",
+      "the",
+      "exact",
+      "token",
+      "position",
+      "where",
+      "a",
+      "term",
+      "occur",
+      "phrase",
+      "query",
+      "such",
+      "as",
+      "information",
+      "retrieval",
+      "are",
+      "answer",
+      "by",
+      "check",
+      "whether",
+      "position",
+      "for",
+      "adjacent",
+      "term",
+      "appear",
+      "consecutively",
+      "in",
+      "the",
+      "same",
+      "document"
+    ],
+    "D003": [
+      "tokenization",
+      "and",
+      "term",
+      "normalization",
+      "index",
+      "construction",
+      "start",
+      "with",
+      "tokenization",
+      "lowercas",
+      "stopword",
+      "filter",
+      "and",
+      "light",
+      "stemm",
+      "these",
+      "choice",
+      "define",
+      "the",
+      "term",
+      "vocabulary",
+      "and",
+      "determine",
+      "whether",
+      "query",
+      "like",
+      "rank",
+      "and",
+      "rank",
+      "retrieve",
+      "the",
+      "same",
+      "document"
+    ],
+    "D004": [
+      "dynamic",
+      "index",
+      "update",
+      "for",
+      "small",
+      "search",
+      "engine",
+      "a",
+      "small",
+      "search",
+      "engine",
+      "can",
+      "maintain",
+      "an",
+      "in",
+      "memory",
+      "index",
+      "and",
+      "periodically",
+      "write",
+      "the",
+      "dictionary",
+      "and",
+      "posting",
+      "to",
+      "disk",
+      "dynamic",
+      "update",
+      "add",
+      "new",
+      "document",
+      "remove",
+      "delet",
+      "identifier",
+      "and",
+      "rebuild",
+      "summary",
+      "statistic",
+      "such",
+      "as",
+      "average",
+      "document",
+      "length"
+    ],
+    "D005": [
+      "query",
+      "time",
+      "candidate",
+      "generation",
+      "candidate",
+      "generation",
+      "start",
+      "by",
+      "taking",
+      "the",
+      "union",
+      "or",
+      "intersection",
+      "of",
+      "posting",
+      "for",
+      "query",
+      "term",
+      "a",
+      "rank",
+      "retrieval",
+      "engine",
+      "then",
+      "score",
+      "only",
+      "candidate",
+      "document",
+      "instead",
+      "of",
+      "scann",
+      "the",
+      "entire",
+      "corpu"
+    ],
+    "D006": [
+      "boolean",
+      "retrieval",
+      "with",
+      "and",
+      "or",
+      "and",
+      "not",
+      "boolean",
+      "retrieval",
+      "treat",
+      "query",
+      "as",
+      "set",
+      "expression",
+      "over",
+      "posting",
+      "list",
+      "and",
+      "compute",
+      "an",
+      "intersection",
+      "or",
+      "compute",
+      "a",
+      "union",
+      "and",
+      "not",
+      "subtract",
+      "a",
+      "set",
+      "from",
+      "the",
+      "document",
+      "universe"
+    ],
+    "D007": [
+      "phrase",
+      "search",
+      "as",
+      "a",
+      "hard",
+      "filter",
+      "a",
+      "phrase",
+      "search",
+      "require",
+      "all",
+      "quot",
+      "term",
+      "to",
+      "occur",
+      "in",
+      "the",
+      "specifi",
+      "order",
+      "searchlen",
+      "apply",
+      "phrase",
+      "constraint",
+      "before",
+      "scor",
+      "so",
+      "a",
+      "document",
+      "must",
+      "contain",
+      "the",
+      "exact",
+      "phrase",
+      "to",
+      "be",
+      "rank"
+    ],
+    "D008": [
+      "proximity",
+      "match",
+      "beyond",
+      "exact",
+      "phrase",
+      "proximity",
+      "rank",
+      "reward",
+      "document",
+      "where",
+      "query",
+      "term",
+      "occur",
+      "near",
+      "each",
+      "other",
+      "this",
+      "can",
+      "improve",
+      "user",
+      "satisfaction",
+      "for",
+      "verbose",
+      "query",
+      "because",
+      "relat",
+      "term",
+      "in",
+      "the",
+      "same",
+      "passage",
+      "usually",
+      "signal",
+      "topical",
+      "relevance"
+    ],
+    "D009": [
+      "limitation",
+      "of",
+      "pure",
+      "boolean",
+      "search",
+      "pure",
+      "boolean",
+      "search",
+      "return",
+      "an",
+      "unorder",
+      "set",
+      "so",
+      "user",
+      "must",
+      "inspect",
+      "every",
+      "match",
+      "document",
+      "rank",
+      "retrieval",
+      "addresse",
+      "this",
+      "limitation",
+      "by",
+      "order",
+      "result",
+      "with",
+      "tf",
+      "idf",
+      "bm25",
+      "or",
+      "other",
+      "scor",
+      "function"
+    ],
+    "D010": [
+      "pars",
+      "user",
+      "query",
+      "into",
+      "search",
+      "operator",
+      "a",
+      "query",
+      "parser",
+      "recognize",
+      "parenthese",
+      "and",
+      "operator",
+      "normalize",
+      "ordinary",
+      "term",
+      "and",
+      "build",
+      "an",
+      "executable",
+      "expression",
+      "even",
+      "a",
+      "compact",
+      "parser",
+      "can",
+      "support",
+      "and",
+      "or",
+      "not",
+      "and",
+      "simple",
+      "precedence",
+      "rule"
+    ],
+    "D011": [
+      "bm25",
+      "rank",
+      "with",
+      "term",
+      "frequency",
+      "saturation",
+      "bm25",
+      "rank",
+      "document",
+      "by",
+      "combin",
+      "inverse",
+      "document",
+      "frequency",
+      "with",
+      "a",
+      "saturat",
+      "term",
+      "frequency",
+      "component",
+      "repeat",
+      "a",
+      "query",
+      "term",
+      "help",
+      "at",
+      "first",
+      "but",
+      "the",
+      "gain",
+      "decrease",
+      "so",
+      "long",
+      "document",
+      "do",
+      "not",
+      "dominate",
+      "unfairly"
+    ],
+    "D012": [
+      "document",
+      "length",
+      "normalization",
+      "in",
+      "bm25",
+      "the",
+      "bm25",
+      "b",
+      "parameter",
+      "control",
+      "document",
+      "length",
+      "normalization",
+      "a",
+      "higher",
+      "value",
+      "penalize",
+      "document",
+      "that",
+      "are",
+      "much",
+      "longer",
+      "than",
+      "the",
+      "collection",
+      "average",
+      "while",
+      "k1",
+      "control",
+      "the",
+      "strength",
+      "of",
+      "term",
+      "frequency",
+      "saturation"
+    ],
+    "D013": [
+      "why",
+      "bm25",
+      "is",
+      "a",
+      "strong",
+      "lexical",
+      "baseline",
+      "bm25",
+      "is",
+      "a",
+      "durable",
+      "lexical",
+      "baseline",
+      "because",
+      "it",
+      "is",
+      "simple",
+      "efficient",
+      "and",
+      "robust",
+      "across",
+      "many",
+      "ad",
+      "hoc",
+      "retrieval",
+      "collection",
+      "modern",
+      "hybrid",
+      "system",
+      "often",
+      "compare",
+      "dense",
+      "retrieval",
+      "against",
+      "bm25",
+      "before",
+      "adding",
+      "rerank"
+    ],
+    "D014": [
+      "bm25",
+      "implementation",
+      "note",
+      "a",
+      "practical",
+      "bm25",
+      "implementation",
+      "need",
+      "document",
+      "frequency",
+      "document",
+      "length",
+      "average",
+      "length",
+      "and",
+      "term",
+      "frequency",
+      "statistic",
+      "score",
+      "can",
+      "be",
+      "comput",
+      "over",
+      "a",
+      "candidate",
+      "set",
+      "from",
+      "the",
+      "invert",
+      "index"
+    ],
+    "D015": [
+      "bm25",
+      "failure",
+      "case",
+      "lexical",
+      "bm25",
+      "may",
+      "miss",
+      "relevant",
+      "document",
+      "that",
+      "use",
+      "different",
+      "vocabulary",
+      "from",
+      "the",
+      "query",
+      "query",
+      "expansion",
+      "thesauri",
+      "dense",
+      "retrieval",
+      "or",
+      "user",
+      "feedback",
+      "can",
+      "reduce",
+      "this",
+      "vocabulary",
+      "mismatch",
+      "problem"
+    ],
+    "D016": [
+      "vector",
+      "space",
+      "rank",
+      "with",
+      "tf",
+      "idf",
+      "the",
+      "vector",
+      "space",
+      "model",
+      "represent",
+      "document",
+      "and",
+      "query",
+      "as",
+      "weight",
+      "term",
+      "vector",
+      "tf",
+      "idf",
+      "combine",
+      "term",
+      "frequency",
+      "with",
+      "inverse",
+      "document",
+      "frequency",
+      "and",
+      "cosine",
+      "similarity",
+      "compare",
+      "the",
+      "angle",
+      "between",
+      "vector"
+    ],
+    "D017": [
+      "inverse",
+      "document",
+      "frequency",
+      "and",
+      "specificity",
+      "inverse",
+      "document",
+      "frequency",
+      "assign",
+      "higher",
+      "weight",
+      "to",
+      "term",
+      "that",
+      "occur",
+      "in",
+      "fewer",
+      "document",
+      "specific",
+      "term",
+      "help",
+      "discriminate",
+      "relevant",
+      "document",
+      "while",
+      "very",
+      "common",
+      "term",
+      "contribute",
+      "less",
+      "to",
+      "rank"
+    ],
+    "D018": [
+      "cosine",
+      "normalization",
+      "for",
+      "different",
+      "document",
+      "length",
+      "cosine",
+      "normalization",
+      "divide",
+      "by",
+      "vector",
+      "length",
+      "so",
+      "longer",
+      "document",
+      "do",
+      "not",
+      "automatically",
+      "receive",
+      "higher",
+      "score",
+      "this",
+      "is",
+      "useful",
+      "when",
+      "corpu",
+      "document",
+      "vary",
+      "in",
+      "length",
+      "and",
+      "verbosity"
+    ],
+    "D019": [
+      "compar",
+      "tf",
+      "idf",
+      "and",
+      "bm25",
+      "tf",
+      "idf",
+      "cosine",
+      "and",
+      "bm25",
+      "are",
+      "both",
+      "lexical",
+      "rank",
+      "model",
+      "bm25",
+      "adds",
+      "saturation",
+      "and",
+      "length",
+      "normalization",
+      "while",
+      "tf",
+      "idf",
+      "cosine",
+      "offer",
+      "a",
+      "simple",
+      "geometric",
+      "interpretation"
+    ],
+    "D020": [
+      "term",
+      "weight",
+      "in",
+      "a",
+      "complete",
+      "search",
+      "system",
+      "a",
+      "complete",
+      "scor",
+      "system",
+      "often",
+      "start",
+      "with",
+      "tf",
+      "idf",
+      "term",
+      "weight",
+      "candidate",
+      "generation",
+      "and",
+      "efficient",
+      "top",
+      "k",
+      "rank",
+      "engineer",
+      "decision",
+      "determine",
+      "latency",
+      "memory",
+      "use",
+      "and",
+      "reproducibility"
+    ],
+    "D021": [
+      "crawler",
+      "politeness",
+      "and",
+      "robot",
+      "exclusion",
+      "a",
+      "web",
+      "crawler",
+      "should",
+      "respect",
+      "robot",
+      "txt",
+      "throttle",
+      "request",
+      "to",
+      "each",
+      "host",
+      "and",
+      "avoid",
+      "overload",
+      "server",
+      "politeness",
+      "policy",
+      "are",
+      "essential",
+      "for",
+      "responsible",
+      "collection",
+      "of",
+      "web",
+      "page"
+    ],
+    "D022": [
+      "url",
+      "frontier",
+      "schedul",
+      "the",
+      "url",
+      "frontier",
+      "store",
+      "discover",
+      "link",
+      "and",
+      "select",
+      "the",
+      "next",
+      "page",
+      "to",
+      "fetch",
+      "good",
+      "schedul",
+      "balance",
+      "freshness",
+      "host",
+      "politeness",
+      "priority",
+      "and",
+      "coverage",
+      "of",
+      "important",
+      "page"
+    ],
+    "D023": [
+      "duplicate",
+      "and",
+      "near",
+      "duplicate",
+      "detection",
+      "crawler",
+      "often",
+      "encounter",
+      "mirror",
+      "page",
+      "and",
+      "repeat",
+      "template",
+      "fingerprint",
+      "and",
+      "shingl",
+      "can",
+      "detect",
+      "near",
+      "duplicate",
+      "before",
+      "they",
+      "waste",
+      "index",
+      "space",
+      "and",
+      "distort",
+      "retrieval",
+      "evaluation"
+    ],
+    "D024": [
+      "pars",
+      "html",
+      "into",
+      "indexable",
+      "text",
+      "a",
+      "crawler",
+      "must",
+      "extract",
+      "readable",
+      "text",
+      "from",
+      "html",
+      "remove",
+      "boilerplate",
+      "navigation",
+      "preserve",
+      "useful",
+      "anchor",
+      "text",
+      "and",
+      "pass",
+      "clean",
+      "content",
+      "to",
+      "the",
+      "index",
+      "pipeline"
+    ],
+    "D025": [
+      "freshness",
+      "in",
+      "incremental",
+      "crawl",
+      "incremental",
+      "crawl",
+      "revisit",
+      "page",
+      "accord",
+      "to",
+      "expect",
+      "change",
+      "frequency",
+      "freshness",
+      "is",
+      "especially",
+      "important",
+      "for",
+      "news",
+      "price",
+      "schedule",
+      "and",
+      "other",
+      "dynamic",
+      "search",
+      "collection"
+    ],
+    "D026": [
+      "pagerank",
+      "and",
+      "the",
+      "random",
+      "surfer",
+      "model",
+      "pagerank",
+      "model",
+      "a",
+      "random",
+      "surfer",
+      "follow",
+      "link",
+      "with",
+      "occasional",
+      "teleportation",
+      "a",
+      "page",
+      "receive",
+      "high",
+      "score",
+      "when",
+      "many",
+      "important",
+      "page",
+      "link",
+      "to",
+      "it"
+    ],
+    "D027": [
+      "combin",
+      "link",
+      "analysi",
+      "with",
+      "text",
+      "rank",
+      "web",
+      "search",
+      "system",
+      "can",
+      "combine",
+      "content",
+      "relevance",
+      "from",
+      "bm25",
+      "with",
+      "link",
+      "authority",
+      "from",
+      "pagerank",
+      "the",
+      "combin",
+      "score",
+      "improve",
+      "rank",
+      "when",
+      "anchor",
+      "text",
+      "and",
+      "link",
+      "indicate",
+      "popularity",
+      "or",
+      "trust"
+    ],
+    "D028": [
+      "anchor",
+      "text",
+      "as",
+      "external",
+      "evidence",
+      "anchor",
+      "text",
+      "often",
+      "describe",
+      "the",
+      "destination",
+      "page",
+      "using",
+      "word",
+      "chosen",
+      "by",
+      "other",
+      "author",
+      "index",
+      "anchor",
+      "text",
+      "can",
+      "improve",
+      "retrieval",
+      "for",
+      "page",
+      "whose",
+      "own",
+      "content",
+      "lack",
+      "the",
+      "query",
+      "term"
+    ],
+    "D029": [
+      "topic",
+      "sensitive",
+      "link",
+      "rank",
+      "topic",
+      "sensitive",
+      "pagerank",
+      "compute",
+      "authority",
+      "within",
+      "topical",
+      "subset",
+      "it",
+      "can",
+      "help",
+      "distinguish",
+      "page",
+      "about",
+      "search",
+      "engine",
+      "from",
+      "page",
+      "about",
+      "unrelat",
+      "popular",
+      "subject"
+    ],
+    "D030": [
+      "link",
+      "spam",
+      "and",
+      "authority",
+      "manipulation",
+      "link",
+      "based",
+      "rank",
+      "can",
+      "be",
+      "manipulat",
+      "by",
+      "link",
+      "farm",
+      "and",
+      "spam",
+      "network",
+      "robust",
+      "system",
+      "monitor",
+      "suspiciou",
+      "link",
+      "pattern",
+      "and",
+      "combine",
+      "authority",
+      "with",
+      "content",
+      "quality",
+      "signal"
+    ],
+    "D031": [
+      "edit",
+      "distance",
+      "for",
+      "spell",
+      "correction",
+      "spell",
+      "correction",
+      "rank",
+      "candidate",
+      "term",
+      "by",
+      "edit",
+      "distance",
+      "from",
+      "the",
+      "misspell",
+      "query",
+      "term",
+      "insertion",
+      "deletion",
+      "substitution",
+      "and",
+      "transposition",
+      "approximate",
+      "the",
+      "effort",
+      "need",
+      "to",
+      "fix",
+      "a",
+      "word"
+    ],
+    "D032": [
+      "k",
+      "gram",
+      "indexe",
+      "for",
+      "tolerant",
+      "retrieval",
+      "a",
+      "k",
+      "gram",
+      "index",
+      "store",
+      "character",
+      "n",
+      "gram",
+      "for",
+      "each",
+      "vocabulary",
+      "term",
+      "it",
+      "generate",
+      "candidate",
+      "for",
+      "wildcard",
+      "query",
+      "and",
+      "spell",
+      "correction",
+      "before",
+      "edit",
+      "distance",
+      "rerank"
+    ],
+    "D033": [
+      "noisy",
+      "channel",
+      "rank",
+      "for",
+      "correction",
+      "a",
+      "noisy",
+      "channel",
+      "spell",
+      "model",
+      "combine",
+      "the",
+      "likelihood",
+      "of",
+      "an",
+      "observ",
+      "typo",
+      "with",
+      "the",
+      "prior",
+      "probability",
+      "of",
+      "the",
+      "intend",
+      "term",
+      "frequent",
+      "vocabulary",
+      "term",
+      "receive",
+      "more",
+      "confidence",
+      "after",
+      "candidate",
+      "generation"
+    ],
+    "D034": [
+      "context",
+      "sensitive",
+      "query",
+      "correction",
+      "context",
+      "sensitive",
+      "correction",
+      "uses",
+      "surround",
+      "query",
+      "word",
+      "to",
+      "choose",
+      "among",
+      "valid",
+      "alternative",
+      "for",
+      "example",
+      "search",
+      "engine",
+      "technolgy",
+      "should",
+      "become",
+      "search",
+      "engine",
+      "technology",
+      "rather",
+      "than",
+      "a",
+      "different",
+      "rare",
+      "word"
+    ],
+    "D035": [
+      "when",
+      "not",
+      "to",
+      "correct",
+      "a",
+      "query",
+      "a",
+      "search",
+      "system",
+      "should",
+      "avoid",
+      "aggressive",
+      "correction",
+      "for",
+      "name",
+      "acronym",
+      "and",
+      "technical",
+      "term",
+      "such",
+      "as",
+      "bm25",
+      "or",
+      "ndcg",
+      "show",
+      "a",
+      "suggestion",
+      "is",
+      "safer",
+      "than",
+      "silently",
+      "rewrit",
+      "a",
+      "specializ",
+      "query"
+    ],
+    "D036": [
+      "rocchio",
+      "relevance",
+      "feedback",
+      "rocchio",
+      "feedback",
+      "move",
+      "a",
+      "query",
+      "vector",
+      "toward",
+      "relevant",
+      "document",
+      "and",
+      "away",
+      "from",
+      "nonrelevant",
+      "document",
+      "it",
+      "is",
+      "a",
+      "classic",
+      "method",
+      "for",
+      "improv",
+      "vector",
+      "space",
+      "retrieval",
+      "when",
+      "relevance",
+      "judgment",
+      "are",
+      "available"
+    ],
+    "D037": [
+      "pseudo",
+      "relevance",
+      "feedback",
+      "without",
+      "user",
+      "label",
+      "pseudo",
+      "relevance",
+      "feedback",
+      "assume",
+      "the",
+      "top",
+      "rank",
+      "document",
+      "from",
+      "an",
+      "initial",
+      "search",
+      "are",
+      "relevant",
+      "expansion",
+      "term",
+      "are",
+      "select",
+      "from",
+      "those",
+      "document",
+      "and",
+      "append",
+      "to",
+      "the",
+      "query"
+    ],
+    "D038": [
+      "thesauru",
+      "based",
+      "query",
+      "expansion",
+      "a",
+      "thesauru",
+      "can",
+      "add",
+      "synonym",
+      "and",
+      "relat",
+      "concept",
+      "to",
+      "a",
+      "query",
+      "this",
+      "help",
+      "with",
+      "vocabulary",
+      "mismatch",
+      "but",
+      "can",
+      "reduce",
+      "precision",
+      "if",
+      "broad",
+      "term",
+      "introduce",
+      "topic",
+      "drift"
+    ],
+    "D039": [
+      "term",
+      "selection",
+      "for",
+      "feedback",
+      "feedback",
+      "term",
+      "selection",
+      "favor",
+      "high",
+      "idf",
+      "term",
+      "that",
+      "occur",
+      "frequently",
+      "in",
+      "top",
+      "document",
+      "filter",
+      "stopword",
+      "and",
+      "original",
+      "query",
+      "term",
+      "keep",
+      "expansion",
+      "concise"
+    ],
+    "D040": [
+      "risk",
+      "of",
+      "topic",
+      "drift",
+      "query",
+      "expansion",
+      "can",
+      "drift",
+      "when",
+      "the",
+      "first",
+      "pass",
+      "result",
+      "include",
+      "nonrelevant",
+      "document",
+      "conservative",
+      "feedback",
+      "depth",
+      "and",
+      "a",
+      "small",
+      "number",
+      "of",
+      "expansion",
+      "term",
+      "reduce",
+      "the",
+      "risk"
+    ],
+    "D041": [
+      "precision",
+      "recall",
+      "and",
+      "f",
+      "measure",
+      "evaluation",
+      "begin",
+      "by",
+      "compar",
+      "retriev",
+      "document",
+      "with",
+      "relevance",
+      "judgment",
+      "precision",
+      "measure",
+      "the",
+      "fraction",
+      "of",
+      "retriev",
+      "document",
+      "that",
+      "are",
+      "relevant",
+      "while",
+      "recall",
+      "measure",
+      "coverage",
+      "of",
+      "all",
+      "relevant",
+      "document"
+    ],
+    "D042": [
+      "mean",
+      "average",
+      "precision",
+      "mean",
+      "average",
+      "precision",
+      "summarize",
+      "the",
+      "precision",
+      "observ",
+      "at",
+      "every",
+      "rank",
+      "where",
+      "a",
+      "relevant",
+      "document",
+      "appear",
+      "map",
+      "reward",
+      "system",
+      "that",
+      "retrieve",
+      "relevant",
+      "document",
+      "early",
+      "and",
+      "consistently"
+    ],
+    "D043": [
+      "ndcg",
+      "for",
+      "grad",
+      "relevance",
+      "normaliz",
+      "discount",
+      "cumulative",
+      "gain",
+      "evaluate",
+      "rank",
+      "list",
+      "with",
+      "grad",
+      "relevance",
+      "highly",
+      "relevant",
+      "document",
+      "receive",
+      "larger",
+      "gain",
+      "and",
+      "the",
+      "discount",
+      "factor",
+      "reward",
+      "early",
+      "rank"
+    ],
+    "D044": [
+      "trec",
+      "style",
+      "test",
+      "collection",
+      "a",
+      "test",
+      "collection",
+      "contain",
+      "a",
+      "corpu",
+      "topic",
+      "relevance",
+      "judgment",
+      "and",
+      "evaluation",
+      "metric",
+      "this",
+      "structure",
+      "support",
+      "reproducible",
+      "comparison",
+      "among",
+      "retrieval",
+      "model"
+    ],
+    "D045": [
+      "limitation",
+      "of",
+      "offline",
+      "evaluation",
+      "offline",
+      "metric",
+      "may",
+      "not",
+      "capture",
+      "user",
+      "satisfaction",
+      "presentation",
+      "quality",
+      "or",
+      "interactive",
+      "search",
+      "behavior",
+      "a",
+      "deploy",
+      "system",
+      "should",
+      "combine",
+      "test",
+      "collection",
+      "result",
+      "with",
+      "user",
+      "center",
+      "evaluation"
+    ],
+    "D046": [
+      "variable",
+      "byte",
+      "encod",
+      "for",
+      "posting",
+      "variable",
+      "byte",
+      "encod",
+      "store",
+      "small",
+      "gaps",
+      "with",
+      "fewer",
+      "byte",
+      "search",
+      "engine",
+      "gap",
+      "encode",
+      "sort",
+      "document",
+      "identifier",
+      "before",
+      "compression",
+      "to",
+      "reduce",
+      "posting",
+      "list",
+      "size"
+    ],
+    "D047": [
+      "gamma",
+      "code",
+      "and",
+      "integer",
+      "compression",
+      "gamma",
+      "code",
+      "encode",
+      "positive",
+      "integer",
+      "using",
+      "a",
+      "unary",
+      "length",
+      "and",
+      "binary",
+      "offset",
+      "they",
+      "are",
+      "useful",
+      "for",
+      "compact",
+      "posting",
+      "but",
+      "require",
+      "bit",
+      "level",
+      "process"
+    ],
+    "D048": [
+      "skip",
+      "pointer",
+      "for",
+      "faster",
+      "intersection",
+      "skip",
+      "pointer",
+      "accelerate",
+      "posting",
+      "intersection",
+      "by",
+      "allow",
+      "query",
+      "process",
+      "to",
+      "jump",
+      "over",
+      "block",
+      "that",
+      "cannot",
+      "contain",
+      "a",
+      "match",
+      "they",
+      "trade",
+      "extra",
+      "storage",
+      "for",
+      "faster",
+      "boolean",
+      "evaluation"
+    ],
+    "D049": [
+      "dictionary",
+      "compression",
+      "the",
+      "term",
+      "dictionary",
+      "can",
+      "be",
+      "compress",
+      "with",
+      "block",
+      "storage",
+      "and",
+      "front",
+      "coding",
+      "compression",
+      "improve",
+      "memory",
+      "locality",
+      "for",
+      "large",
+      "vocabulary"
+    ],
+    "D050": [
+      "compression",
+      "trade",
+      "offs",
+      "in",
+      "search",
+      "engine",
+      "index",
+      "compression",
+      "reduce",
+      "disk",
+      "and",
+      "memory",
+      "footprint",
+      "but",
+      "increase",
+      "decod",
+      "cost",
+      "practical",
+      "system",
+      "balance",
+      "latency",
+      "storage",
+      "and",
+      "implementation",
+      "complexity"
+    ],
+    "D051": [
+      "dense",
+      "retrieval",
+      "with",
+      "learn",
+      "embedding",
+      "dense",
+      "retrieval",
+      "encode",
+      "query",
+      "and",
+      "document",
+      "into",
+      "continuou",
+      "vector",
+      "approximate",
+      "nearest",
+      "neighbor",
+      "search",
+      "retrieve",
+      "semantically",
+      "similar",
+      "document",
+      "even",
+      "when",
+      "exact",
+      "query",
+      "term",
+      "are",
+      "absent"
+    ],
+    "D052": [
+      "hybrid",
+      "lexical",
+      "and",
+      "dense",
+      "retrieval",
+      "hybrid",
+      "retrieval",
+      "combine",
+      "bm25",
+      "lexical",
+      "score",
+      "with",
+      "dense",
+      "vector",
+      "similarity",
+      "the",
+      "lexical",
+      "component",
+      "preserve",
+      "exact",
+      "match",
+      "while",
+      "dense",
+      "retrieval",
+      "can",
+      "address",
+      "synonymy",
+      "and",
+      "paraphrase"
+    ],
+    "D053": [
+      "cross",
+      "encoder",
+      "rerank",
+      "a",
+      "cross",
+      "encoder",
+      "reranker",
+      "read",
+      "the",
+      "query",
+      "and",
+      "document",
+      "together",
+      "to",
+      "estimate",
+      "relevance",
+      "it",
+      "is",
+      "often",
+      "more",
+      "accurate",
+      "than",
+      "first",
+      "stage",
+      "retrieval",
+      "but",
+      "too",
+      "expensive",
+      "to",
+      "run",
+      "over",
+      "the",
+      "whole",
+      "corpu"
+    ],
+    "D054": [
+      "retrieval",
+      "augment",
+      "generation",
+      "retrieval",
+      "augment",
+      "generation",
+      "uses",
+      "a",
+      "search",
+      "component",
+      "to",
+      "supply",
+      "evidence",
+      "to",
+      "a",
+      "language",
+      "model",
+      "the",
+      "quality",
+      "of",
+      "retriev",
+      "passage",
+      "directly",
+      "affect",
+      "answer",
+      "faithfulness"
+    ],
+    "D055": [
+      "evaluat",
+      "dense",
+      "retrieval",
+      "against",
+      "bm25",
+      "dense",
+      "system",
+      "should",
+      "be",
+      "compar",
+      "with",
+      "bm25",
+      "baseline",
+      "on",
+      "the",
+      "same",
+      "query",
+      "and",
+      "relevance",
+      "judgment",
+      "without",
+      "a",
+      "lexical",
+      "baseline",
+      "semantic",
+      "retrieval",
+      "improvement",
+      "are",
+      "hard",
+      "to",
+      "interpret"
+    ],
+    "D056": [
+      "search",
+      "spam",
+      "and",
+      "keyword",
+      "stuff",
+      "search",
+      "spam",
+      "attempt",
+      "to",
+      "manipulate",
+      "rank",
+      "by",
+      "repeat",
+      "popular",
+      "term",
+      "hiding",
+      "text",
+      "or",
+      "creat",
+      "low",
+      "quality",
+      "page",
+      "robust",
+      "rank",
+      "should",
+      "detect",
+      "unnatural",
+      "term",
+      "distribution"
+    ],
+    "D057": [
+      "adversarial",
+      "document",
+      "in",
+      "retrieval",
+      "adversarial",
+      "document",
+      "can",
+      "exploit",
+      "lexical",
+      "matcher",
+      "by",
+      "includ",
+      "many",
+      "query",
+      "term",
+      "without",
+      "satisfy",
+      "the",
+      "information",
+      "need",
+      "evaluation",
+      "should",
+      "include",
+      "difficult",
+      "negative",
+      "example"
+    ],
+    "D058": [
+      "trust",
+      "signal",
+      "for",
+      "web",
+      "search",
+      "trust",
+      "signal",
+      "include",
+      "domain",
+      "reputation",
+      "link",
+      "quality",
+      "author",
+      "information",
+      "and",
+      "content",
+      "consistency",
+      "they",
+      "complement",
+      "textual",
+      "relevance",
+      "in",
+      "open",
+      "web",
+      "environment"
+    ],
+    "D059": [
+      "bias",
+      "and",
+      "fairness",
+      "in",
+      "rank",
+      "rank",
+      "system",
+      "can",
+      "amplify",
+      "exposure",
+      "disparity",
+      "when",
+      "popular",
+      "document",
+      "receive",
+      "more",
+      "click",
+      "and",
+      "authority",
+      "fairness",
+      "aware",
+      "evaluation",
+      "study",
+      "whether",
+      "different",
+      "group",
+      "receive",
+      "equitable",
+      "visibility"
+    ],
+    "D060": [
+      "robust",
+      "evaluation",
+      "of",
+      "search",
+      "system",
+      "robust",
+      "retrieval",
+      "evaluation",
+      "test",
+      "performance",
+      "under",
+      "misspelling",
+      "spam",
+      "ambiguou",
+      "query",
+      "and",
+      "distribution",
+      "shift",
+      "stress",
+      "test",
+      "reveal",
+      "limitation",
+      "not",
+      "visible",
+      "in",
+      "easy",
+      "benchmark",
+      "topic"
+    ]
+  }
+}

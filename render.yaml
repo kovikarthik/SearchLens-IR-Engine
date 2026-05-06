@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: searchlens-demo
+    env: docker
+    plan: free
+    autoDeploy: true

@@ -1,0 +1,12 @@
+{"query_id": "Q01", "text": "inverted index postings positions phrase query", "topic": "indexing"}
+{"query_id": "Q02", "text": "bm25 term frequency document length normalization", "topic": "bm25"}
+{"query_id": "Q03", "text": "tf idf cosine vector space retrieval", "topic": "tfidf"}
+{"query_id": "Q04", "text": "boolean AND OR NOT phrase proximity", "topic": "boolean"}
+{"query_id": "Q05", "text": "pagerank link analysis random surfer anchor text", "topic": "pagerank"}
+{"query_id": "Q06", "text": "crawler robots politeness url frontier duplicate detection", "topic": "crawling"}
+{"query_id": "Q07", "text": "spelling correction k gram edit distance typo", "topic": "spelling"}
+{"query_id": "Q08", "text": "pseudo relevance feedback rocchio query expansion", "topic": "expansion"}
+{"query_id": "Q09", "text": "precision recall map ndcg evaluation metrics", "topic": "evaluation"}
+{"query_id": "Q10", "text": "index compression variable byte gamma skip pointers", "topic": "compression"}
+{"query_id": "Q11", "text": "dense retrieval hybrid bm25 reranking embeddings", "topic": "neural"}
+{"query_id": "Q12", "text": "search spam adversarial ranking robustness", "topic": "robustness"}

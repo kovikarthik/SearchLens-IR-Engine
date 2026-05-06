@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=src
+    command: python web/app.py --host 0.0.0.0 --port 8000
+    volumes:
+      - .:/app
