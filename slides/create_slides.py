@@ -1,4 +1,5 @@
 from __future__ import annotations
+print("Starting slide generation...")
 from pathlib import Path
 from pptx import Presentation
 from pptx.util import Inches, Pt
@@ -331,18 +332,31 @@ add_bullets(slide, [
     ("3. Live Evaluation: Real user-click tracking.", 1)
 ])
 
-# --- 23. CONCLUSION ---
+# --- 23. TARGET VENUE & DEMO ---
 slide = blank_slide(23)
+add_title_text(slide, "Target Venue & Live Demo")
+add_bullets(slide, [
+    "Target Venue: ACM SIGIR 2026 (System Demonstrations)",
+    "SIGIR is the premier venue for Information Retrieval research.",
+    "Live Demo URL: https://searchlens-demo.onrender.com",
+    "Key Demo Features:",
+    ("Real-time BM25 vs TF-IDF ranking comparison.", 1),
+    ("Interactive 'Ranking Intelligence' explanations.", 1),
+    ("Optimized for production via Render & Docker.", 1)
+])
+
+# --- 24. CONCLUSION ---
+slide = blank_slide(24)
 add_title_text(slide, "Conclusion")
 add_bullets(slide, [
     "SearchLens successfully demonstrates that a transparent Python implementation can rival industrial models like BM25.",
     "The project proves the importance of term saturation and positional indexing for technical search tasks.",
     "The system is demo-ready, fully tested, and reproducible.",
-    "Ready for submission to ACM SIGIR."
+    "Final URL: https://searchlens-demo.onrender.com"
 ])
 
-# --- 24. THANK YOU ---
-slide = blank_slide(24)
+# --- 25. THANK YOU ---
+slide = blank_slide(25)
 box = slide.shapes.add_textbox(Inches(1.0), Inches(2.5), Inches(11.33), Inches(2.5))
 p = box.text_frame.paragraphs[0]
 p.text = "Thank You"
@@ -365,4 +379,4 @@ p3.alignment = PP_ALIGN.CENTER
 p3.font.color.rgb = COLOR_GRAY
 
 prs.save(OUT)
-print(f"Final Presentation (24 Slides) saved to: {OUT}")
+print(f"Final Presentation (25 Slides) saved to: {OUT}")
